@@ -1,0 +1,18 @@
+# Appendix XIV: A tuned example on the road
+
+## Description
+
+In this chapter we will see some measured data from a tuned car which will give more insight in how boostlevels relate to power, torque and acceleration.
+Please do note that these figures are just give to illustrate and that the results of tuning will vary for every engine and car.
+
+Here we see the power curves in brake horsepower related to different boostvalues…
+
+![](images/p182-1.png){width=59%}
+
+and the torque curves in Newton meters related to boost…
+
+![](images/p182-2.png){width=59%}
+
+And last but not least the acceleration values from 100-150 km/h related to the same boost levels...
+
+![](images/p182-3.png){width=59%}

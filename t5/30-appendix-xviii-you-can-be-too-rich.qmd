@@ -1,0 +1,81 @@
+# Appendix XVIII: You can be too rich
+
+## Adding fuel too cool
+
+*By Klaus Allmendinger, VP of Engineering, Innovate Motorsports*
+
+Many people with turbochargers believe that they need to run at very rich mixtures.
+The theory is that the excess fuel cools the intake charge and therefore reduces the probability of knock.
+It does work in reducing knock, but not because of charge cooling.
+The following little article shows why.
+
+First let’s look at the science.
+Specific heat is the amount of energy required to raise 1 kg of material by one degree K (Kelvin, same as Celsius but with 0 point at absolute zero).
+Different materials have different specific heats.
+The energy is measured in kJ or kilojoules:
+
+Air ~ 1 kJ/( kg \* deg K)\
+Gasoline 2.02 kJ/( kg \* deg K)\
+Water 4.18 kJ/( kg \* deg K)\
+Ethanol 2.43 kJ/( kg \* deg K)\
+Methanol 2.51 kJ/( kg \* deg K)
+
+Fuel and other liquids also have what's called latent heat.
+This is the heat energy required to vaporize 1 kg of the liquid.
+The fuel in an internal combustion engine has to be vaporized and mixed thoroughly with the incoming air to produce power.
+Liquid gasoline does not burn.
+The energy to vaporize the fuel comes partially from the incoming air, cooling it.
+The latent heat energy required is actually much larger than the specific heat.
+That the energy comes from the incoming air can be easily seen on older carbureted cars, where frost can actually form on the intake manifold from the cooling of the charge.
+
+The latent heat values of different liquids are shown here:
+
+Gasoline 350 kJ/kg\
+Water 2256 kJ/kg\
+Ethanol 904 kJ/kg\
+Methanol 1109 kJ/kg
+
+Most engines produce maximum power (with optimized ignition timing) at an air-fuel-ratio between 12 and 13.
+Let's assume the optimum is in the middle at 12.5.
+This means that for every kg of air, 0.08 kg of fuel is mixed in and vaporized.
+The vaporization of the fuel extracts 28 kJ of energy from the air charge.
+If the mixture has an air-fuel-ratio of 11 instead, the vaporization extracts 31.8 kJ instead.
+A difference of 3.8 kJ.
+Because air has a specific heat of about 1 kJ/kg\*deg K, the air charge is only 3.8 C (or K) degrees cooler for the rich mixture compared to the optimum power mixture.
+This small difference has very little effect on knock or power output.
+
+If instead of the richer mixture about 10% (by mass) of water would be injected in the intake charge (0.008 kg Water/kg air), the high latent heat of the water would cool the charge by 18 degrees, about 4 times the cooling effect of the richer mixture.
+The added fuel for the rich mixture can't burn because there is just not enough oxygen available.
+So it does not matter if fuel or water is added.
+
+So where does the knock suppression of richer mixtures come from?
+
+If the mixture gets ignited by the spark, a flame front spreads out from the spark plug.
+This burning mixture increases the pressure and temperature in the cylinder.
+At some time in the process the pressures and temperatures peak.
+The speed of the flame front is dependent on mixture density and AFR.
+A richer or leaner AFR than about 12-13 AFR burns slower.
+A denser mixture burns faster.
+So with a turbo under boost the mixture density raises and results in a faster burning mixture.
+The closer the peak pressure is to TDC, the higher that peak pressure is, resulting in a high knock probability.
+Also there is less leverage on the crankshaft for the pressure to produce torque, and, therefore, less power.
+
+Richening up the mixture results in a slower burn, moving the pressure peak later where there is more leverage, hence more torque.
+Also the pressure peak is lower at a later crank angle and the knock probability is reduced.
+The same effect can be achieved with an optimum power mixture and more ignition retard.
+
+Optimum mix with “later” ignition can produce more power because more energy is released from the combustion of gasoline.
+Here’s why: When hydrocarbons like gasoline combust, the burn process actually happens in multiple stages.
+First the gasoline molecules are broken up into hydrogen and carbon.
+The hydrogen combines with oxygen from the air to form H2O (water) and the carbon molecules form CO.
+This process happens very fast at the front edge of the flame front.
+The second stage converts CO to CO2.
+This process is relatively slow and requires water molecules (from the first stage) for completion.
+If there is no more oxygen available (most of it consumed in the first stage), the second stage can't happen.
+But about 2/3 of the energy released from the burning of the carbon is released in the second stage.
+Therefore a richer mixture releases less energy, lowering peak pressures and temperatures, and produces less power.
+A secondary side effect is of course also a lowering of knock probability.
+It's like closing the throttle a little.
+A typical engine does not knock when running on part throttle because less energy and therefore lower pressures and temperatures are in the cylinder.
+
+This is why running overly-rich mixtures can not only increase fuel consumption, but also cost power.

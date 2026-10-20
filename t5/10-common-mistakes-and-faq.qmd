@@ -1,0 +1,60 @@
+# Common mistakes and FAQ
+
+## General
+
+This chapter will describe some frequently made mistakes in handling the Trionic.
+
+### Fuel knock map
+
+When knocking occurs inside the engine (sensed through the DI cartridge) evenly in all cylinders a tiny bit of extra fuel will be injected.
+When the manifold pressure (MAP) is over 140 kPa the normal injection map will be overruled by another map: the knocking fuel map.
+This map enriches the fuel mixture so that the engine cools down (extra fuel means cooler mixture).
+
+A common mistake in changing maps is that the injection map is altered but the knocking map is forgotten.
+This may result in lower (or equal) values in the knocking map than in the normal injection map.
+When the engine starts to knock and the map is switched to supply more fuel to cool the engine, not more but less fuel will be injected.
+This, of course, is a nightmare for your engine.
+
+### Ignition advance
+
+When altering the ignition tables keep in mind that more than 35˚ advance from TDC is not good.
+
+### Ignition retard
+
+When altering the ignition tables keep in mind that more than 5˚ retarding from TDC is not good.
+
+### Injector constant
+
+After changing the stock injectors for larger ones, the injector constant has to be changed.
+Keep in mind the the injector constant needs to be over ~10 to keep a good resolution for fuel injection time calculation (630 cc injectors have an injector constant of 14-17 so there no need to go below 10.
+
+### Boost request map
+
+Some tuners change the boost request map(s) to absurd values.
+Sometimes because they think that it’s just a request map, so the engine will make maximum power anyway, sometimes because they try to compensate for weak wastegate springs and such.
+The boost request map should not be higher than what the engine can achieve.
+So, putting 1.45 bar request \@ 5500 RPM with a Garrett T25 turbine is useless because the little turbo cannot sustain this pressure at higher engine speeds.
+The only result this will have is socalled negative adaption.
+The Trionic will notice that the requested boost is not met by the engine and adapt the boost request accordingly.
+This can even result in lower boost in other load and rpm sites and thus give you the result of less power than can be made at that load / rpm site.
+
+### FAQ
+
+Question: At what AFR should I try to keep the engine?\
+Answer: Try to keep the AFR between 10.8 and 12 \@ wide open throttle
+
+Question: At what EGT should I try to keep the engine?\
+Answer: Try to keep the exhaust gas temperature below 950˚C.
+
+Question: What is the approximate ignition advance at wide open throttle?\
+Answer: Try to keep the ignition advance at approximately 10˚ BTDC \@ wide open throttle and rpm limit
+
+Question: How can I determine what the maximum boost request should be for my turbo?\
+Answer: Check that the boost request level fits somehow to compressor map:\
+<http://www.squirrelpf.com/turbocalc/index.php>\
+In addition you can read appendix IV.
+
+Question: What is a good intake air temperature?\
+Answer: Up to 60˚C is good enough.
+If temperatures rise above 60˚C consider replacing your stock intercooler with an aluminium, cross-flow type.
+These are available from speedparts, Abbott, ETS and others.

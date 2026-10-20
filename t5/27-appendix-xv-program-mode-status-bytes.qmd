@@ -1,0 +1,54 @@
+# Appendix XV: Program mode status bytes
+
+## Description
+
+| Byte | Bitmask | Description |
+|:----:|:-------:|------------------------------------------------------|
+| 0 | 0x01 | After start enrichment |
+| 0 | 0x02 | Wide open throttle enrichment |
+| 0 | 0x04 | Interpolation of delay |
+| 0 | 0x08 | Temperature compensation |
+| 0 | 0x10 | Lambda control |
+| 0 | 0x20 | Adaptivity (adaption enabled) |
+| 0 | 0x40 | Idle control |
+| 0 | 0x80 | Enrichment during start |
+| 1 | 0x01 | Constant injection time E51 |
+| 1 | 0x02 | Lambda control during transients |
+| 1 | 0x04 | Fuelcut |
+| 1 | 0x08 | Constant injection time during idle |
+| 1 | 0x10 | Acceleration enrichment |
+| 1 | 0x20 | Deceleration enleanment |
+| 1 | 0x40 |  |
+| 1 | 0x80 | Adaptivity with closed throttle |
+| 2 | 0x01 | Factor to lambda control when throttle is opening |
+| 2 | 0x02 | Use separate injection map during idle |
+| 2 | 0x04 | Factor to lambda control when AC is engaged |
+| 2 | 0x08 | Throttle Acc ret adjust simultaneously MY1995 |
+| 2 | 0x10 | Fuel adjust during idle |
+| 2 | 0x20 | Purge enable |
+| 2 | 0x40 | Adaption of idle control |
+| 2 | 0x80 | Lambda control during idle |
+| 3 | 0x01 | Heat plates compensation |
+| 3 | 0x02 | Automatic transmission |
+| 3 | 0x04 | Load control |
+| 3 | 0x08 | ETS |
+| 3 | 0x10 | APC control |
+| 3 | 0x20 | Higher idle during start |
+| 3 | 0x40 | Global adaption enable |
+| 3 | 0x80 | Temperature compensation with active lambda control |
+| 4 | 0x01 | Load buffer during idle |
+| 4 | 0x02 | Constant idle ignition angle in gears one and two |
+| 4 | 0x04 | No fuel cut in reverse, first and second gear |
+| 4 | 0x08 | Airpump control |
+| 4 | 0x10 | Normally aspirated engine |
+| 4 | 0x20 | Knock regulation disabled |
+| 4 | 0x40 | Constant ignition angle |
+| 4 | 0x80 | Purge valve MY1994 |
+| 5 | 0x01 |  |
+| 5 | 0x02 |  |
+| 5 | 0x04 |  |
+| 5 | 0x08 |  |
+| 5 | 0x10 |  |
+| 5 | 0x20 |  |
+| 5 | 0x40 |  |
+| 5 | 0x80 |  |

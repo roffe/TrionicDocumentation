@@ -1,0 +1,356 @@
+# Appendix I : Symbol list
+
+## Flash symbols
+
+| Symbol name | Category | Subcategory | Description |
+|------------------------|-----------|----------------|-------------------------------------------------|
+| AC_const! | Misc | Advanced | Number of half enginerevs AC compensation is active. |
+| AC_Control! | Misc | Advanced | Data to control the ac-compressor when the brake pedal is pressed. This function must be enabled with a bit in Pgm_mod. |
+| AC_fak! | Sensor | Lambda sensor | Additive (enrichment) offset to lambdacontrol when AC activates. |
+| AC_slope! | Misc | Advanced | Number of half enginerevs between every decreament of AC_fak when ramping if lamdacontrol is not activated. |
+| AC_start_tid! | Idle | Advanced | AC starttime |
+| AC_wait_off! | Idle | Advanced | Delaytime in milliseconds when AC disables. Function of air temperature |
+| AC_wait_on! | Idle | Advanced | Delaytime in milliseconds when AC engages. Function of air temperature |
+| Accel_konst! | Fuel | Transient | Fuel Injection Map, Acceleration, Throttle Position. |
+| Accel_temp! | Fuel | Temperature compensation | Acceleration temperature compensation |
+| Accel_temp2! | Fuel | Temperature compensation | Acceleration temperature compensation #2 |
+| Adapt_inj_imat! | Fuel | Idle | Idle Injection map adaption. |
+| Adapt_injfaktor! | Fuel | Advanced | Long term fuel adaption factor. |
+| Adapt_injfaktor_high! | Fuel | Advanced | If the long term fuel adaption (Adapt_injfaktor) is above Adapt_injfaktor_high, adaption error is set. Resolution is 0.008. |
+| Adapt_injfaktor_low! | Fuel | Advanced | If the long term fuel adaption (Adapt_injfaktor) is below Adapt_injfaktor_low, adaption error is set. Resolution is 0.008. |
+| Adapt_korr! | Fuel | Advanced | The adapted injection table (spot adaption base) |
+| Adapt_korr_high! | Fuel | Advanced | Maximum value for fuel adaption map |
+| Adapt_korr_low! | Fuel | Advanced | Minimal value for fuel adaption map |
+| AdjustLamCal! | Sensor | Lambda sensor | Lean and rich step adjustment depending on rear lambda sensor |
+| After_fcut_tab! | Fuel | Enrichment | After fuelcut enrichment (function of number of combustions after fuelcut) |
+| Airpump_ign_offset! | Ignition | Advanced | Ignitionangle offset value when the airpump are activated. A negative value will decrease the ignitionangle. |
+| Airpump_inj_factor! | Fuel | Advanced | Injectiontime factor when the airpump are activated. A value above 1.00 will increase the injectiontime. |
+| Ap_lambda_delay! | Sensor | Lambda sensor | Delaytime between that the airpump are turned off and that the lamdacontrol are activated. |
+| Ap_max_on_time! | Misc | Airpump control | Maximum time the airpump will bee activated after the engine are started. |
+| Ap_max_on_watertemp! | Misc | Airpump control | Maximum watertemperature for the airpump. If the watertemperature are above this limit will the airpump bee turned off. |
+| Ap_max_rpm! | Misc | Airpump control | Maximum engine speed for the airpump. If the rpm are above this limit will the airpump bee turned off. |
+| Ap_max_start_airtemp! | Misc | Airpump control | Maximum start airtemperature for the airpump. If the start airtemperature are above this limit will the airpump never turn on. |
+| Ap_max_start_watertemp! | Misc | Airpump control | Maximum start watertemperature for the airpump. If the start watertemperature are above this limit will the airpump never turn on. |
+| Ap_min_airtemp! | Misc | Airpump control | Minimum start airtemperature for the airpump. If the start airtemperature are below this limit will the airpump never turn on. |
+| Apc_cert_tid! | Boost control | Advanced | Apc_cert_tid |
+| Apc_decrese_asp! | Boost control | Advanced | Apc_decrese_asp |
+| Apc_frek! | Boost control | Advanced | Apc control frequency |
+| Apc_fullgas! | Boost control | Advanced | Apc_fullgas |
+| Apc_knock_tab! | Boost control | Advanced | Apc_knock_tab |
+| Apc_konst_tid! | Boost control | Advanced | Apc_konst_tid |
+| API_dt_delay! | Misc | Advanced automatic | Delay time for 'drive and throttle' ignition retardation before ramping back. |
+| API_dt_offset_tab! | Ignition | Advanced automatic | Function to reduce torque when driver switches from NEUTRAL to DRIVE and has activated accelerator pedal. |
+| API_dt_ramp! | Misc | Advanced automatic | Ramp time for 'drive and throttle' ignition retardation ramping back. |
+| API_ku_delay! | Ignition | Advanced automatic | Delay time for 'kickdown and upshift' ignition retardation before ramping back. |
+| API_ku_derivata! | Ignition | Advanced automatic | Negative rpm derivata limit (rpm/10ms). |
+| API_ku_offset! | Ignition | Advanced automatic | Function to reduce torque when driver kick's down and automatic gearbox shifts up. |
+| API_ku_ramp! | Ignition | Advanced automatic | Ramp time for 'kickdown and upshift' ignition retardation ramping back. |
+| API_rpm_limit! | Misc | Advanced automatic | Below this rpm limit no 'kickdown and upshift' ignition retardation will be enabled. |
+| API_throttle_limit! | Ignition | Advanced automatic | Below this throttle limit no 'kickdown and upshift' ignition retardation will be enabled. |
+| API_throttle_tab! | Misc | Advanced automatic | Table used to determine ignition offset retardation depending on relative throttle angle when DRIVE is engaged. |
+| Batt_korr_tab! | Fuel | Advanced | Correction on injectiontime depending on battery voltage |
+| Before_start! | Fuel | Cranking | Parallel injection on all cylinders before engine start to aid in starting a cold engine. |
+| Br_minus_tab! | Fuel | Idle | Decrease of fuel during idle when rpm \< rpm nominal. Resolution is uS |
+| Br_plus_tab! | Fuel | Idle | Increase of fuel during idle when rpm \< rpm nominal. Resolution is uS |
+| BS_temp! | Misc | Advanced | Enables before start at restart after 0 to 45 sec if last start was succsessful and coolingwater temperature is above BS_temp. |
+| Build_up_time! | Fuel | Cranking | Delay between first detected crank tooth and before start. Compensation for building up fuel system pressure. Active when coolingwater temp is above Build_up_time_switch. |
+| Build_up_time_2! | Fuel | Cranking | Delay between first detected crank tooth and before start. Compensation for building up fuel system pressure. Active when coolingwater temp is below Build_up_time_switch. |
+| Build_up_time_switch! | Fuel | Cranking | Temp limit for Build_up_time. if(Kyl_temp > Build_up_time_switch) Use Build_up_time for delay. else Use Build_up_time_2 for delay. |
+| Cat_af_start_timer_min! | Sensor | Lambda sensor | If the air flow is below this threshold, the Cat_start_timer halts. |
+| Cat_air_flow_hi! | Sensor | Lambda sensor | Used to enable catalyst monitor function. if (Cat_air_flow > Cat_air_flow_hi) Catalyst monitor disables. Resolution is 1. |
+| Cat_air_flow_lo! | Sensor | Lambda sensor | Used to enable catalyst monitor function. if (Cat_air_flow \< Cat_air_flow_lo) Catalyst monitor disables. Resolution is 1. |
+| Cat_air_flow_tab! | Sensor | Lambda sensor | Airflow site for calibrating tables using airflow as input data. Resolution is 1. |
+| Cat_cool_temp_lim! | Sensor | Lambda sensor | Used to enable catalyst monitor function. if (Kyl_temp \< Cat_cool_temp_lim) Catalyst monitor disables. Resolution is 1øC. |
+| Cat_delta_load_lim! | Sensor | Lambda sensor | Used to enable catalyst monitor function. if (Cat_delta_load > Cat_delta_load_lim) Catalyst monitor disables. Resolution is 1 kPa. |
+| Cat_load_filt_coef! | Sensor | Lambda sensor | To average the engine load value.(Last). Used to detect load transients. 0.000 => Max filtering. 1.000 => Min filtering. filter_coeficient = 1-exp(-loop_time / time_constant) loop_time = 0.010s Resolution is 0.001. |
+| Cat_load_tab! | Sensor | Lambda sensor | Load site for calibrating maps using load as input data. Resolution is 1. |
+| Cat_monitor_restart! | Sensor | Lambda sensor | If set to one, the catalyst monitor will restart. (automaticly set to zero directly afterwards) |
+| Cat_ox1_bias_lim! | Sensor | Lambda sensor | The O2 bias is the point where the O2 sensor switches from rich to lean. This value is substracted from the filtrated O2 voltage to get Cat_ox1_err. Resolution is 1 mV.. |
+| Cat_ox1_duty_hi_lim! | Sensor | Lambda sensor | To define the maximum acceptable duty cycle of oxygen sensor 1. if (Cat_ox1_duty_cycle > Cat_ox1_duty_hi_lim) Do not use current cycle data for catalyst monitor. Resolution is 1%. |
+| Cat_ox1_duty_lo_lim! | Sensor | Lambda sensor | To define the minimum acceptable duty cycle of oxygen sensor 1. if (Cat_ox1_duty_cycle \< Cat_ox1_duty_lo_lim) Do not use current cycle data for catalyst monitor. Resolution is 1%. |
+| Cat_ox1_err_lim! | Sensor | Lambda sensor | Its purpose is to assure that a stable fuel control condition exists before data can be considered valid for test purpose. if (Cat_ox1_err > Cat_ox1_err_lim) Do not use current cycle data for catalyst monitor. Resolution is 1 mV.. |
+| Cat_ox1_err_max_tab! | Sensor | Lambda sensor | Table to control Cat_ox2_dev_max_lim. Input variable Cat_ox1_max_err. Resolution is 1mV.. |
+| Cat_ox1_filt_coef_map! | Sensor | Lambda sensor | Look-up tabe of filter coefficients as a function of load and rpm. As driving conditions changes, so does the O2 frequency, therefore the amount of filtering will need to change to maintain a fixed amplitude filtered output. This table look-up will provide a varying coefficient to keep the amount of filtering constant at all points. Resolution is 0.001. |
+| Cat_ox1_per_hi_tab! | Sensor | Lambda sensor | To eliminate catalyst oxygen sensor data whose high period is higher (longer) than expected. This look-up table is a function of engine airflow. Resolution is 1 mS.. |
+| Cat_ox1_per_lo_tab! | Sensor | Lambda sensor | To eliminate catalyst oxygen sensor data whose low period is higher (longer) than expected. This look-up table is a function of engine airflow. Resolution is 1 mS.. |
+| Cat_ox2_dev_max_map! | Sensor | Lambda sensor | Table look-up as function of load and rpm. This calibration map defines a threshold for the Cat_ox2_dev_max_lim. Cat_dev_diff = Cat_ox2_dev_max - Cat_ox2_dev_max_lim Resolution is 1. |
+| Cat_ox2_dev_samp_lim! | Sensor | Lambda sensor | To determine if enough samples have been collected to average the post-catalyst oxygen sensor maximum deviation data. if (Cat_ox2_dev_samp >= Cat_ox2_dev_samp_lim) Cat_avg_dev_diff = Cat_ox2_dev_sum / Cat_ox2_dev_samp Resolution is 1. |
+| Cat_ox2_filt_coef_2! | Sensor | Lambda sensor | Filter coeficient to second LP-filter on oxygen sensor 2 signal. (used to create Cat_ox2_dev) |
+| Cat_ox2_filt_coef_map! | Sensor | Lambda sensor | Look-up tabe of filter coefficients as a function of load and rpm. As driving conditions changes, so does the O2 frequency, therefore the amount of filtering will need to change to maintain a fixed amplitude filtered output. This table look-up will provide a varying coefficient to keep the amount of filtering constant at all points. Resolution is 0.001. |
+| Cat_ready_timer_lim! | Sensor | Lambda sensor | Used to enable catalyst monitor function. if (Cat_ready_timer = Cat_ready_timer_lim) Catalyst monitor enables. Resolution is 1 sec.. |
+| Cat_ready_timer_step! | Sensor | Lambda sensor | Used to increase recovering period for catalyst after fuel dependent actions. Cat_ready_timer_step is decremented from the ready timer if the warm up data are met and the warm up data breaks due to high delta load or lambda ctrl. deactivation. |
+| Cat_rpm_tab! | Sensor | Lambda sensor | Rpm site for calibrating maps using engine speed as input data. Resolution is 10. |
+| Cat_stage1_threshold! | Sensor | Lambda sensor | To determine if the post-catalyst oxygen sensor's average deviation difference is small enough to pass the diagnostic test. if (Cat_avg_dev_diff > Cat_stage1_threshold) catalyst converter test fails. else catalyst converter test passes. Resolution is 1. |
+| Cat_start_timer_lim! | Sensor | Lambda sensor | To enable catalyst monitor. if (Cat_start_timer \< Cat_start_timer_lim) Catalyst monitor disabled. |
+| Cat_vehi_speed_hi! | Sensor | Lambda sensor | Used to enable catalyst monitor function. if (Bil_hast > Cat_vehi_speed_hi) Catalyst monitor disables. Resolution is 1 km/h. |
+| Cat_vehi_speed_lo! | Sensor | Lambda sensor | Used to enable catalyst monitor function. if (Bil_hast \< Cat_vehi_speed_lo) Catalyst monitor disables. Resolution is 1 km/h. |
+| Cut_ej_under! | Fuel | Advanced | Lower engine speed limit to be able to allow fuel cut |
+| Cut_temp! | Fuel | Advanced | Minimal coolingwatertemp to allow fuel cut |
+| Cyl_komp! | Fuel | Advanced | Limit for cylinder detection low part Fuel compensation factor due to differences between cylinders. |
+| D_fors! | Boost control | Advanced manual | Boost Regulation Map, D-Gain factor of PID control |
+| D_fors_a! | Boost control | Advanced automatic | Boost Regulation Map, D-Gain factor of PID control (automatic) |
+| Dash_act_step! | Idle | Advanced | Dash act step |
+| Dash_rpm_axis! | Fuel | Axis | Dash pot tabel rpm axis |
+| Dash_tab! | Fuel | Advanced | Dash pot position interpolated from matrix. |
+| Dash_trot_axis! | Fuel | Axis | Dash pot tabel rpm axis |
+| Data_namn! | Misc | Basic | Software version |
+| Del_mat! | Fuel | Advanced | Delay map (crankshaft degrees) |
+| Delay! | Idle | Advanced | Number of 131 millisecond intervals to permit adaption. (How many seconds engine should be in the I part to allow adaption) |
+| Derivata_br_sp! | Fuel | Axis | Fuel adjustment map support points |
+| Derivata_br_tab_neg! | Fuel | Idle | Fuel adjustment, negative rpm delta |
+| Derivata_br_tab_pos! | Fuel | Idle | Fuel adjustment, positive rpm delta |
+| Derivata_fuel_rpm! | Fuel | Idle | Rpm limit for fuel adjustment |
+| Derivata_grans! | Idle | Advanced | Smallest rpm difference for idle control |
+| Detect_map! | Diagnostics | Misfire | Reference map for misfire detection. Resolution is 1. |
+| Detect_map_x_axis! | Diagnostics | Axis | Control's the current working position in Detect_map depending on inlet manifold pressure. Resolution is 1. |
+| Detect_map_y_axis! | Diagnostics | Axis | Control's the current working position in Detect_map depending on engine speed. Resolution is 10. |
+| DI_cassette_U_limit! | Diagnostics | Advanced | Below this voltage, signals from the DI-cassette can not be trusted. Used to disable some diagnostic tests to prevent corruption depending on bad input signals. Resolution is 0.1 V. |
+| Diag_speed_load! | Diagnostics | Advanced | Threshold for detecting missing vehicle speed signal. (Last > Diag_speed_load) Resolution is 1. |
+| Diag_speed_rpm! | Diagnostics | Advanced | Threshold for detecting missing vehicle speed signal. (RPM > Diag_speed_rpm) Resolution is 10 rpm. |
+| Diag_speed_time! | Misc | Advanced | Timelimit for load and rpm to be over their limits for detecting vehicle speed error. |
+| Eft_dec_fak! | Fuel | Warmup | Number of half enginerev. between a unit of decrease for Eft_fak1. Number of half enginerev is temperature dependent. |
+| Eft_dec_fak2! | Fuel | Warmup | Number of half enginerev. between a unit of decrease for Eft_fak2. Number of half enginerev is temperature dependent. |
+| Eft_fak_minsk! | Fuel | Warmup | Number of steps to decrease Eft_fak2 |
+| Eftersta_fak! | Fuel | Warmup | Enrichmentfactor for coldstart #1. Factor is depending on coolantwater temperature. |
+| Eftersta_fak2! | Fuel | Warmup | Enrichmentfactor for coldstart #2. Factor is depending on coolantwater temperature. |
+| Expand! | Misc | Advanced | Multiplicative factor to load and engine-speed axles. Introduced to experiment with idlemap. |
+| Fload_tab! | Fuel | Enrichment | Full load map for full load enrichment |
+| Fload_throt_tab! | Fuel | Enrichment | Full load throttle map for full load enrichment |
+| Frekv_map! | Sensor | Lambda sensor | Lambda ramp combustion delay |
+| Fuel_knock_mat! | Fuel | Enrichment | Fuel enrichment table when knocking occurs |
+| Fuel_knock_xaxis! | Fuel | Axis | Fuel knock correction table x axis |
+| Fuel_map_xaxis! | Fuel | Axis | Fuel correction table x axis |
+| Fuel_map_yaxis! | Fuel | Axis | Fuel correction table y axis |
+| Gear_ratio_delta! | Runtime | Basic | Car speed calculation, gear ratio delta |
+| Gear_st! | Runtime | Basic | Car speed calculation, gear stages |
+| Halva_sidan! | Fuel | Advanced | This constant is used by pointadaption to decide if the riftpoint the engine works in is close enough to the matrixpoint which is closest to allow adaption (0-7 - 7 is easyest to allow adaption) |
+| Hast_grans! | Idle | Advanced | Lowest vehicle speed with idle control. (Minimal car speed limit to enable idle control) |
+| Hot_decr! | Fuel | Enrichment | Decrementtime on Hot_start_fak |
+| Hot_tab! | Fuel | Enrichment | Enrichmentfactor when hotstartenrichment is active |
+| Hp_support_points! | Fuel | Axis | Restart factor for heatplates support points |
+| I_fors! | Boost control | Advanced manual | Boost Regulation Map, I-Gain factor of PID control |
+| I_fors_a! | Boost control | Advanced automatic | Boost Regulation Map, I-Gain factor of PID control (automatic) |
+| I_kyl_st! | Misc | Temperature calculation | Support points for cooling water temperature dependend maps |
+| I_last_rpm! | Idle | Advanced | Value for calculation of nominal load. Function of rpm. |
+| I_last_temp! | Idle | Advanced | Value for calculation of nominal load. Function of coolant water temperature. |
+| I_luft_cel! | Misc | Advanced | Last actual airtemp (more text) |
+| I_luft_st! | Misc | Temperature calculation | Support points for airtemp dependend mas |
+| I_medel_varv! | Idle | Advanced | Number of rotations for integrating control. (Number of engine revolutions needed to calculate average enginespeed) |
+| Idle_ac_extra_sp! | Idle | Axis | Rpm breakpoints for Idle_ac_extra_tab. |
+| Idle_ac_tab! | Idle | Advanced | Drive with AC, function of airtemp. Extra step for idle valve position when AC is turned on. |
+| Idle_der_tab! | Idle | Advanced | (D) Above nominal enginespeed when rpm is decreasing |
+| Idle_drift_tab! | Idle | Advanced | Drive/Neutral value |
+| Idle_ej_off! | Idle | Advanced | Increment of valveposition first time when not idle. |
+| Idle_fuel_korr! | Fuel | Idle | Idle fuel correction map |
+| Idle_p_tab! | Idle | Advanced | (P) Decrement value over nominal rpm |
+| Idle_rpm_off! | Idle | Advanced | Increment of nominal rpm when Drive/Neutral |
+| Idle_rpm_tab! | Idle | Advanced | Nominal rpm depending on cooling water temperature |
+| Idle_st_last! | Fuel | Axis | Injection on idle load axis values. |
+| Idle_st_rpm! | Fuel | Axis | Injection on idle RPM axis values. |
+| Idle_start! | Idle | Advanced | Idle start variable |
+| Idle_start_extra! | Fuel | Idle | Idle start extra, new value after 5 minutes soak |
+| Idle_start_extra_ramp! | Fuel | Idle | Number of 180 degrees pulses for decrement |
+| Idle_start_extra_sp! | Fuel | Axis | Idle start extra, new value after 5 minutes soak, map support points |
+| Idle_step_imns! | Idle | Advanced | Decrement value within the inner band |
+| Idle_step_ioka! | Idle | Advanced | Increment value within the inner band |
+| Idle_temp_off! | Idle | Advanced | Additional factor to valveposition. Function of cooling water temperature) |
+| Idle_tryck! | Fuel | Cranking | Increase of valve position during start. Function of AD value pressure sensor. |
+| Ign_idle_angle! | Ignition | Idle | Target ignition advance for idle state. |
+| Ign_map_0! | Ignition | Basic | Main ignition map for warm engine (0) |
+| Ign_map_0_x_axis! | Ignition | Axis | Ignition map 0 x-axis, pressure from MAP sensor |
+| Ign_map_0_y_axis! | Ignition | Axis | Ignition map 0 y-axis, RPM |
+| Ign_map_1! | Ignition | Idle | Ignition map for idle correction (1) |
+| Ign_map_1_x_axis! | Ignition | Axis | Ignition map 1 x-axis. |
+| Ign_map_1_y_axis! | Ignition | Axis | Ignition map 1 y-axis, RPM deviation |
+| Ign_map_2! | Ignition | Advanced | Ignition map for knocking correction (2) |
+| Ign_map_2_x_axis! | Ignition | Axis | Ignition map 2 x-axis, pressure from MAP sensor |
+| Ign_map_2_y_axis! | Ignition | Axis | Ignition map 2 y-axis, RPM |
+| Ign_map_3! | Ignition | Advanced | Transient ignition map (3) |
+| Ign_map_3_x_axis! | Ignition | Axis | Ignition map 3 x-axis, cooling water AD |
+| Ign_map_3_y_axis! | Ignition | Axis | Ignition map 3 y-axis, RPM |
+| Ign_map_4! | Ignition | Basic | Ignition map for warmup (cool engine) (4) |
+| Ign_map_5! | Ignition | Advanced automatic | Ignition map for stalling engine (5) |
+| Ign_map_5_x_axis! | Ignition | Axis | Ignition map 5 x-axis |
+| Ign_map_5_y_axis! | Ignition | Axis | Ignition map 5 y-axis, RPM |
+| Ign_map_6! | Ignition | Advanced | Ignition map for torque reduction on upshift (6) |
+| Ign_map_6_x_axis! | Ignition | Axis | Ignition map 6 x-axis, pressure from MAP sensor |
+| Ign_map_6_y_axis! | Ignition | Axis | Ignition map 6 y-axis, RPM |
+| Ign_map_7! | Ignition | Advanced | Ignition map for torque reduction on downshift (7) |
+| Ign_map_7_x_axis! | Ignition | Axis | Ignition map 7 x-axis, pressure from MAP sensor |
+| Ign_map_7_y_axis! | Ignition | Axis | Ignition map 7 y-axis, RPM |
+| Ign_map_8! | Ignition | Idle | Ignition map for idle ignition compensation during speed (8) |
+| Ign_map_8_x_axis! | Ignition | Axis | Ignition map 8 x-axis |
+| Ign_map_8_y_axis! | Ignition | Axis | Ignition map 8 y-axis, RPM delta |
+| Ign_offset! | Ignition | Basic | Global ignition offset, added to calculated ignition angle. |
+| Ign_offset_adapt! | Ignition | Advanced | General ignition offset adaption. |
+| Ign_offset_cyl1! | Ignition | Advanced | Individual ignition offset for cylinder 1, added to calculated ignition angle. |
+| Ign_offset_cyl2! | Ignition | Advanced | Individual ignition offset for cylinder 2, added to calculated ignition angle. |
+| Ign_offset_cyl3! | Ignition | Advanced | Individual ignition offset for cylinder 3, added to calculated ignition angle. |
+| Ign_offset_cyl4! | Ignition | Advanced | Individual ignition offset for cylinder 4, added to calculated ignition angle. |
+| Indent_kvot! | Undocumented | Undocumented | Not used. |
+| Inj_konst! | Fuel | Advanced | Injector scaling (adjust for different injectors) |
+| Insp_mat! | Fuel | Basic | Volumetric Efficiencey table (RPM x MAP) |
+| Iv_min_change! | Misc | Advanced | Step for how much adaption should been adjust. |
+| Iv_min_count! | Misc | Advanced | Idle valve counter |
+| Iv_min_load! | Misc | Advanced | Pressure for which adaption should been adjust. |
+| Iv_min_tab! | Fuel | Idle | Idle valve min table. |
+| Iv_min_tab_ac! | Fuel | Idle | Idle valve min table ac. |
+| Iv_start_pos_offset! | Fuel | Idle | Idle valve after start position offset |
+| Iv_start_rpm_offset! | Fuel | Idle | Idle valve after start rpm offset |
+| Iv_start_time_tab! | Fuel | Idle | Time for higher idle speed after start |
+| Knock_lim_tab! | Ignition | Advanced | Maximum allowed knock offset |
+| Knock_press_tab! | Ignition | Advanced | Pressure limit for knock indication |
+| Knock_ref_matrix! | Ignition | Advanced | Knock reference map |
+| Knock_start! | Misc | Advanced | Knock window start time |
+| Knock_wind_off_tab! | Ignition | Advanced | Closing angle of knock window from matrix |
+| Knock_wind_on_tab! | Ignition | Advanced | Opening angle of knock window from matrix |
+| Knock_wind_rpm! | Ignition | Axis | Knock_wind table rpm axis |
+| Konst_lean_map! | Sensor | Lambda sensor | Lean constant lambdaintegrator, combustions |
+| Konst_rich_map! | Sensor | Lambda sensor | Rich constant lambdaintegrator, combustions |
+| Kyltemp_steg! | Misc | Temperature calculation | Map to convert coolingwatertemps A/D value to øC, |
+| Kyltemp_tab! | Misc | Temperature calculation | Same as Kyltemp_steg, Value in øC +40 |
+| Lacc_konst! | Fuel | Transient | Fuel Injection Map, Acceleration, Load Delta. |
+| Lam_laststeg! | Sensor | Axis | Lambda control table load steps |
+| Lam_load_sp! | Sensor | Axis | Lambda load support points |
+| Lam_minlast! | Sensor | Lambda sensor | Lambda minimal load |
+| Lam_rpm_sp! | Sensor | Axis | Lambda rpm support points |
+| Lam_rpmsteg! | Sensor | Axis | Lambda control table rpm steps |
+| Lamb_ej! | Sensor | Lambda sensor | Lambda no, temperature limit for open throttle |
+| Lamb_idle! | Sensor | Lambda sensor | Lambda idle, temperature limit for closed throttle |
+| Lamb_kyl! | Sensor | Axis | Lambda map support points for coolant temperature |
+| Lamb_temp! | Sensor | Lambda sensor | Min. Coolingwatertemp to start Lambdacontrol. |
+| Lamb_tid! | Sensor | Lambda sensor | Lambda time (number of combustions) |
+| Lambda_cat_lean! | Sensor | Lambda sensor | Lambda sensor lean value |
+| Lambda_cat_rich! | Sensor | Lambda sensor | Lambda sensor rich value |
+| Lambdamatris_diag! | Sensor | Lambda sensor | Lambda sonde diagnostics control factors |
+| Last_reg_ac! | Idle | Advanced | Value for calculation of nominal load. Function of AC. |
+| Last_reg_kon! | Idle | Advanced | Current reg_kon_mat values |
+| Last_temp_st! | Idle | Axis | Nominal load calculation maps support points |
+| Last_varv_st! | Idle | Axis | Nominal load calculation maps support points |
+| Lean_step_map! | Sensor | Lambda sensor | Lean step for lambda integrator |
+| Leave_shut! | Sensor | Lambda sensor | Additive factor to lambda control when leaving idlecontrol This results in a enrichment when opening throttle |
+| LhomeMapPman! | Misc | Limp home | Limphome map for pressure in manifold (P_manifold) |
+| LhomeXaxisPman! | Misc | Axis | Throttle values for Limphome pressure map |
+| LhomeYaxisPman! | Misc | Axis | RPM values for Limphome pressure map |
+| Limit_high! | Misc | Advanced | Limit for cylinder detection high part |
+| Limit_low! | Misc | Advanced | Limit for cylinder detection low part |
+| Limp_tryck_konst! | Boost control | Advanced | Maximum boost in limp-home mode |
+| Lknock_oref_tab! | Ignition | Advanced | Offset reference table for large knock |
+| Lret_konst! | Fuel | Transient | Fuel Injection Map, Deceleration, Load Delta. |
+| Luft_kompfak! | Misc | Temperature calculation | Map over correction factors on injectiontime as a function of airtemp. Map-support points from Lufttemp_steg |
+| Lufttemp_steg! | Misc | Temperature calculation | Map-support points used in the most airtemp dependend maps |
+| Lufttemp_tab! | Misc | Temperature calculation | Map to convert airtemps A/D value to øC, map-support points in Lufttemp_steg. Value in øC +40. |
+| Max_dead! | Idle | Advanced | Rpm offset for higher integrator limit. |
+| Max_load_gadapt! | Fuel | Advanced | Maximum Load global fuel injection adaption. |
+| Max_ratio_aut! | Boost control | Advanced automatic | Below this limit load pressure reduce is active. |
+| Max_regl_sp! | Boost control | Axis | Maximum boost pressure limit maps support points |
+| Max_regl_temp_1! | Boost control | Advanced | Maximum boost pressure to set above temperature limit #1 |
+| Max_regl_temp_2! | Boost control | Advanced | Maximum boost pressure to set above temperature limit #2 |
+| Max_rpm_gadapt! | Fuel | Advanced | Maximum RPM global fuel injection adaption. |
+| Max_vehicle_speed! | Misc | Basic | Maximum vehicle speed. |
+| Min_dead! | Idle | Advanced | Rpm offset for lower integrator limit. |
+| Min_load_gadapt! | Fuel | Advanced | Minimum Load global fuel injection adaption. |
+| Min_rpm_gadapt! | Fuel | Advanced | Minimum RPM global fuel injection adaption. |
+| Min_tid! | Fuel | Advanced | Lowest possible injectiontime in the system |
+| Mis_temp_limit! | Diagnostics | Misfire | Below this cooling water temp limit no misfire are Resolution is 1. |
+| Mis_trans_limit! | Diagnostics | Misfire | Disables misfire detection during throttle transients + 5 cumbustions. if (Trans_trott > Mis_trans_limit) Disable misfire detection Resolution is 1. |
+| Mis1000_map! | Diagnostics | Misfire | Contains maximum allowed misfire over 2000 cumbustions for not causing emission level degradation. Resolution is 1. |
+| Mis200_map! | Diagnostics | Misfire | Contains maximum allowed misfire over 400 cumbustions for not causing catalyst overheating. Resolution is 1. |
+| Misfire_map_x_axis! | Misc | Axis | Control's the current working position in misfire map's depending on inlet manifold pressure. Resolution is 1. |
+| Misfire_map_y_axis! | Misc | Axis | Control's the current working position in misfire map's depending on engine speed. Resolution is 10. |
+| Open_all_varv! | Fuel | Advanced | When enginerev is coming under this limit the fuel will come back simultanously for all cylinders |
+| Open_loop! | Sensor | Lambda sensor | Load limit where system switches to open loop. Function of rpm. |
+| Open_loop_adapt! | Sensor | Lambda sensor | Open loop adaption, not used |
+| Open_loop_knock! | Sensor | Lambda sensor | Load limit where system switches to open loop during knocking conditions. Function of rpm. |
+| Open_varv! | Fuel | Advanced | When enginerev is coming under this limit the fuel will come back successively for all cylinders |
+| Overs_tab! | Boost control | Advanced | Peek map, pressure peek (Overshoot) |
+| Overs_tab_xaxis! | Boost control | Axis | Overshoot table x axis |
+| Overstid_tab! | Boost control | Advanced | Overboost time |
+| Ox1DeltaLoadLim! | Sensor | Lambda sensor | If Cat_delta_load exceeds this limit, oxygen sensor 1 transition test is halted. |
+| Ox2_activity_time_lim! | Misc | Advanced | When Ox2_activity_time exceeds this limit the oxygen sensor 2 change activity is evaluated. |
+| Ox2_change_lim! | Misc | Advanced | If Ox2_change is above this limit after Ox2_activity_time the oxygen sensor 2 activity test is approved. |
+| P_fors! | Boost control | Advanced manual | Boost Regulation Map, P-Gain factor of PID control |
+| P_fors_a! | Boost control | Advanced automatic | Boost Regulation Map, P-Gain factor of PID control (automatic) |
+| P_man_korr_tab! | Misc | Advanced | Pressure correction vs. throttle |
+| Pgm_mod! | Misc | Advanced | Program control flags |
+| PMCal_CloseRamp! | Misc | Advanced | Ramp factor during close phase. |
+| PMCal_IdlePosFiltCoef! | Misc | Advanced | Idle position filter coeficient. 1.000 -> Min filtering. 0.000 -> Max filtering. |
+| PMCal_IdlePosIntABSLim! | Misc | Advanced | Halt limit for fast idle position changes. |
+| PMCal_IdleRefHaltLim! | Misc | Advanced | Halt limit on idle reference position. |
+| PMCal_IdleValueLim! | Misc | Advanced | Idle position change limit from reference value for a successful purge diagnostic test. |
+| PMCal_LambdaAvgHaltLim! | Sensor | Lambda sensor | Halt limit on lambda average reference signal. |
+| PMCal_LambdaAvgLim! | Sensor | Lambda sensor | Lambda change limit from reference value for a successful purge diagnostic test. |
+| PMCal_LamTransCntLim! | Sensor | Lambda sensor | Number of transitions used for lambda integrator reference calculation. |
+| PMCal_OpenPWMTab! | Misc | Advanced | PWM axis for purge monitor open phase. |
+| PMCal_OpenTimeTab! | Misc | Advanced | Time axis for purge monitor open phase. |
+| PMCal_RpmIdleNomRefLim! | Misc | Idle | RPM idle nominal change reference halt limit. |
+| PMCal_StartRamp! | Misc | Advanced | Rampfactor to purge monitor start position (0%). |
+| PMCal_TestCountLim! | Misc | Advanced | Number of tests that trionic will perform before purge test fails. |
+| Press_trans_type! | Sensor | Basic | Saab part no of current pressure transducer. |
+| Pulses_per_rev! | Runtime | Basic | Number of pulses from wheel during 1 rev. |
+| Purge_tab! | Fuel | Advanced | The Purge matrix (0-100%) |
+| Purge_temp! | Fuel | Advanced | The engine temperature above which Purge is alllowed. |
+| Pwm_ind_rpm! | Misc | Axis | Rpm axis for several tables |
+| Pwm_ind_trot! | Sensor | Advanced | Relative throttle value |
+| Radius_of_roll! | Runtime | Basic | Front wheel tyre radius of roll. |
+| Ramp_down_ram! | Ignition | Advanced | Ramp down table |
+| Ramp_fak! | Fuel | Cranking | Correcting injectiontime with a faktor in this map at every halv enginerev when ramping during cranking. |
+| Ramp_steg! | Sensor | Lambda sensor | Number of steps lambdaintergrator will change while ramping. |
+| Ramp_up_ram! | Ignition | Advanced | Ramp up table |
+| Reg_kon_fga! | Boost control | Advanced automatic | Regulation constant (automatic) below a programmable gear- ratio |
+| Reg_kon_fgm! | Boost control | Advanced manual | Regulation constant for first and reverse gear manual |
+| Reg_kon_mat! | Boost control | Advanced manual | Boost Regulation Map, BCV Constant (manual). |
+| Reg_kon_mat_a! | Boost control | Advanced automatic | Boost Regulation Map, BCV Constant (automatic). |
+| Reg_kon_sgm! | Boost control | Advanced manual | Regulation constant for second gear manual |
+| Reg_last! | Boost control | Advanced | Boost regulation load axis values. |
+| Reg_varv! | Boost control | Advanced | Boost regulation RPM axis values. |
+| Regl_tryck_fgaut! | Boost control | Basic automatic | Maximum boost in first gear (automatic) |
+| Regl_tryck_fgm! | Boost control | Basic manual | Maximum boost in first and reverse gear (limiter) |
+| Regl_tryck_sgm! | Boost control | Basic manual | Maximum boost in second gear (limiter) |
+| Restart_corr_hp! | Fuel | Cranking | Restart factor for heatplates |
+| Restart_tab! | Fuel | Cranking | Restart factor (1 - 15, 15 - 30 and 30 - 45 seconds) |
+| Restart_temp! | Fuel | Cranking | Restart temperature |
+| Ret_delta_rpm! | Fuel | Enrichment | RPM drop enrichment, delta rpm for triggering |
+| Ret_down_rpm! | Fuel | Enrichment | RPM drop enrichment, lower rpm limit for function |
+| Ret_fuel_step! | Fuel | Enrichment | RPM drop enrichment, amount of decrement/combustion |
+| Ret_fuel_tab! | Fuel | Enrichment | RPM drop enrichment, value for enrichment |
+| Ret_fuel_time! | Fuel | Enrichment | RPM drop enrichment, constant enrichment time (ms) |
+| Ret_up_rpm! | Fuel | Enrichment | RPM drop enrichment, upper rpm limit for function |
+| Retard_konst! | Fuel | Transient | Fuel Injection Map, Deceleration, Throttle Position. |
+| Retard_temp! | Fuel | Temperature compensation | Deceleration temperature compensation |
+| Rev_grad_sens_cont! | Ignition | Advanced | Rev. gradient sensitivity continous |
+| Rich_step_map! | Sensor | Lambda sensor | Rich step for lambda integrator |
+| Rpm_max! | Misc | Basic | Maximum Revolutions Per Minute (RPM limiter) |
+| Shut_off_time! | Misc | Advanced | Time between engine stop and disactivating main-relay |
+| Sond_heat_tab! | Sensor | Lambda sensor | Load limit for lambda sensor heating |
+| Sond_ign_limit! | Sensor | Lambda sensor | Test condition for front lambda sensor transition test. |
+| Sond_omsl_limit! | Misc | Advanced | Threshold for transition test. |
+| Start_dead_tab! | Fuel | Cranking | Number of dead injections. |
+| Start_detekt_nr! | Misc | Advanced | The engine should be this number of halve enginerevs over the Start_detect_rpm to fulfil the second creterion of "Motorn_startad" |
+| Start_detekt_rpm! | Misc | Advanced | Engine speed should be over this limit to fulfil the first creterion of "Motorn_startad" |
+| Start_insp! | Fuel | Cranking | Base fuel amount (constant) while cranking |
+| Start_max! | Fuel | Cranking | Number of halv enginerevs when injectiontime is constant |
+| Start_proc! | Fuel | Cranking | Procentual adjusting of injection time (after Start_max) before ramping |
+| Start_ramp! | Fuel | Cranking | Number of halv enginerevs to stop ramping and stabilize injectiontime. |
+| Start_tab! | Idle | Advanced | Increment of valve position during start. Function of cooling water temperature) |
+| Start_time_rpm_lim! | Fuel | Cranking | Rpm limit used for start time meassuring. Resolution is 1 rpm. |
+| Start_trottel! | Fuel | Cranking | Throttlevalue which is needed to achieve total fuelcut while cranking |
+| Start_v_vinkel! | Fuel | Cranking | Injection angle while cranking |
+| Startvev_fak! | Fuel | Cranking | Enrichmentfactor on Start_insp depending on cooling water temperature |
+| Synk_ok_limit! | Misc | Advanced | Syncronisation counter counting number of succesful sync detections. |
+| Temp_max_regl! | Boost control | Advanced | Boost temperature limits |
+| Temp_reduce_mat! | Fuel | Temperature compensation | Fuel Injection, Temperature compensation reduction map (open throttle) |
+| Temp_reduce_mat_2! | Fuel | Temperature compensation | Fuel Injection, Temperature compensation reduction map (closed throttle) |
+| Temp_reduce_x_st! | Fuel | Axis | Temperature reduction fuel correction x axis |
+| Temp_reduce_y_st! | Fuel | Axis | Temperature reduction fuel correction y axis |
+| Temp_steg! | Misc | Temperature calculation | Map-support points used in the most cooling water dependend maps |
+| Tempkomp_konst! | Fuel | Temperature compensation | Temperature compensation |
+| Tid_konst! | Fuel | Idle | When program goes with constant injection time during idle, the actual injection time is taken from this adress. |
+| Trans_x_st! | Misc | Advanced | Delta throttle angle |
+| Trans_y_st! | Misc | Advanced | RPM |
+| Tryck_mat! | Boost control | Basic manual | Boost table for manual transmission |
+| Tryck_mat_a! | Boost control | Basic automatic | Boost table for automatic transmission |
+| Tryck_vakt_tab! | Boost control | Basic | Boost limit map (fuel cut) |
+| Turbo_knock_tab! | Ignition | Advanced | Pressure limit for turbo knock regulation |
+| Vinkel_konst! | Fuel | Advanced | If the program not interpolates delay-angle from crankshaftpulse to injectionstart in the Delay map, the angle will be taken from this constant. |
+| Wait_count_tab! | Ignition | Advanced | Number of sparks to wait before reducing knock offsets |

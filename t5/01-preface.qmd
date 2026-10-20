@@ -1,0 +1,27 @@
+# Preface
+
+This document is intended for Saab fanatics and engineers who want to start understanding the Saab Trionic 5 engine management system.
+It will give as much information as possible about the technical part of the system.
+The only limitation will be the knowledge of the author.
+
+In short the content of this document will enable you to understand Trionic better and give you hands-on information about altering the maps it uses.
+Prerequisites are minor electronics and computer knowledge and of course some understanding of how a turbo charged engine works.
+
+Throughout the document the T5Suite software will be referenced.
+This software will enable you to really “get into” the Trionic.
+The T5Suite software can be downloaded from the T5Suite website.
+
+![](images/icon-references.png){height=1.5em} <http://trionic.mobixs.eu>
+
+*Acknowledgements*
+
+*The author would like to thank everyone on ecuproject for their help on getting all this information together.
+Special thanks go out to General Failure, J.K. Nilsson, Hook, Hma, Vigge, Mackan, Renton, Sourcode, Seb, Sandy Rus, JKB, L4staero and Steve Hayes.*
+
+*These icons are used throughout the document to denote:*
+
+![](images/icon-references.png){height=1.5em} **References**
+
+![](images/icon-t52.png){height=1.5em} **T5.2 remarks**
+
+![](images/icon-advanced.png){height=1.5em} **Advanced technical topics**

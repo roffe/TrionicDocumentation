@@ -1,0 +1,166 @@
+# Appendix V: Upgrade stages 1-7
+
+If you want to go beyond the standard stages I – III there’s more to alter than just the “silly” stuff like ECU, exhaust and catalyst.
+This chapter will describe what steps are needed for stages 1 up to 7.
+
+## Stage I
+
+The target amount of power for stage I is about 235 bhp for FPT versions (T25 turbo) and 260 bhp for Aero models (TD04-15 turbo)
+
+| Component         | Stock       | Stage I minimum requirement |
+|--------------------------|--------------------------|--------------------------|
+| ECU               | 200/225 bhp | Stage I                     |
+| Exhaust           | 2″         | 2″                         |
+| Intake            | \-\-\-      | \-\-\-                      |
+| Catalyst          | \-\-\-      | \-\-\-                      |
+| Injectors         | 345 cc/min  | 345 cc/min                  |
+| Fuel lines        | \-\-\-      | \-\-\-                      |
+| Turbo             | T25/TD04-15 | T25/TD04-15                 |
+| Exhaust manifold  | \-\-\-      | \-\-\-                      |
+| Intercooler       | \-\-\-      | \-\-\-                      |
+| Clutch            | 450 Nm      | 450 Nm                      |
+| Camshafts         | \-\-\-      | \-\-\-                      |
+| Fuel pump         | \-\-\-      | \-\-\-                      |
+| Wastegate         | \-\-\-      | \-\-\-                      |
+| Mapsensor         | 2.5 bar     | 2.5 bar                     |
+| Air delivery pipe | \-\-\-      | \-\-\-                      |
+| Cylinder head     | \-\-\-      | \-\-\-                      |
+
+## Stage II
+
+The target amount of power for stage III is about 250 bhp for T25 models and 270 bhp for TD04 models.
+
+| Component         | Stock       | Stage II minimum requirement |
+|--------------------------|--------------------------|--------------------------|
+| ECU               | 200/225 bhp | Stage II                     |
+| Exhaust           | 2″         | 3″ cat-back                 |
+| Intake            | \-\-\-      | \-\-\-                       |
+| Catalyst          | \-\-\-      | \-\-\-                       |
+| Injectors         | 345 cc/min  | 345 cc/min                   |
+| Fuel lines        | \-\-\-      | \-\-\-                       |
+| Turbo             | T25/TD04-15 | T25/TD04-15                  |
+| Exhaust manifold  | \-\-\-      | \-\-\-                       |
+| Intercooler       | \-\-\-      | \-\-\-                       |
+| Clutch            | 450 Nm      | 450 Nm                       |
+| Camshafts         | \-\-\-      | \-\-\-                       |
+| Fuel pump         | \-\-\-      | \-\-\-                       |
+| Wastegate         | \-\-\-      | \-\-\-                       |
+| Mapsensor         | 2.5 bar     | 2.5 bar                      |
+| Air delivery pipe | \-\-\-      | \-\-\-                       |
+| Cylinder head     | \-\-\-      | \-\-\-                       |
+
+## Stage III
+
+The target amount of power for stage III is about 270 bhp for T25 models and 280 bhp for TD-04 models.
+
+| Component         | Stock       | Stage III minimum requirement |
+|--------------------------|--------------------------|--------------------------|
+| ECU               | 200/225 bhp | Stage III                     |
+| Exhaust           | 2″         | 3″ turbo back                |
+| Intake            | \-\-\-      | Open/sport air filter         |
+| Catalyst          | \-\-\-      | Sport (3″) catalyst          |
+| Injectors         | 345 cc/min  | 345 cc/min                    |
+| Fuel lines        | \-\-\-      | \-\-\-                        |
+| Turbo             | T25/TD04-15 | T25/TD04-15                   |
+| Exhaust manifold  | \-\-\-      | \-\-\-                        |
+| Intercooler       | \-\-\-      | \-\-\-                        |
+| Clutch            | 450 Nm      | 450 Nm                        |
+| Camshafts         | \-\-\-      | \-\-\-                        |
+| Fuel pump         | \-\-\-      | \-\-\-                        |
+| Wastegate         | \-\-\-      | \-\-\-                        |
+| Mapsensor         | 2.5 bar     | 2.5 bar                       |
+| Air delivery pipe | \-\-\-      | \-\-\-                        |
+| Cylinder head     | \-\-\-      | \-\-\-                        |
+
+## Stage IV
+
+The target amount of power for stage IV is about 300 bhp.
+From stage 4 there’s no longer a difference between FPT and Aero models because the T25 turbo cannot reach a stage IV level and has to be replaced from this stage on.
+
+| Component         | Stock       | Stage IV minimum requirement |
+|--------------------------|--------------------------|--------------------------|
+| ECU               | 200/225 bhp | Stage IV                     |
+| Exhaust           | 2″         | 3″ turbo back               |
+| Intake            | \-\-\-      | Open/sport air filter        |
+| Catalyst          | \-\-\-      | Sport (3″) catalyst         |
+| Injectors         | 345 cc/min  | 413 cc/min                   |
+| Fuel lines        | \-\-\-      | \-\-\-                       |
+| Turbo             | T25/TD04-15 | TD04-15                      |
+| Exhaust manifold  | \-\-\-      | \-\-\-                       |
+| Intercooler       | \-\-\-      | \-\-\-                       |
+| Clutch            | 450 Nm      | Sports clutch (600 Nm)       |
+| Camshafts         | \-\-\-      | \-\-\-                       |
+| Fuel pump         | \-\-\-      | \-\-\-                       |
+| Wastegate         | \-\-\-      | Reinforced model (Forge)     |
+| Mapsensor         | 2.5 bar     | 3 bar                        |
+| Air delivery pipe | \-\-\-      | \-\-\-                       |
+| Cylinder head     | \-\-\-      | \-\-\-                       |
+
+## Stage V
+
+The target amount of power for stage V is about 350 bhp
+
+| Component         | Stock       | Stage V minimum requirement |
+|--------------------------|--------------------------|--------------------------|
+| ECU               | 200/225 bhp | Stage V                     |
+| Exhaust           | 2″         | 3″ turbo back              |
+| Intake            | \-\-\-      | Open/sport air filter       |
+| Catalyst          | \-\-\-      | Sport (3″) catalyst        |
+| Injectors         | 345 cc/min  | 413 cc/min                  |
+| Fuel lines        | \-\-\-      | \-\-\-                      |
+| Turbo             | T25/TD04    | TD04-18T/19T                |
+| Exhaust manifold  | \-\-\-      | \-\-\-                      |
+| Intercooler       | \-\-\-      | Cross flow, high capacity   |
+| Clutch            | 450 Nm      | Sports clutch (600 Nm)      |
+| Camshafts         | \-\-\-      | \-\-\-                      |
+| Fuel pump         | \-\-\-      | \-\-\-                      |
+| Wastegate         | \-\-\-      | Reinforced model (Forge)    |
+| Mapsensor         | 2.5 bar     | 3 bar                       |
+| Air delivery pipe | \-\-\-      | \-\-\-                      |
+| Cylinder head     | \-\-\-      | \-\-\-                      |
+
+## Stage VI
+
+The target amount of power for stage VI is about 400 bhp
+
+| Component         | Stock       | Stage VI minimum requirement               |
+|--------------------------|--------------------------|--------------------------|
+| ECU               | 200/225 bhp | Stage VI                                   |
+| Exhaust           | 2″         | 3″ turbo back                             |
+| Intake            | \-\-\-      | Open/sport air filter                      |
+| Catalyst          | \-\-\-      | Sport (3″) catalyst                       |
+| Injectors         | 345 cc/min  | 630 cc/min                                 |
+| Fuel lines        | \-\-\-      | \-\-\-                                     |
+| Turbo             | T25/TD04    | Garrett GTBB30                             |
+| Exhaust manifold  | \-\-\-      | \-\-\-                                     |
+| Intercooler       | \-\-\-      | Cross flow, high capacity                  |
+| Clutch            | 450 Nm      | Sports clutch (600 Nm)                     |
+| Camshafts         | \-\-\-      | Upgraded model for better engine breathing |
+| Fuel pump         | \-\-\-      | Walbro 255 or Bosch 044                    |
+| Wastegate         | \-\-\-      | Reinforced model (Forge)                   |
+| Mapsensor         | 2.5 bar     | 3 bar                                      |
+| Air delivery pipe | \-\-\-      | \-\-\-                                     |
+| Cylinder head     | \-\-\-      | \-\-\-                                     |
+
+## Stage VII
+
+The target amount of power for stage VII is about 500 bhp
+
+| Component         | Stock       | Stage VII minimum requirement                  |
+|--------------------------|--------------------------|--------------------------|
+| ECU               | 200/225 bhp | Stage VII                                      |
+| Exhaust           | 2″         | 3″ turbo back                                 |
+| Intake            | \-\-\-      | Open/sport air filter                          |
+| Catalyst          | \-\-\-      | Sport (3″) catalyst                           |
+| Injectors         | 345 cc/min  | 750 cc/min                                     |
+| Fuel lines        | \-\-\-      | Upgraded piping and rail                       |
+| Turbo             | T25/TD04    | Garrett GT30R                                  |
+| Exhaust manifold  | \-\-\-      | Tubular model with all mandrels of same length |
+| Intercooler       | \-\-\-      | Cross flow, high capacity                      |
+| Clutch            | 450 Nm      | Sports clutch (700 Nm)                         |
+| Camshafts         | \-\-\-      | Upgraded model for better engine breathing     |
+| Fuel pump         | \-\-\-      | Walbro 255 or Bosch 044                        |
+| Wastegate         | \-\-\-      | Reinforced model (Forge)                       |
+| Mapsensor         | 2.5 bar     | 3 bar                                          |
+| Air delivery pipe | \-\-\-      | Upgraded model (Abbott)                        |
+| Cylinder head     | \-\-\-      | Custom ported                                  |

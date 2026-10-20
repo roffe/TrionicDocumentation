@@ -1,0 +1,34 @@
+# Appendix VI: Check Engine Light (CEL)
+
+If the Trionic detects something is wrong it may light the CEL.
+The CEL flashes its code when you turn on the ignition and wait for a few seconds.
+If more than one code it in the fault list, the codes will be flashed one after another.
+The sequence is repeated until you turn off the ignition or start the car.
+
+## CEL Flash codes
+
+In the table below you will find the known CEL flash codes with their description.
+
+| \# flashes | Description                   | Additional information                                  |
+|------------|-------------------------------|---------------------------------------------------------|
+| 2          | MAP sensor                    | Pressure sensor out of boundaries or defective          |
+| 3          | Intake air temperature sensor | IAT sensor out of boundaries or defective               |
+| 4          | Coolant temperature sensor    | Coolant water sensor defective                          |
+| 5          | Throttle position sensor      | TPS out of boundaries or defective                      |
+| 6          | Oxygen sensor (lambda)        | Oxygen sensor out of boundaries or defective            |
+| 7          | Air/Fuel mixture (A/F ratio)  | A/F ratio out of boundaries (outside of adaption range) |
+| 8          | EVAP value                    |                                                         |
+| 9          | ECU internal failure          | Flash / SRAM fault or checksum error.                   |
+
+| \# flashes | Description                   | ISAT codes                                                  |
+|------------|-------------------------------|-------------------------------------------------------------|
+| 2          | MAP sensor                    | P0105 P0106 P0107 P0108                                     |
+| 3          | Intake air temperature sensor | P0110 P0112 P0113                                           |
+| 4          | Coolant temperature sensor    | P0115 P0117 P0118                                           |
+| 5          | Throttle position sensor      | P0120 P0121 P0122 P0123                                     |
+| 6          | Oxygen sensor (lambda)        | P0130 P0135                                                 |
+| 7          | Air/Fuel mixture (A/F ratio)  | P0170 P0171 P0172                                           |
+| 8          | EVAP value                    | P0443 P1443 P1444 P1445                                     |
+| 9          | ECU internal failure          | P1651 P1652 (check ground, connectors and checksum)         |
+
+![](../shared/images/check-engine-light-flash-codes.svg){width=100%}

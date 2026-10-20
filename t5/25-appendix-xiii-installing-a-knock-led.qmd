@@ -1,0 +1,22 @@
+# Appendix XIII: Installing a knock LED
+
+## Description
+
+This chapter will describe the installation procedure for a knock LED.
+This LED will indicate detected knock to the driver.
+Trionic has a “service” output that switches to ground in the event of knocking detection.
+This signal is available on pin 8 on the ECU 70-pin connector.
+Since the output is normally ‘floating’ and switches to ground when the knock detection occurs we can connect the ground side (cathode) of a LED to the ECU’s output and connect the LED’s “hot” side (anode) via a resistor (680 Ω - 1 kΩ) to +12V (switched over ignition).
+
+## Schematic diagram
+
+The image below shows a schematic diagram for this.
+
+![](../shared/images/knock-led-circuit.svg){width=58%}
+
+A normal LED (light emitting diode) has a long lead and a short lead.
+The long lead is the anode which is the positive side (current flows into the diode here) while the short lead is the cathode which is the negative side (current flows out of the diode here).
+The top side of the diode in the schematic diagram is the anode and the bottom side is the cathode.
+Note: On 5mm LEDs the cathode side is also indicated by the housing being flat on the side of this lead.
+
+Do not attempt to hook up a normal lamp to the ECU’s output because the ECU cannot sink so much current from it.

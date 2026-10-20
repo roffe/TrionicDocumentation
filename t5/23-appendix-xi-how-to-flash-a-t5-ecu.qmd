@@ -1,0 +1,65 @@
+# Appendix XI: How to flash a T5 ECU
+
+## Overview
+
+This how to describes the procedure for writing a binary file to the flash in a T5 ECU.
+It also describes how to dump the flash memory to a binary file.
+
+***Important note:***
+
+***The flash memories in the T5 ECUs are starting to get old and writing to the flash does not always work.
+If this should be the case the ECU will be inoperable and the only way to fix it is to physically replace the flashes.
+Unfortunately there is no way to determine the status of the flash in advance.
+Please do not use flashT5 if you only have one ECU and you need it to drive your car.***
+
+## Prerequisites
+
+- BD32 must be installed and working (see Appendix XII).
+- The BDM interface must be connected to the T5 ECU and to the computer.
+- The T5 ECU must be powered up and +16 volt should be applied to pinnumber 65.
+
+## Steps
+
+### 1. Install FlashT5
+
+- Download FlashT5 from the Downloads section on <http://trionic.mobixs.eu>
+- Unpack the files in the same directory as BD32 is installed in.
+
+### 2. Prepare ECU for flash management
+
+- In BD32 give the command: "do prepT5.do".
+  This will start a script that prepares the processor in the ECU for flash management.
+  Among several things this script will disable the watchdog, set up registers to allow writing to flash and tell BD32 where to load the target resident program.
+
+### 3. Dump flash memory
+
+This step is not necessary but can be used to verify that the content of the flash really is changed.
+Also, it is a good idea to always make a backup of the flash before you start writing to it.
+
+- In BD32 give the command: "dumpT5 filename.bin"
+
+filename.bin should be replaced with a file name of your choice keeping in mind that DOS can only handle 8.3 filename format (8 characters for filename and 3 for extension).
+BD32 will now download a target resident program that reads from flash and sends the information to BD32.
+You will see a number of dots appearing in BD32 during the copying.
+
+### 4. Flash the ECU
+
+- Read Important note above!
+- In BD32 give the command: "flashT5 filename.bin"
+
+filename.bin should be replaced by the name of the binary file that you want to write to flash keeping in mind that DOS can only handle 8.3 filename format (8 characters for filename and 3 for extension).
+This file should be in the same folder as the BD32 software.
+BD32 will now download a target resident program called flashT5.d32 to the processor in the ECU and execute it.
+The target resident program and BD32 cooperates during the flashing (BD32 takes care of file handling and the target resident program handles writing to flash).
+During the flashing you will see a number of dots being printed in BD32.
+This will stop when the flashing is completed and the command prompt of BD32 will appear.
+
+### 5. If you run into a problem
+
+If you run into problem when you are flashing try this:
+
+- Double the delay parameter.
+- The bottom field in BD32 should report "MCU: STOPPED" while you are using flashT5.
+  If you for some reason have given the reset command you need to run the prepT5.do script again in order to setup the registers and stop the MCU.
+- If you get an Erase Error or Program Error message it is likely that your flash cannot be written to (see Important note above).
+  You can try flashing a couple of more times but it is likely that the ECU can no longer be used.

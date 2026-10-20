@@ -1,0 +1,66 @@
+# Appendix II : Trionic 5 pinout
+
+## 70 pin connector
+
+| Pinnumber | Colour | Description | Symbol | Range | In/out |
+|-------------|--------------|-------------------------------------|-------------|--------------|---------|
+| 1 | Red | +30 (power supply) |  | +12 Volt | In |
+| 2 | Blue | Boost pressure control valve |  |  | Out |
+| 3 | Grey | Injector 1 |  |  | Out |
+| 4 | Blue | Injector 2 |  |  | Out |
+| 5 | Yellow | Injector 3 |  |  | Out |
+| 6 | White | Injector 4 |  |  | Out |
+| 8 | \-\-\- | Knock detect (knock indicator) |  | Switches to GND | Out |
+| 9 | Brown/white | Trigger 1 |  |  | Out |
+| 10 | Green | Trigger 2 |  |  | Out |
+| 11 | Blue | Trigger 3 |  |  | Out |
+| 12 | Grey | Trigger 4 |  |  | Out |
+| 13 | White | Engine torque limitation |  |  | In |
+| 14 | Orange | Drive |  |  | In |
+| 15 | White | Brake light switch |  |  | In |
+| 17 | Yellow | Combustion cylinder 1+2 |  |  | In |
+| 18 | Brown | Combustion cylinder 3+4 |  |  | In |
+| 20 | PK |  |  |  |  |
+| 21 | BU | M96: EVAP canister purge valve diagnosis M96.5: Fuel tank pressure sensor |  | 0-5 Volt | In |
+| 22 | Grey | MAP sensor input signal | P_Manifold | 0 – 5 Volt | In |
+| 23 | Green | Oxygen sensor 1 (front lambda sonde) | AD_sond |  | In |
+| 24 | Black/white | Main ground |  |  | In |
+| 25 | Black/white | Main ground |  |  | In |
+| 26 | Green | Boost pressure control valve |  |  | Out |
+| 27 | Yellow/red | EVAP canister purge valve |  |  | Out |
+| 28 | GN | EVAP canister close valve |  |  | Out |
+| 29 | \-\-\- | Heat plate activation relay |  |  | Out |
+| 31 | Yellow/white | Main relay |  |  | Out |
+| 32 | White | Check engine |  |  | Out |
+| 33 | Blue/white | Diagnosis (data link under seat, TECHII) |  |  | In/Out |
+| 35 | YE/BK | Engine load signal out |  |  | Out |
+| 36 | BU/WH | Cruise control |  |  | In |
+| 38 | YE | Low fuel signal light |  |  | In |
+| 39 | Green | Speed signal | Bil_hast |  | In |
+| 41 | Yellow | Crankshaft position sensor |  |  | In |
+| 42 | WH/BK | Throttle position sensor |  |  | Out |
+| 43 | Blue/white | MAP (Manifold Absolute Pressure) signal |  | +5 Volt | Out |
+| 44 | Orange | Knock signal | AD_knock |  | In |
+| 45 | GN/BN | Throttle position sensor | AD_trot |  | In |
+| 46 | Black | Intake air temperature sensor | AD_lufttemp |  | In |
+| 47 | Black | Oxygen sensor, reference ground |  |  | In |
+| 48 | Red | +30 (power supply) |  | +12 Volt | In |
+| 49 | BU/VT | Idle air control valve (IAC) |  |  | Out |
+| 50 | Black | Oxygen sensor 1, preheating |  |  | Out |
+| 51 | BK/WH | Oxygen sensor 2 (rear), preheating |  |  | Out |
+| 52 | YE/WH | Vacuum pump, brake system |  |  | Out |
+| 54 | RD/WH | A/C out |  |  | Out |
+| 55 | Brown | Shift up light (to instrument cluster) |  | Switches to GND | Out |
+| 56 | Violet | Fuel pump relay |  |  | Out |
+| 57 | Yellow | Throttle position signal |  |  | Out |
+| 58 | Blue | Engine speed signal (RPM) | Rpm |  | Out |
+| 59 | Green/white | A/C in |  |  | In |
+| 60 | Green/white | +15 (switched power supply, ignition contact) |  |  | In |
+| 62 | Grey | CANH (CAN bus high signal) |  |  | In/Out |
+| 63 | Red | CANL (CAN bus low signal) |  |  | In/Out |
+| 65 | Red/white | Programming voltage |  | +16 Volt | In |
+| 66 | Black | Reference ground for engine coolant temp. sensor |  | 0 Volt | In |
+| 67 | Black/white | Sensor ground |  | 0 Volt | Out |
+| 68 | Yellow | Engine coolant temperature sensor | AD_kylv |  | In |
+| 69 | \-\-\- | Exhaust gas temperature (not mounted) | AD_EGR | 0-5 volt | In |
+| 70 | \-\-\- | Oxygen sensor 2 (rear lambda sonde) | AD_cat |  | In |

@@ -1,0 +1,45 @@
+book:
+  title: Trionic 5
+  output-file: Trionic 5
+  chapters:
+    - index.qmd
+    - t5/01-preface.qmd
+    - t5/02-hardware.qmd
+    - t5/03-flash.qmd
+    - t5/04-firmware.qmd
+    - t5/05-symbol-tables.qmd
+    - t5/06-maps.qmd
+    - t5/07-variables.qmd
+    - t5/08-tuning-the-t5.qmd
+    - t5/09-can-bus-interface.qmd
+    - t5/10-common-mistakes-and-faq.qmd
+    - t5/11-tools.qmd
+    - t5/12-references.qmd
+    - t5/13-appendix-i-symbol-list.qmd
+    - t5/14-appendix-ii-trionic-5-pinout.qmd
+    - t5/15-appendix-iii-bdm-technical-information.qmd
+    - t5/16-appendix-iv-turbo-compressor-maps.qmd
+    - t5/17-appendix-v-upgrade-stages-1-7.qmd
+    - t5/18-appendix-vi-check-engine-light-cel.qmd
+    - t5/19-appendix-vii-knock-and-misfire-detection.qmd
+    - t5/20-appendix-viii-sensors-and-actuators.qmd
+    - t5/21-appendix-ix-converting-to-t7-boost.qmd
+    - t5/22-appendix-x-how-to-connect-the-pd-bdm.qmd
+    - t5/23-appendix-xi-how-to-flash-a-t5-ecu.qmd
+    - t5/24-appendix-xii-howto-install-bd32-with-a.qmd
+    - t5/25-appendix-xiii-installing-a-knock-led.qmd
+    - t5/26-appendix-xiv-a-tuned-example-on-the-road.qmd
+    - t5/27-appendix-xv-program-mode-status-bytes.qmd
+    - t5/28-appendix-xvi-intercooler-calculation.qmd
+    - t5/29-appendix-xvii-fuel-calculation-formulas.qmd
+    - t5/30-appendix-xviii-you-can-be-too-rich.qmd
+    - t5/31-appendix-xix-acronyms.qmd
+
+project:
+  output-dir: _book/t5
+
+trionic:
+  running-title: Analyzing Trionic 5 with T5Suite 2.0
+  copyright: © Dilemma & J.K. Nilsson 2010
+  revision: rev 1.24
+  cover: [t5/images/p001-1.png, t5/images/p001-2.jpg]
