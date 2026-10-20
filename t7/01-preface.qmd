@@ -7,11 +7,12 @@ The only limitation will be the knowledge of the author.
 In short the content of this document will enable you to understand Trionic 7 better and give you hands-on information about altering the maps it uses.
 Prerequisites are minor electronics and computer knowledge and of course some understanding of how a turbo charged engine works.
 
-Throughout the document the T7Suite software will be referenced.
+Throughout the document the TxSuite software will be referenced.
+TxSuite is T5Suite, T7Suite and T8Suite in one program, for Windows, Linux and macOS.
 This software will enable you to really “get into” the Trionic.
-The T7Suite software can be downloaded from the T7Suite website.
+TxSuite can be downloaded from its releases page, and its user manual is in the program under Help → T7 → User manual.
 
-![](../_extensions/trionic/icons/references.png){height=1em} <http://trionic.mobixs.eu>
+![](../_extensions/trionic/icons/references.png){height=1em} <https://github.com/roffe/TuningSuites/releases/latest>
 
 *Acknowledgements*
 

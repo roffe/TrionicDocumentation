@@ -4,11 +4,11 @@
 
 A lot of maps in the T7 are not only made up of a piece of raw data.
 It also includes x-axis and y-axis information.
-T7Suite will automatically display all known axis information when a map is opened.
+TxSuite will automatically display all known axis information when a map is opened.
 In Trionic 7 most symbols have an English name (Trionic 5 has lots of Swedish names) that explains lots about its function.
 Also, the symbols are categorized by name, which makes browsing the symbols much easier.
 All torque calibration symbols start with “TorqueCal.”.
-T7Suite groups all symbols by their respective category by default.
+TxSuite groups all symbols by their respective category by default, every category starts folded.
 
 ## Fuel
 
@@ -32,14 +32,14 @@ In rough steps this seems to be the calculation’s flow:
 | 13 | Activation of injector | At a DETERMINED crank shaft angle, the microprocessor will control the transistor for the injector that is next in the firing order |
 
 The basic fuel quantity is calculated based on Airmass and Injector constant.
-This injector constant is called InjCorrCal.InjectorConstant.
+This injector constant is called InjCorrCal.InjectorConst.
 
-![](images/p018-1.png){width=71%}
+![](images/txsuite/injcorrcal-injectorconst.png){width=41%}
 
 If the engine is not warmed up yet, an alternate fuel map is used called BFuelCal.StartMap.
-If the engine has reached operating temperature the normal map “BfuelCal.Map” is used.
+If the engine has reached operating temperature the normal map “BFuelCal.Map” is used.
 
-![](images/p019-1.jpg){width=96%}
+![](images/txsuite/bfuelcal-startmap-and-map.png){width=100%}
 
 You will see the areas calibrated to be run in closed loop have a value of around 1.00.
 It can be .98-1.02 or so.
@@ -63,7 +63,7 @@ After several weeks the multiplicative adaptation (Long term fuel trim) has abso
 All of a sudden your full power AFR has jumped up to 14.0 AFR, **engine failure happens very easily from here**.
 
 Now back to fuel mapping.
-To set closed loop area of fuel map, monitor the AFR in this light load area and if its wrong after adjusting for large injectors, start by just adjusting the Injector constant up and down accordingly instead of altering the closed loop area of the BfuelCalMap.
+To set closed loop area of fuel map, monitor the AFR in this light load area and if its wrong after adjusting for large injectors, start by just adjusting the Injector constant up and down accordingly instead of altering the closed loop area of BFuelCal.Map.
 This will affect the whole map instead of one point.
 By doing it this way you can almost get AFR spot on in closed loop area just by a few goes at adjusting the injector constant.
 It can be found in InjCorrCal.InjectorConst, the value represents the injectors flow in mg of fuel (not capacity or cc's as injectors are normally rated in).
@@ -85,15 +85,15 @@ If you want to ECU to leave closed loop faster after overrunning the load limit,
 
 Battery correction values for injector latency
 
-![](images/p021-1.png){width=53%}
+![](images/txsuite/injcorrcal-battcorrtab.png){width=40%}
 
 Water temperature correction
 
-![](images/p021-2.png){width=39%}
+![](images/txsuite/startcal-enrfactab.png){width=40%}
 
 Fuel injection correction map for knock conditions
 
-![](images/p022-1.jpg){width=71%}
+![](images/txsuite/knkfuelcal-enrichmentmap.png){width=83%}
 
 ## Ignition
 
@@ -129,13 +129,13 @@ The same procedure is used for controlling the ignition on the rest of the cylin
 
 ### Idle control
 
-![](images/p024-2.png){width=62%}
+![](images/txsuite/ignidlecal-tab.png){width=40%}
 
 ### Normal mode ignition
 
 Ignition is normally controlled by the main ignition matrix: IgnNormCal.Map
 
-![](images/p025-1.jpg){width=71%}
+![](images/txsuite/ignnormcal-map.png){width=90%}
 
 ## Torque
 
@@ -162,15 +162,15 @@ The basic procedure for the Airmass controller is like in the table below.
 ### Torque request
 
 So, if the driver (or cruise control for that matter) pressed the accelerator pedal he actually requests a certain Airmass from the system.
-This value is fetched from the PedelMapCal.m_RequestMap shown below.
+This value is fetched from the PedalMapCal.m_RequestMap shown below.
 
-![](images/p027-1.jpg){width=74%}
+![](images/txsuite/pedalmapcal-m-requestmap.png){width=74%}
 
 The table holds Airmass values for each position of the accelerator pedal and each rpm site.
 Trionic now looks up the estimated engine output (torque) based on Airmass and rpm.
 This is done through map “TorqueCal.M_NominalMap” as shown next.
 
-![](images/p028-1.jpg){width=73%}
+![](images/txsuite/torquecal-m-nominalmap.png){width=83%}
 
 ## Second lambda sensor
 
@@ -190,7 +190,7 @@ You can use this procedure in cars having only one lambda sensor and in cars hav
 
 ### Alternative solution to turning off second lambda
 
-Change low limit on O2heaterPostCal.I_LowLim to 0 mA to disable sensor heater error, and change CatDiagCal.LoadHi and LoadLo to values never seen normally, like 30 and 20.
+Change low limit on O2HeatPostCal.I_LowLim to 0 mA to disable sensor heater error, and change CatDiagCal.LoadHi and LoadLo to values never seen normally, like 30 and 20.
 
 | Map                    | Value | Description                   |
 |------------------------|-------|-------------------------------|
@@ -209,11 +209,11 @@ We need to make changes to the file before we can run in on an earlier car (e.g.
 
 OBDCal.OBD2Enabled= This is self explanatory, if car is OBD2 put value at 1 if it's not OBD2 put value at 0.
 On this point in later bins(compressed) there is EOBDEnable which is always on in EC2000 EU files and LOBDEnable which is always on in EC2000 RW files.
-File type is shown in firmware information under engine type.
+File type is shown in Actions → Firmware information under Engine type.
 
 OBDCal.EnableOBD2Limit= As above but its a 4 byte value.
 If done in Hex value for a OBD2 car is 00000001 and for non-OBD2 car is 00000000.
-As shown in T7suite is 2 values.
+TxSuite shows it as 2 values.
 OBD2 cars top value is 1 and bottom value is 0.
 In non OBD2 car both values are 0.
 
@@ -227,7 +227,7 @@ The term LEV(Low emission vehicle) in this sense refers to Saab's decision to ad
 
 ## Footer information {.advanced}
 
-If we look at the footer in the binary (last page in hex viewer) we see a set of reversed strings.
+If we look at the footer in the binary (last page in a hex viewer, Actions → View file in hex in TxSuite) we see a set of reversed strings.
 Each of these strings contains an identifier.
 These identifiers have a hardcoded meaning.
 

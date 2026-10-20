@@ -22,15 +22,16 @@ Search binary for string the first sequence of 15 zeros.
 [Finding start of address lookup table:]{.underline}\
 Search binary for 20 00 00 00 XX YY 00 F0 where XX YY is the index of the first symbol found in the symbollist.
 
-To save you the time to lookup all addresses manually the T7Suite application will extract all symbol information in one run.
+To save you the time to lookup all addresses manually TxSuite extracts all symbol information in one run when it opens the file.
 Symbol name, flash address and length will be displayed all together.
 
 @fig-symbol-list will give you an idea of what the symbol table should look like once it has been extracted.
 See appendix I for a complete list of known symbols.
+The description line under each symbol name is File → Settings → Common → Show descriptions under symbol names, it's off by default.
 
-![Screenshot of a part of the symbol table](images/p016-1.png){#fig-symbol-list width=100%}
+![A part of the symbol table in TxSuite's symbol list](images/txsuite/symbol-list-descriptions.png){#fig-symbol-list width=100%}
 
-When the user double clicks one of the symbols that has a flash address attached to it, T7Suite will display the corresponding symbol in a viewer.
+When the user double clicks one of the symbols that has a flash address attached to it, TxSuite will display the corresponding symbol in a map viewer.
 This viewer will display the data in table form was well as in graphical form.
 
-![](images/p016-2.jpg){width=60%}
+![](images/txsuite/torquecal-m-nominalmap.png){width=83%}

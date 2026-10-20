@@ -1,23 +1,31 @@
 # Tools
 
-## T7Suite
+## TxSuite
 
-T7Suite has the following functions:
+TxSuite is T5Suite, T7Suite and T8Suite in one program, for Windows, Linux and macOS.
+For a T7 it has the following functions:
 
-- Checksum verification and correction
-- Software ID adjustment
-- Immobilizer code adjustment
-- File comment adjustment
-- Box number adjustment
-- Extraction of symbol table
-- Map visualization
-- Compare maps in binary to another binary
-- Move maps from one binary to another
-- Downloading flash content from ECU through Canbus
-- Flashing ECU through Canbus
-- Real-time tuning (work in progress…)
+- Checksum verification and correction (Actions → Verify checksum, and every time it writes a map)
+- Software ID adjustment (Actions → Firmware information)
+- Immobilizer code and chassis ID (VIN) adjustment (Actions → Firmware information)
+- Firmware options like Open SID info and the torque limiters (Actions → Firmware information)
+- What the SID shows (Actions → SID information)
+- ESP calibration and the TCM limit (Actions → ESP calibration and TCM limit)
+- Extraction of symbol table (when it opens a file)
+- Map visualization and editing (the map viewer)
+- Compare maps in binary to another binary (Actions → Compare symbols with other binary)
+- Move maps from one binary to another (Actions → Transfer maps to another binary)
+- Tuning packages (File → Import tuning package and Edit a tuning package)
+- Airmass result viewer (Actions → Airmass result viewer)
+- Downloading flash content from ECU through Canbus (ECU → Read ECU)
+- Flashing ECU through Canbus (ECU → Flash current file to ECU)
+- SRAM snapshots and comparing them (ECU → Get SRAM snapshot and the Actions menu)
+- Realtime viewing and logging, and real-time tuning on open software (Realtime menu)
+- AFR feedback maps from a wideband (Realtime → AFR maps and Actions → Import AFR feedback data)
+- Projects that log every change, with roll back and roll forward (File → Project)
 
-For usage of this tool please refer to its user manual.
+It can be downloaded from <https://github.com/roffe/TuningSuites/releases/latest>.
+For usage of this tool please refer to its user manual, Help → T7 → User manual.
 
 ## BD32
 
@@ -44,7 +52,10 @@ Now, from the menu select Options -> General, go to Analysis tab and press 'Kern
 Check 'Make final analysis pass' and hit OK\
 Press 'Reanalyze program' button and wait a while (this really takes some time, a minute or so)
 
+TxSuite's File → Generate Idc file writes an IDC script with the symbol names of the open file, to name the addresses in IDA Pro.
+
 ## Hex editor {.advanced}
 
 Hexworkshop (or UltraEdit) is a tool that comes in handy often.
 It can be used to view, search and modify the raw binary file.
+TxSuite has one built in, Actions → View file in hex.

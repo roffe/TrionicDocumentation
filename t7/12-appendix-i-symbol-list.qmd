@@ -59,7 +59,7 @@ Resolution is 0.1 °.*
 *Normal ignition map.
 Resolution is 0.1 °.*
 
-**MapChkCal.CheckSum** (automatically updated in between every map change with T7suite!)
+**MapChkCal.CheckSum** (updated automatically every time TxSuite saves a map!)
 
 **MaxVehicCal.v_MaxSpeed** (max vehicle speed )
 
@@ -90,7 +90,7 @@ Torque limitation in gears 2-5 is 380 Nm.*\
 Engine speed and torque are used as support points.
 The value in the matrix + friction Airmass (idle Airmass) will create the pointed torque at the pointed engine speed.
 Resolution is 1 mg/c.*\
-axis to the above map: **TorqueCal.m_AirXSP**
+axis to the above map: **TorqueCal.M_EngXSP**
 
 **TorqueCal.M_EngMaxTab**\
 *Data-table for maximum engine output torque for manual cars.
