@@ -1,0 +1,36 @@
+book:
+  title: Trionic 7
+  output-file: Trionic 7
+  chapters:
+    - index.qmd
+    - t7/01-preface.qmd
+    - t7/02-hardware.qmd
+    - t7/03-flash.qmd
+    - t7/04-firmware.qmd
+    - t7/05-symbol-tables.qmd
+    - t7/06-maps.qmd
+    - t7/07-tuning-the-t7.qmd
+    - t7/08-can-bus-interface.qmd
+    - t7/09-common-mistakes-and-faq.qmd
+    - t7/10-tools.qmd
+    - t7/11-references.qmd
+    - t7/12-appendix-i-symbol-list.qmd
+    - t7/13-appendix-ii-trionic-7-pinout.qmd
+    - t7/14-appendix-iii-bdm-technical-information.qmd
+    - t7/15-appendix-iv-turbo-compressor-maps.qmd
+    - t7/16-appendix-v-upgrade-stages-1-7.qmd
+    - t7/17-appendix-vi-check-engine-light-cel.qmd
+    - t7/18-appendix-vii-knock-and-misfire-detection.qmd
+    - t7/19-appendix-viii-sensors-and-actuators.qmd
+    - t7/20-appendix-x-how-to-connect-the-pd-bdm.qmd
+    - t7/21-appendix-xvi-intercooler-calculation.qmd
+    - t7/22-appendix-xvii-acronyms.qmd
+
+project:
+  output-dir: _book/t7
+
+trionic:
+  running-title: Analyzing Trionic 7 with T7Suite
+  copyright: © Dilemma 2010
+  revision: rev 1.08
+  cover: [t7/images/p001-1.jpg, t7/images/p001-2.jpg]

@@ -1,0 +1,15 @@
+# Appendix VIII: Sensors and actuators
+
+This appendix will list details about the sensors and actuators used in a T7 car.
+
+## General
+
+Sensors are devices used to gather information.
+In a Trionic 7 car a lot of sensors are used to determine what actions to take inside the ECU.
+These sensors are all analogue, which means they output a signal that has to be converted to digital numbers for the ECU to be able to understand them.
+Actuators on the other hand are devices that enable the ECU to interact with the processes in the car.
+Actuators are driven (or activated) by the Trionic be it directly or indirectly.
+
+## Sensors
+
+## Actuators

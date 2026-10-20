@@ -1,0 +1,33 @@
+# Appendix XVII: Acronyms
+
+## Engine management specifics
+
+| Acronym | Description                                             |
+|---------|---------------------------------------------------------|
+| ABS     | Antilock Braking System                                 |
+| AMM     | Air Mass Meter                                          |
+| BDM     | Background Debug Mode                                   |
+| CANBUS  | Controller Area Network (Car Area Network)              |
+| CPS     | Crankshaft Position Sensor                              |
+| DI      | Direct Ignition                                         |
+| DICE    | Dashboard Integrated Control Electronics                |
+| ECM     | Engine Control Module                                   |
+| ECU     | Engine Control Unit                                     |
+| EDU     | Electronic Display Unit                                 |
+| FPR     | Fuel Pressure Regulator                                 |
+| FPT     | Full Pressure Turbo                                     |
+| HOT     | High Output Turbo                                       |
+| IAT     | Intake Air Temperature                                  |
+| LPT     | Light Pressure Turbo / Line Printer Terminal            |
+| MAF     | Mass Air Flow                                           |
+| MAP     | Manifold Absolute Pressure                              |
+| OBD     | On Board Diagnostics                                    |
+| RAM     | Random Access Memory                                    |
+| ROM     | Read Only Memory                                        |
+| RPM     | Revolutions Per Minute                                  |
+| SFI     | Synchronous Flash Interface (Production test interface) |
+| SID     | System Information Display                              |
+| TPS     | Throttle Position Sensor                                |
+| TWICE   | Theft Warning Integrated Central Electronics            |
+| VSS     | Vehicle Security System                                 |
+| WOT     | Wide Open Throttle                                      |

@@ -1,0 +1,12 @@
+# Firmware {.advanced}
+
+## General
+
+Once you are done with dumping the flash contents and you want to do more than only alter variables and maps you can start analyzing the binary.
+This is a difficult task because there are a lot of different firmware versions, stock ones – maybe different per MY and tuned ones that differ for every manufacturer and stage.
+In every case the code can be disassembled using a 6833x disassembler like the one in IDAPro.
+There are scripts available to automatically disassemble the code and make it more readable by replacing addresses by variable names that are extracted from the symboltable inside the binary.
+
+## Memory map {.advanced}
+
+## Disassembling the code {.advanced}

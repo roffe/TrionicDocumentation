@@ -1,0 +1,132 @@
+# Appendix I : Symbol list
+
+This appendix will give a short description of the most important maps in Trionic 7.
+To give a list of all symbols would be kind of stupid because there are approximately 4000 (!!!) symbols in a Trionic 7 binary.
+
+**AirCtrlCal.m_MaxAirTab**\
+*Airmass value from controller where area map has reached max-area and there is no point to increase the I-part.
+Resolution is 1 mg/c.*
+
+**AirCtrlCal.m_MaxAirE85Ta** ( if running on E85 )\
+*Same as above for E85*
+
+**BoostCal.I_LimTab**\
+*Load limit tab. to enable the I Part of boost regulator.
+If the load request from Airmass master is above this value plus the hysteresis is the I Part enabled and the throttle closed loop is disabled.
+If the load request from Airmass master is below this value is the I Part disabled and the throttle is allowed to run in closed loop.*
+
+**BoostCal.P_LimTab**\
+*Load limit tab. to enable the P Part of boost regulator.
+If the load request from Airmass master is above this value plus the hysteresis is the P Part enabled.
+If the load request from Airmass master is below this value is the P Part disabled.*
+
+**BoostCal.RegMap**\
+*Main constant matrix.
+Resolution is 0.1 %.*
+
+**BstKnkCal.MaxAirmass** (divide by 3,1 for approx torque, ignition, airtemp etc affect this!)\
+*Map for max allowed Airmass for manual gearbox, m_nHigh.
+Resolution is 1 mg/c.*
+
+*[Knock limitation]{.underline}*\
+*Knock control first retards the ignition timing for each cylinder.
+If the mean value for the ignition retardation for all the cylinder exceeds a certain value, fuel enrichment will take place.*\
+*If the mean value for ignition retardation increases further, the maximum permissible air mass/combustion will be reduced with the values in the BstKnkCal.MaxAirmass maps.
+X axis represents degree of ignition retard.
+This reduction takes place continuously as the ignition retardation increases.
+The value constitutes the maximum air mass/combustion value permitted by knock control.*
+
+*Note*\
+*Knock control on modern engines is not a safety function but a normal function.
+Consequently, it is considered normal when knock control reduces engine torque in certain cases.
+The engine knock control increases for e.g. high intake air temperatures or high coolant temperatures.
+Further influencing factors are driving at high altitudes and low octane fuel.*\
+*Certain engine variants require petrol with an octane rating of 98 RON in order to provide the specified engine torque/power.*
+
+**BstKnkCal.MaxAirmassAu**\
+*Map for max allowed Airmass for automatic gearbox, m_nHigh.
+Resolution is 1 mg/c.*\
+*See text above*
+
+**FCutCal.m_AirInletLimit**\
+*If the "MAF.m_AirInletFuel" is higher than this limit during m_AirInletTime will the fuelcut be activated ( pressure guard ).*
+
+**IgnE85Cal.fi_AbsMap** ( if you want to change the ignition )\
+*Ignition map for E85 fuel.
+Resolution is 0.1 °.*
+
+**IgnNormCal.Map** ( if you want to change the ignition )\
+*Normal ignition map.
+Resolution is 0.1 °.*
+
+**MapChkCal.CheckSum** (automatically updated in between every map change with T7suite!)
+
+**MaxVehicCal.v_MaxSpeed** (max vehicle speed )
+
+**PedalMapCal.m_RequestMap**\
+*Requested Airmass from the driver as a function of rpm and accelerator pedal position.
+Resolution is 1 mg/c.*
+
+**TorqueCal.M_ManGearLim**\
+*Maximum engine torque limit for each gear in the manual gearbox.
+Resolution is 1 Nm.*\
+*Manual gearbox, engine torque limitation*
+
+*The maximum engine torque must be limited at low gear ratios for reasons of strength.*\
+*The control module calculates the engaged gear by comparing engine speed with vehicle speed.*\
+*If the gear ratio corresponds with gear 1 or R, the control module reads bus information "Reverse gear selected" from DICE to distinguish between them.*\
+*Engine torque is limited to:*\
+*Gear 1 or R is limited to 230 Nm on engine alternative B205E/B235E.
+Engine torque is limited to 350 Nm in other gears.*\
+*On engine alternative B235E, gear 5 is gradually limited if the engine speed is below 2400 rpm.
+This is to avoid vibration.*\
+*On engine alternative B235R, gear 1 is limited to 280 Nm and reverse gear, R, is limited to 230 Nm.
+Torque limitation in gears 2-5 is 380 Nm.*\
+*The engine torque value is converted to mg air/combustion and constitutes the maximum air mass/combustion allowed by the gearbox.*
+
+**TorqueCal.m_AirTorqMap** This is where all torque limiters take their data from and therefore needs to be "fooled" if you are running 400nm+ or an automatic.
+4sp automatic need the last row to be max 330nm, 5sp 350nm, as this is what the gearbox ECU is requesting as a max limit.\
+*Data-matrix for nominal Airmass.
+Engine speed and torque are used as support points.
+The value in the matrix + friction Airmass (idle Airmass) will create the pointed torque at the pointed engine speed.
+Resolution is 1 mg/c.*\
+axis to the above map: **TorqueCal.m_AirXSP**
+
+**TorqueCal.M_EngMaxTab**\
+*Data-table for maximum engine output torque for manual cars.
+Resolution is 1 Nm.*
+
+**TorqueCal.M_EngMaxAutTab**\
+*Data-table for maximum engine output torque for automatic cars.
+Resolution is 1 Nm.*\
+*TCM, engine torque limitation*
+
+*The maximum engine torque must be limited in gear R, 1 and 2 for reasons of strength.
+TCM will send continuous bus information specifying the maximum permissible engine torque.
+The maximum permitted engine torque is also limited during gear changing.
+TCM sends maximum permissible engine speed:*
+
+| *Reverse*        | *270 Nm* |
+|------------------|----------|
+| *1^st^ gear*     | *330 Nm* |
+| *2^nd^ gear*     | *330 Nm* |
+| *3^rd^ gear*     | *330 Nm* |
+| *4^th^ gear*     | *350 Nm* |
+| *5^th^ gear*     | *350 Nm* |
+
+*TCM then sends maximum permissible engine torque to protect the gearbox.*
+
+*Trionic T7 converts Nm to mg air/combustion with help of the Airtorque map.
+The value constitutes the maximum air mass/combustion permitted by the automatic transmission and it is therefore we currently need to trick T7 to think more Airmass is still the same Nm.*
+
+**TorqueCal.M_5GearLimTab**\
+*Data-table for maximum engine output torque for manual cars on fifth gear.
+Resolution is 1 Nm.*
+
+**TorqueCal.M_EngMaxE85Tab** ( if running on E85 )\
+*Data-table for maximum engine output torque when running on E85.
+Resolution is 1 Nm.*
+
+**TorqueCal.m_PedYSP**\
+*Air mass support points for (Calc) X_AccPedalMap.
+Resolution is 1 mg/combustion.*

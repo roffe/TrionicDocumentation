@@ -1,0 +1,25 @@
+# Preface
+
+This document is intended for Saab fanatics and engineers who want to start understanding the Saab Trionic 7 motor management system.
+It will give as much information as possible about the technical part of the system.
+The only limitation will be the knowledge of the author.
+
+In short the content of this document will enable you to understand Trionic 7 better and give you hands-on information about altering the maps it uses.
+Prerequisites are minor electronics and computer knowledge and of course some understanding of how a turbo charged engine works.
+
+Throughout the document the T7Suite software will be referenced.
+This software will enable you to really “get into” the Trionic.
+The T7Suite software can be downloaded from the T7Suite website.
+
+![](../_extensions/trionic/icons/references.png){height=1em} <http://trionic.mobixs.eu>
+
+*Acknowledgements*
+
+*The author would like to thank everyone on ecuproject for their help on getting all this information together.
+Special thanks go out to General Failure, J.K. Nilsson, Hook, Hma, Vigge, Mackan, Sandy Rus, JKB, L4staero and Steve Hayes.*
+
+*These icons are used throughout the document to denote:*
+
+![](../_extensions/trionic/icons/references.png){height=1em} **References**
+
+![](../_extensions/trionic/icons/advanced.png){height=1em} **Advanced technical topics**

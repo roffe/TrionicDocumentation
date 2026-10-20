@@ -1,0 +1,34 @@
+# Common mistakes and FAQ
+
+## General
+
+This chapter will describe some frequently made mistakes in handling the Trionic.
+
+### Ignition advance
+
+When altering the ignition tables keep in mind that more than 35˚ advance from TDC is not good.
+
+### Ignition retard
+
+When altering the ignition tables keep in mind that more than 5˚ retarding from TDC is not good.
+
+### FAQ
+
+Question: At what AFR should I try to keep the engine?\
+Answer: Try to keep the AFR between 10.8 and 12.5 at WOT.
+
+Question: At what EGT should I try to keep the engine?\
+Answer: Try to keep the exhaust gas temperature below 950˚C.
+
+Question: What is the approximate ignition advance at wide open throttle?\
+Answer: Try to keep the ignition advance at approximately 10˚ BTDC
+
+Question: How can I determine what the maximum boost request should be for my turbo?\
+Answer: Check that the boost request level fits somehow to compressor map:\
+<http://www.squirrelpf.com/turbocalc/index.php>\
+In addition you can read [appendix IV](#appendix-iv).
+
+Question: What is a good intake air temperature?\
+Answer: Upton 60˚C is good enough.
+If temperatures rise above 60˚C consider replacing your stock intercooler with an aluminium, cross-flow type.
+These are available from Speedparts, Abbott, ETS and others.
