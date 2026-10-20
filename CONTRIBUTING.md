@@ -48,7 +48,7 @@ As you can see in @fig-symbol-table the table starts with ...
 
 Drawings (pinouts, circuits, block and timing diagrams) are SVG, not screenshots of them, so they stay sharp at any zoom. Write the text as real `<text>` with `font-family="DejaVu Sans" font-stretch="condensed"`, that's the font the books bundle, and it stays searchable. Look at one in `shared/images/` before making a new one.
 
-The TxSuite screenshots aren't made by hand: they come from the Screenshots tests in [TuningSuites](https://github.com/roffe/TuningSuites) (`docs/screenshots/generate.sh`). A new one is added there and its light version copied to `txsuite/images/<ecu>/`.
+The TxSuite screenshots aren't made by hand: they come from the Screenshots tests in [TuningSuites](https://github.com/roffe/TuningSuites), the books' from `BookScreenshots` into `tN/images/txsuite/`, the manuals' from `docs/screenshots/generate.sh` into `txsuite/images/<ecu>/`. A new one is added to the test there, then `tools/screenshots.sh ~/devel/TuningSuites` brings them all over.
 
 Tables are pipe tables, first row is the header:
 
