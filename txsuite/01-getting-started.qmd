@@ -29,15 +29,15 @@ This manual tells you what the program does.
 What the ECU does, its hardware, firmware and maps and how to tune them, is in Dilemma's Trionic documentation.
 
 ::: {.content-visible when-profile="t5-manual"}
-For the T5 that is "Analyzing Trionic 5 with T5Suite", Help → T5 → Trionic 5 documentation.
+For the T5 that is "Analyzing Trionic 5 with TxSuite", Help → T5 → Trionic 5 documentation.
 :::
 
 ::: {.content-visible when-profile="t7-manual"}
-For the T7 that is "Analyzing Trionic 7 with T7Suite", Help → T7 → Trionic 7 documentation.
+For the T7 that is "Analyzing Trionic 7 with TxSuite", Help → T7 → Trionic 7 documentation.
 :::
 
 ::: {.content-visible when-profile="t8-manual"}
-For the T8 that is "Analyzing Trionic 8 with T8Suite", Help → T8 → Trionic 8 documentation.
+For the T8 that is "Analyzing Trionic 8 with TxSuite", Help → T8 → Trionic 8 documentation.
 :::
 
 Both are kept up to date in one place, <https://github.com/roffe/TrionicDocumentation>.

@@ -4,9 +4,9 @@ Dilemma's Trionic 5, 7 and 8 documentation and the TxSuite user manuals (once th
 
 | Book | PDF |
 |---|---|
-| Analyzing Trionic 5 with T5Suite | `Trionic 5.pdf` |
-| Analyzing Trionic 7 with T7Suite | `Trionic 7.pdf` |
-| Analyzing Trionic 8 with T8Suite | `Trionic 8.pdf` |
+| Analyzing Trionic 5 with TxSuite | `Trionic 5.pdf` |
+| Analyzing Trionic 7 with TxSuite | `Trionic 7.pdf` |
+| Analyzing Trionic 8 with TxSuite | `Trionic 8.pdf` |
 | TxSuite user manual, Trionic 5 | `T5_manual.pdf` |
 | TxSuite user manual, Trionic 7 | `T7_manual.pdf` |
 | TxSuite user manual, Trionic 8 | `T8_manual.pdf` |
