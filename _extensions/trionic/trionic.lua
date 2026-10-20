@@ -15,13 +15,6 @@ function Header(el)
   end
 end
 
--- A picture on its own without a caption is centered, like in the originals.
-function Para(el)
-  if not quarto.doc.is_format("typst") then return nil end
-  if #el.content == 1 and el.content[1].t == "Image" then
-    return { pandoc.RawBlock("typst", "#align(center)["), el, pandoc.RawBlock("typst", "]") }
-  end
-end
 
 -- Typst books get Quarto's rule that restarts figure numbers at every chapter,
 -- the originals number them straight through the book.
@@ -51,4 +44,33 @@ function Table(el)
     end
   end
   return el
+end
+
+-- A picture without a caption is centered, like in the originals, and a short
+-- lead-in right above a picture stays on the picture's page.
+local function is_bare_picture(b)
+  return b and b.t == "Para" and #b.content == 1 and b.content[1].t == "Image"
+end
+
+local function is_picture(b)
+  return b and (b.t == "Figure" or is_bare_picture(b))
+end
+
+local function wrap(open, b)
+  return { pandoc.RawBlock("typst", open), b, pandoc.RawBlock("typst", "]") }
+end
+
+function Blocks(blocks)
+  if not quarto.doc.is_format("typst") then return nil end
+  local out = pandoc.Blocks({})
+  for i, b in ipairs(blocks) do
+    if is_bare_picture(b) then
+      out:extend(wrap("#align(center)[", b))
+    elseif b.t == "Para" and is_picture(blocks[i + 1]) and #pandoc.utils.stringify(b) < 200 then
+      out:extend(wrap("#block(sticky: true)[", b))
+    else
+      out:insert(b)
+    end
+  end
+  return out
 end
