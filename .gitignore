@@ -1,0 +1,10 @@
+.venv/
+.tools/
+_book/
+.quarto/
+/original/
+/out/
+**/*.quarto_ipynb
+__pycache__/
+
+/.quarto/

@@ -1,0 +1,9 @@
+# One project, one profile per book: quarto render --profile t7
+project:
+  type: book
+
+book:
+  author: Dilemma
+
+format:
+  trionic-typst: default

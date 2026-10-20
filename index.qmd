@@ -1,0 +1,5 @@
+---
+title: ""
+---
+
+<!-- Empty on purpose: Quarto books need a root index.qmd, every book (profile) starts here and the title page comes from the template. -->

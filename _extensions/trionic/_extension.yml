@@ -1,0 +1,23 @@
+title: Trionic
+author: Dilemma, roffe
+version: 1.0.0
+quarto-required: ">=1.10.0"
+contributes:
+  formats:
+    typst:
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ
+        - page.typ
+      filters:
+        - path: trionic.lua
+          at: post-quarto
+      font-paths:
+        - fonts
+      toc-depth: 3
+      number-sections: false
+      crossref:
+        chapters: false
+        fig-prefix: Image
+        fig-title: Image
+        tbl-prefix: Table
