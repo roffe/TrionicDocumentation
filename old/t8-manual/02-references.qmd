@@ -1,0 +1,8 @@
+# References
+
+This section references, by identity and title, documents that facts in this document depend upon.
+Those documents are not necessarily the latest version.
+
+| Document                         | Title     | Rev  |
+|----------------------------------|-----------|------|
+| Analyzing Trionic 8 with T8Suite | Trionic 8 | 1.03 |

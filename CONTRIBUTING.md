@@ -21,6 +21,7 @@ The PDF ends up in `_book/t7/`. The profiles are `t5`, `t7`, `t8` (the Trionic b
 - `_quarto.yml`: what all books share.
 - `_extensions/trionic/`: the look (Typst template, fonts, icons). Same for all books.
 - `index.qmd`: empty on purpose, Quarto books need one.
+- `old/`: the T5Suite, T7Suite and T8Suite manuals from before TxSuite, for reference. Not built.
 
 ## Writing
 

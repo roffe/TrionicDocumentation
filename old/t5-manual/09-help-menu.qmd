@@ -1,0 +1,5 @@
+# Help menu
+
+![](images/p045-2.png){width=100%}
+
+Gives you access to the T5 documentation, this file and allows you to check for updates online.

@@ -1,0 +1,14 @@
+# Adjusting values in map
+
+To avoid that you have to adjust all values of a “large” map manually some features have been added to the mapeditor.
+
+- Plus key: adds 1 to all selected cells
+- Minus key: substracts 1 from all selected cells
+- PageUp key: adds 10 to all selected cells
+- PageDown key: substracts 10 from all selected cells
+- Home key: sets all selected cells to the maximal value
+- End key: sets all selected cells to the minimal values
+
+To be able to get your work done faster you can selected one or more cells in a table and copy them to the clipboard by rightclicking and selecting “Copy selected cells”.
+
+To paste the cells select the location where you want to cells to appear – this could be in another map and even in another binary – rightclick and select “paste selected cells” and then “At original position” or “At currently selected location”.

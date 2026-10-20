@@ -1,0 +1,4 @@
+# Purpose and scope
+
+By using this document users are assured to use the correct functionality of the software.
+The information from this document should be followed as stated and compared with expected output from the software.

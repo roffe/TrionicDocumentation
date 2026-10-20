@@ -1,0 +1,3 @@
+# Sorting information
+
+Information can be sorted ascending or descending by clicking the column header you want to sort on.

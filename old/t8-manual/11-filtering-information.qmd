@@ -1,0 +1,7 @@
+# Filtering information
+
+You can easily filter information in the views by selecting the little filter image in the column header and choosing one of the options.
+The most elaborate filters can be defined in “custom” of course.
+Here’s a sample.
+
+![Custom filter](images/p032-1.png){#fig-custom-filter width=73%}

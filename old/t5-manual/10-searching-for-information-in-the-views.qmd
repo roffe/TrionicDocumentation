@@ -1,0 +1,20 @@
+# Searching for information in the views
+
+The used data viewers all support something called “incremental searching”.
+If you select a value in one of the views and start typing the name or address you are looking for the view will automatically scroll to the given entry (best match).
+You normally should have the column you are searching in as the primary sort column.
+To do this just click on the column header of the column in question.
+
+![](images/p046-1.png){width=86%}
+
+## Filtering information
+
+You can easily filter information in the views by selecting the little filter image in the column header and choosing one of the options.
+The most elaborate filters can be defined in “custom” of course.
+Here’s a sample.
+
+![](images/p046-2.png){width=52%}
+
+## Sorting information
+
+Information can be sorted ascending or descending by clicking the column header you want to sort on.

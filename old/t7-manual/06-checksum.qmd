@@ -1,0 +1,4 @@
+# Checksum
+
+For you to be able to use the binary after altering maps or other information within the binary, the checksum must be updated after alteration of data.
+This is possible by clicking “update checksum” in the menu.

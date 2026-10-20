@@ -1,0 +1,8 @@
+# Searching for information in the views
+
+The used data viewers all support something called “incremental searching”.
+If you select a value in one of the views and start typing the name or address you are looking for the view will automatically scroll to the given entry (best match).
+You normally should have the column you are searching in as the primary sort column.
+To do this just click on the columnheader of the column in question.
+
+![Incremental search in action](images/p031-1.png){#fig-incremental-search width=72%}
