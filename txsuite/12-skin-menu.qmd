@@ -1,0 +1,17 @@
+# Skin menu
+
+TxSuite has a light and a dark skin.
+
+## Skin → Light, Dark and Follow the system
+
+Light and Dark pick the skin, Follow the system takes the one your system uses.
+The choice is the same for every ECU and is remembered.
+
+## Skin → Cascade windows and Tile windows
+
+Cascade windows puts the windows in the workspace on top of each other, slightly shifted, so every title bar shows.
+Tile windows horizontally and Tile windows vertically put them next to each other so they all fit.
+
+## Skin → Dock all floating windows
+
+Brings every window that floats outside the main window back into the workspace.

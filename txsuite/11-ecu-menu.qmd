@@ -1,0 +1,56 @@
+# ECU menu
+
+The ECU menu reads and flashes the ECU over CAN, the way the Trionic CAN Flasher does.
+Like the Realtime menu it needs a file of the ECU open, and an interface set up in File → Settings → Common.
+The progress shows in the status bar, and TxSuite won't close while it runs.
+
+::: {.content-visible when-profile="t8-manual"}
+With File → Settings → T8 → Use Legion Bootloader on (the default) reading, flashing and recovering use the Legion bootloader, which only erases and writes the partitions that differ from the file.
+:::
+
+## ECU → Read ECU
+
+Downloads the flash content from the connected ECU.
+It will ask you where to store the binary file.
+
+## ECU → Flash current file to ECU
+
+Flashes the open file to the connected ECU.
+Map viewers with unsaved changes are pointed out first, they are not in the file yet.
+A wrong checksum is corrected first, or TxSuite offers to correct it when File → Settings → Common → Auto update checksum is off.
+When it's done TxSuite says whether it worked.
+
+A good check after flashing is to read the ECU back and compare the two files with Actions → Compare binary with other binary.
+
+::: {.content-visible when-profile="t8-manual"}
+When the flash was erased but programming failed, TxSuite asks whether to attempt to recover the ECU with the same file.
+:::
+
+::: {.content-visible when-profile="t5-manual"}
+## ECU → Get SRAM snapshot
+
+Lets you create an SRAM snapshot from the ECU, a copy of its working memory, for later analysis or reference.
+It needs a connection to the ECU, Realtime → Connect ECU.
+In a project it goes into the project's Snapshots folder, otherwise TxSuite asks where to save it, proposing `Snapshot-<bin>-<time>.RAM`.
+
+## ECU → Upload SRAM to ECU
+
+This option allows you to upload a snapshot of the ECU's SRAM (working memory) back into the ECU.
+This works like a sort of system restore point you can make.
+Connect first with Realtime → Connect ECU, without a connection nothing happens.
+TxSuite asks whether the maps should go into the binary file too.
+:::
+
+::: {.content-visible when-profile="t7-manual"}
+## ECU → Get SRAM snapshot
+
+Lets you download the ECU's working memory as a snapshot for comparing and backup.
+In a project it goes into the project's Snapshots folder, otherwise next to the bin as `SRAM<time>.RAM`.
+:::
+
+::: {.content-visible when-profile="t8-manual"}
+## ECU → Recover ECU
+
+Brings back an ECU whose flashing failed halfway, by flashing a file through the bootloader.
+It only takes a T8 binary whose checksum verifies.
+:::

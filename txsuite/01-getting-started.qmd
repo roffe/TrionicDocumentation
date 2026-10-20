@@ -1,0 +1,161 @@
+# Getting started
+
+TxSuite is T5Suite, T7Suite and T8Suite in one program.
+The three suites were rebuilt on .NET 10 and Avalonia, without the commercial components the old suites needed, so TxSuite runs on Windows, Linux and macOS.
+Open a T5, T7 or T8 binary and TxSuite works on it the way that ECU's suite did: the same files read, edited and written, the same maps, tools and realtime panel.
+It talks to the ECU through TrionicCANLib, the library of the Trionic CAN Flasher.
+
+::: {.content-visible when-profile="t5-manual"}
+This manual covers TxSuite with a Trionic 5 binary.
+Trionic 7 and Trionic 8 have a manual of their own, Help → T7 → User manual and Help → T8 → User manual.
+:::
+
+::: {.content-visible when-profile="t7-manual"}
+This manual covers TxSuite with a Trionic 7 binary.
+Trionic 5 and Trionic 8 have a manual of their own, Help → T5 → User manual and Help → T8 → User manual.
+:::
+
+::: {.content-visible when-profile="t8-manual"}
+This manual covers TxSuite with a Trionic 8 binary.
+Trionic 5 and Trionic 7 have a manual of their own, Help → T5 → User manual and Help → T7 → User manual.
+:::
+
+What all three ECU's have in common is written the same way in all three manuals.
+The parts only your ECU has are in chapters of their own, right after the chapter they belong to.
+
+## Documentation
+
+This manual tells you what the program does.
+What the ECU does, its hardware, firmware and maps and how to tune them, is in Dilemma's Trionic documentation.
+
+::: {.content-visible when-profile="t5-manual"}
+For the T5 that is "Analyzing Trionic 5 with T5Suite", Help → T5 → Trionic 5 documentation.
+:::
+
+::: {.content-visible when-profile="t7-manual"}
+For the T7 that is "Analyzing Trionic 7 with T7Suite", Help → T7 → Trionic 7 documentation.
+:::
+
+::: {.content-visible when-profile="t8-manual"}
+For the T8 that is "Analyzing Trionic 8 with T8Suite", Help → T8 → Trionic 8 documentation.
+:::
+
+Both are kept up to date in one place, <https://github.com/roffe/TrionicDocumentation>.
+Found something wrong or missing? Open an issue or send a PR there.
+
+## Installation
+
+The newest TxSuite and TxExtras are on one page, <https://github.com/roffe/TuningSuites/releases/latest>.
+All downloads are on the releases page: the `Txsuite_v…` releases, and `Txsuite_nightly` with the latest build.
+
+The stock binaries of all three ECU's are a separate download, TxExtras.
+TxSuite uses them wherever it needs the original file of a partnumber, Lookup partnumber for example.
+They go into `Binaries\T5`, `Binaries\T7` and `Binaries\T8` in TxSuite's folder.
+
+### Windows
+
+Run TxSuiteSetup.exe.
+It installs to `Program Files (x86)\MattiasC\TxSuite`, next to any old T5Suite, T7Suite or T8Suite (it replaces none of them), and asks whether `.bin` files should open in TxSuite.
+Then TxExtrasSetup.exe puts the stock binaries into TxSuite's folder.
+Running the setup of a newer build over an existing installation upgrades it.
+
+Rather not install it?
+TxSuite-win-x86.zip runs from wherever you unpack it, unpack TxExtras.zip into the `TxSuite` folder for the stock binaries.
+It doesn't open `.bin` files by itself, and its update check opens the release page instead of downloading the setup.
+
+### Linux
+
+Download TxSuite-linux-x64.tar.gz (or -linux-arm64) and run it from where you extracted it.
+Unpack TxExtras.zip into the `TxSuite` folder for the stock binaries.
+
+```sh
+tar xzf TxSuite-linux-x64.tar.gz
+./TxSuite/TxSuite
+```
+
+`./TxSuite/install-desktop.sh` adds TxSuite to the application menu and to Open with for `.bin` files, for your user only.
+Run it again after moving the folder.
+
+The CombiAdapter needs libusb and the udev rule next to the program:
+
+```sh
+sudo cp TxSuite/70-txsuite.rules /etc/udev/rules.d/
+sudo udevadm control --reload && sudo udevadm trigger
+```
+
+There is also an AppImage, all of TxSuite in one file (TxSuite-linux-x64.AppImage, or -linux-arm64).
+`chmod +x` it and start it.
+It needs FUSE, which most desktops have; without it start it with `--appimage-extract-and-run`.
+The stock binaries go next to the AppImage, unpack TxExtras.zip in its folder.
+The udev rule isn't in the AppImage, take `70-txsuite.rules` from the tar.gz.
+
+### macOS
+
+Download TxSuite-osx-arm64.zip (Apple silicon) or -osx-x64 (Intel).
+The build is not signed, so clear the quarantine flag after extracting it, then start it from Terminal or by double-clicking TxSuite in Finder:
+
+```sh
+unzip TxSuite-osx-arm64.zip
+xattr -dr com.apple.quarantine TxSuite
+./TxSuite/TxSuite
+```
+
+## Supported interfaces
+
+TxSuite supports the same interfaces as the Trionic CAN Flasher.
+On a T5 it talks to the ECU's P-bus.
+
+| Interface | Windows | Linux | macOS |
+|---|---|---|---|
+| Lawicel CANUSB | Lawicel CANUSB DLL driver | FTDI serial port | FTDI serial port |
+| CombiAdapter | libusb (WinUSB driver) | libusb + udev rule | libusb |
+| OBDLink SX / EX, ELM327 | serial port | serial port | serial port |
+| Just4Trionic | serial port | serial port | serial port |
+| SLCAN | serial port | serial port | serial port |
+| Kvaser HS | Kvaser CANlib driver | Kvaser linuxcan | not supported |
+| J2534 (Beta) | vendor DLL (32-bit) | vendor `.so` | not supported |
+| Wideband lambda (realtime) | serial port | serial port | serial port |
+
+The adapters still need their own drivers, see Adapter setup in the flasher's README, <https://github.com/roffe/Trionic#adapter-setup>.
+Which adapter TxSuite uses is set in File → Settings → Common.
+
+::: {.content-visible when-profile="t5-manual"}
+The P&E micro and USB BDM programmers of T5Suite are gone, there is no driver for them on .NET 10.
+Reading and flashing goes over CAN, see the ECU menu.
+:::
+
+::: {.content-visible when-profile="t7-manual"}
+The P&E micro programmer of T7Suite is gone, there is no driver for it on .NET 10.
+Reading and flashing goes over CAN, see the ECU menu.
+:::
+
+## Settings and log files
+
+Settings and log files are in `%APPDATA%\MattiasC\TxSuite` on Windows and `~/.config/MattiasC/TxSuite` on Linux and macOS.
+File → Settings → Logging decides which log files get written, at what level and for how long, and its Open button shows the folder on any system.
+
+The first start takes over the settings of T5Suite, T7Suite and T8Suite once, with their Recent lists merged into one.
+After that TxSuite keeps its own settings and the old suites are left alone.
+
+## Coming from the old suites
+
+TxSuite looks and works like the old suites, with some differences:
+
+- One window for all three ECU's. The file you open decides the ECU.
+- One menu bar instead of the ribbon. Want the ribbon back? File → Settings → Common → Show ribbon bar instead of menus.
+- One settings dialog with a tab per ECU.
+- Excel export and import are CSV now, and the map tables copy as text that pastes into Excel.
+- Autologging, sound notifications, full screen and the panel snapshot (F9) are gone.
+- New are the symbol and command palettes, colour blind modes, a dark skin, dropping files on the window and multi-step undo in the map viewer.
+
+## Updates
+
+TxSuite looks for a newer release when it starts and from Help → Check for updates, and shows the result in the status bar.
+When there is one it asks.
+OK downloads the setup on Windows and opens the release page elsewhere (and for the Windows zip).
+
+## Disclaimer
+
+This is Open Source software that pokes around in your car's control system.
+The authors of the tools shall not be held accountable for how you decide to use the tools.
+If you are not careful, you can easily brick your car with these tools so please use this software with care.

@@ -1,0 +1,33 @@
+book:
+  title: TxSuite user manual
+  subtitle: Trionic 8
+  output-file: T8_manual
+  chapters:
+    - index.qmd
+    - txsuite/01-getting-started.qmd
+    - txsuite/02-main-window.qmd
+    - txsuite/03-symbol-list.qmd
+    - txsuite/04-working-with-maps.qmd
+    - txsuite/05-file-menu.qmd
+    - txsuite/06-projects.qmd
+    - txsuite/07-settings.qmd
+    - t8-manual/01-settings.qmd
+    - txsuite/08-actions-menu.qmd
+    - t8-manual/02-firmware-information.qmd
+    - t8-manual/03-tools.qmd
+    - t8-manual/04-tuning-menu.qmd
+    - txsuite/09-my-maps-menu.qmd
+    - txsuite/10-realtime-menu.qmd
+    - t8-manual/05-realtime.qmd
+    - txsuite/11-ecu-menu.qmd
+    - txsuite/12-skin-menu.qmd
+    - txsuite/13-help-menu.qmd
+
+project:
+  output-dir: _book/t8-manual
+
+trionic:
+  running-title: TxSuite user manual, Trionic 8
+  copyright: © Dilemma 2010-2011, Roffe 2026
+  revision: TxSuite edition
+  cover: [txsuite/images/t8/mapviewer.png]

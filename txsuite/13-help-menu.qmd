@@ -1,0 +1,22 @@
+# Help menu
+
+The Help menu has the manuals and documentation of all three ECU's, whatever file is open.
+
+## Help → T5, T7 and T8
+
+Each has a submenu with the User manual, this book for that ECU, and the Trionic N documentation, Dilemma's book about that ECU.
+
+## Help → Release notes
+
+Opens the releases page with what changed in each version.
+
+## Help → Check for updates
+
+Looks for a newer TxSuite and shows the result in the status bar.
+When there is one it asks, OK downloads the setup on Windows and opens the release page elsewhere.
+TxSuite also checks when it starts.
+
+## Help → About TxSuite
+
+The version, and the people who made the suites possible.
+TxSuite was created with the help of lots of people on ecuproject.com and trionictuning.com.

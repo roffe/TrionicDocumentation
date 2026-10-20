@@ -1,0 +1,126 @@
+# Tuning menu
+
+The Tuning menu gives you direct access to the most important maps, grouped in submenus.
+Each entry opens that map of the open file in a map viewer.
+An entry only shows when the binary has the map, so BioPower, Myrtilos and gas maps only show on software that has them, and an empty submenu is hidden.
+Point at an entry to see which symbol it opens.
+
+The menu is rebuilt when you import a descriptor, so a stripped binary gets its entries too.
+
+## Tuning → Diagnostics
+
+The knock count map, false knock map, real knock map and misfire map, read from the connected ECU.
+These are the same as the View items in the Realtime menu.
+
+## Tuning → Calibration
+
+Sensor and air calibration maps: AirCompCal.PressMap, AirCtrlCal.map, AreaCal.Area and AreaCal.Table, MAFCal.m_RedundantAirMap, TCompCal.EnrFacTab and EnrFacE85Tab, VIOSMAFCal.FreqSP and Q_AirInletTab2.
+Ethanol adaption value is E85.X_EthAct_Tech2, read from the ECU.
+
+## Tuning → Injectors
+
+Injector constant
+:   The injector constant (InjCorrCal.InjectorConst), to compensate for different injectors.
+
+Injector dead time and Injector dead time (Y)
+:   The battery voltage correction of the injection time (InjCorrCal.BattCorrTab) and its voltage axis.
+
+## Tuning → Airmass
+
+Pedal request map and Pedal request airmass (Y)
+:   Pedal position/airmass per combustion map (PedalMapCal.m_RequestMap), and the Y axis for the pedal position calculation.
+
+Air/Torque calibration and Air/Torque (X)
+:   The air vs torque calibration map (TorqueCal.m_AirTorqMap).
+    Converts torque to airmass per combustion in T7.
+
+Nom. torque map and Nom. torque map (X)
+:   The nominal torque map (TorqueCal.M_NominalMap).
+    Converts airmass per combustion to estimated torque in T7.
+
+## Tuning → Fuel
+
+VE map
+:   The Volumetric Efficiency map (BFuelCal.Map).
+
+Startup / E85 VE map
+:   The startup Volumetric Efficiency map (BFuelCal.StartMap), or the E85 map on BioPower software.
+
+Gas VE map
+:   The VE map for gas, on software that has it.
+
+Enrichment factor during starting, and for E85
+:   The fuel enrichment while cranking.
+
+Enable closed loop regulation
+:   LambdaCal.ST_Enable.
+
+Injection end angles
+:   InjAnglCal.Map.
+
+Fuel cut, Closed Loop and TransCal
+:   Submenus with the fuel cut on engine braking (FCutCal), the maximum load for closed loop (Max load norm, Max load E85) and the transient fuel enrichment and enleanment (TransCal).
+
+## Tuning → Ignition
+
+Ignition map
+:   The main ignition map (IgnNormCal.Map).
+
+Ignition for E85 and Ignition for Gas
+:   The ignition map for E85 fuel and for gas (if present).
+
+Ignition Idle and Ignition Start
+:   The ignition at idle and while starting.
+
+Knock pull map
+:   The knock ignition map (IgnKnkCal.IndexMap).
+
+Max knock pull
+:   The maximum ignition pull map (KnkFuelCal.fi_MapMaxOff).
+
+## Tuning → Boost
+
+Boost calibration
+:   The turbo boost calibration (bias) map (BoostCal.RegMap).
+
+P factor, I factor and D factor
+:   The P, I and D factors for the PID controller that handles boost.
+
+Boost Temp Compensation and its (Y)
+:   The boost control's correction for temperature.
+
+## Tuning → Knock
+
+Knock enrichment
+:   The knock enrichment map, how much extra fuel should be injected in case of knock detection.
+
+Knock sensitivity
+:   The knock sensitivity factors, lower values means less sensitive to knock.
+
+## Tuning → Limiters
+
+Manual
+:   For manual gearboxed cars: Airmass (M), the maximum airmass limiter; Engine torque (M) and Engine torque for E85 (M), the engine torque limiters; Gear Torque (M) and Gear Torque (5th), the gear torque limiters.
+
+Automatic
+:   For automatic gearboxed cars: Airmass (A), Engine torque (A) and Engine torque for E85 (A).
+
+RPM limiter
+:   The engine speed (RPM) limiter.
+
+Fuel cut
+:   The fuel cut limiter, running more airmass per combustion than this value results in a complete shutoff of fuel.
+
+Speed limiter
+:   The vehicle speed (km/h) limiter.
+
+Overboost
+:   The allowed overboost (if enabled).
+
+## Tuning → Adaption
+
+The switches for the adaptions and functions around them: Temp limit for adaption, Fuelcut enabled, Closed loop regulation, Purge enabled and Biopower enabled.
+
+## Tuning → Myrtilos
+
+On Myrtilos software: the launch control settings and the wideband lambda maps (MyrtilosCal and MyrtilosAdap).
