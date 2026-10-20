@@ -1,0 +1,18 @@
+# Appendix II : Trionic 8 pinout
+
+## X pin connector
+
+| Pinnumber    | Color         | Description                          | Range            | In/out        |
+|--------------|---------------|--------------------------------------|------------------|---------------|
+| A2           |               | +15 circuit (+12 volt)               |                  |               |
+| A3           |               | +30 circuit (+12 volt)               |                  |               |
+| A5           |               | P-bus (+)                            |                  |               |
+| A6           |               | P-bus (-)                            |                  |               |
+| A19          |               | +15 circuit (+12 volt)               |                  |               |
+| A20          |               | +30 circuit (+12 volt)               |                  |               |
+| A47          |               | Power ground                         |                  |               |
+| A48          |               | +12 volt from main relay             |                  |               |
+| A57          |               | Power ground                         |                  |               |
+| A60          |               | Power ground                         |                  |               |
+| A63          |               | Power ground                         |                  |               |
+| A64          |               | +12 volt from main relay             |                  |               |

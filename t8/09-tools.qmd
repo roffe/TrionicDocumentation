@@ -1,0 +1,39 @@
+# Tools
+
+## T8Suite
+
+T8Suite has the following funtions:
+
+- Checksum verification and correction
+- Software ID adjustment
+- Immobilizer code adjustment
+- Extraction of symbol table
+- Map visualisation
+- Compare maps in binary to another binary
+- Move maps from one binary to another
+
+For usage of this tool please refer to its user manual.
+
+## IDA Pro {.advanced}
+
+IDAPro stands for Interactive DisAssembler Professional.
+It enables the user to disassemble binary files to its original source code.
+IDAPro is commercial software, not freeware.
+
+Example of how to use IDA Pro with a **Trionic 8** box.
+
+Open binary/raw file\
+Set processor to Motorola series: 68330\
+Check the 'Create RAM section', start address 0xF00000, size 0xFFFF.\
+Go to address ROM:00000000 in 'IDA View-A' and hit D-key three times to get dc.l \$FFFFEFFC\
+Go to the next address ROM:00000004 and hit D-key three times to get reset vector address (this varies from binary to binary)\
+You should get e.g. dc.l unk_5169A or something like that, double-click the unk_5169A text\
+Your now in the place where the code executation starts, press C to disassemble\
+Now, from the menu select Options -> General, go to Analysis tab and press 'Kernel options1' button\
+Check 'Make final analysis pass' and hit OK\
+Press 'Reanalyze program' button and wait a while (this really takes some time, a minute or so)
+
+## Hex editor {.advanced}
+
+Hexworkshop (or UltraEdit) is a tool that comes in handy often.
+It can be used to view, search and modify the raw binary file.

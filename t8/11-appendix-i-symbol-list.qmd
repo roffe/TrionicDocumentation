@@ -1,0 +1,4 @@
+# Appendix I : Symbol list {#sec-appendix-symbol-list}
+
+This appendix will give a short description of the most important maps in Trionic 8.
+To give a list of all symbols would be kind of stupid because there are approximately X (!!!) symbols in a Trionic 8 binary.

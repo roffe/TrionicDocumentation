@@ -1,0 +1,16 @@
+# References {.references}
+
+## Webreferences
+
+- ECUproject initiative \[ [www.ecuprojct.com](http://www.ecuprojct.com) Steve Hayes and friends \]
+- Xendus \[ [www.xendus.se](http://www.xendus.se) General Failure \]
+- SaabCentral \[ [www.saabcentral.com](http://www.saabcentral.com) \]
+- Motorola datasheet on MC68337
+- Trionic Wiki pages \[ <http://en.wikipedia.org/wiki/Trionic> \]
+- T8Suite homepage \[ <http://trionic.mobixs.eu> \]
+- Townsendimports \[ [www.townsendimports.com](http://www.townsendimports.com) \]
+- BDM Software \[ <http://www.xendus.se/bdm/bd32-122.zip> \]
+- Ion sensing for knock detection \[ <http://www.fs.isy.liu.se/~larer/Projects/main.html> \]
+- Turbo compressor maps \[ <http://www.automotivearticles.com/Turbo_Selection.shtml> \]
+- Saab9000.com \[ <http://www.saab9000.com> \]
+- JKBPower forum \[ <http://jkbpower.egetforum.se/forum/index.php> \]

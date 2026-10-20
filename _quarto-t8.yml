@@ -1,0 +1,34 @@
+book:
+  title: Trionic 8
+  output-file: Trionic 8
+  chapters:
+    - index.qmd
+    - t8/01-preface.qmd
+    - t8/02-hardware.qmd
+    - t8/03-flash.qmd
+    - t8/04-symbol-tables.qmd
+    - t8/05-maps.qmd
+    - t8/06-tuning-the-t8.qmd
+    - t8/07-can-bus-interface.qmd
+    - t8/08-common-mistakes-and-faq.qmd
+    - t8/09-tools.qmd
+    - t8/10-references.qmd
+    - t8/11-appendix-i-symbol-list.qmd
+    - t8/12-appendix-ii-trionic-8-pinout.qmd
+    - t8/13-appendix-iii-bdm-technical-information.qmd
+    - t8/14-appendix-iv-turbo-compressor-maps.qmd
+    - t8/15-appendix-v-upgrade-stages-1-7.qmd
+    - t8/16-appendix-vi-check-engine-light-cel.qmd
+    - t8/17-appendix-vii-knock-and-misfire-detection.qmd
+    - t8/18-appendix-viii-sensors-and-actuators.qmd
+    - t8/19-appendix-xvi-intercooler-calculation.qmd
+    - t8/20-appendix-xvii-acronyms.qmd
+
+project:
+  output-dir: _book/t8
+
+trionic:
+  running-title: Analyzing Trionic 8 with T8Suite
+  copyright: © Dilemma 2011
+  revision: rev 1.03
+  cover: [t8/images/p001-1.jpg]
