@@ -312,7 +312,7 @@ If we take a closer look at the parameters in the Trionic software we can see th
 This makes the already complicated system even more complex because not only is the boost request and measured boost a variable but also the factors in which P, I and D are applied.
 This makes tuning these parameter tables very difficult.
 
-![](images/p071-1.png){width=40%}
+![](images/txsuite/p-fors.png){width=40%}
 
 The image above shows a stock P_fors (Kp in out previous paragraphs) table for manual transmission on a B234R engine.
 We can clearly see that values differ a lot with RPM and pressure error.
@@ -320,12 +320,12 @@ Low pressure errors (0-0.10 bar) are not adjusted over 2500 RPM.
 The highest Kp is found in the lowest RPM range.
 This is probably because the turbo still needs to spool up on this region so regulation is strong here.
 
-![](images/p071-2.png){width=40%}
+![](images/txsuite/i-fors.png){width=40%}
 
 Here we see the Ki factors used in the stock firmware.
 What seems kind of strange is that I peaks at a low boost error and high range RPM.
 
-![](images/p072-1.png){width=40%}
+![](images/txsuite/d-fors.png){width=40%}
 
 And finally we take a look at the Kd factor in the stock firmware.
 It seems kind of dumb to have these strange high values in the table at seemingly random places.
@@ -445,68 +445,82 @@ Under 1000 rpm PWM_ut = 0.2 %\
 PWM_ut maximum = 98%\
 PWM_ut minimum = 0.2%
 
-## Tuning with T5Suite
+## Tuning with TxSuite
 
-T5Suite incorporates several ways to tune your software to another stage.
+TxSuite incorporates several ways to tune your software to another stage.
 
 ### Manual tuning
 
-You can alter maps and parameters within the binary file using T5Suite.
-This is done by selecting the desired symbol from the symbollist and double clicking it.
-A mapviewer will appear and you can manually alter the values in the map.
+You can alter maps and parameters within the binary file using TxSuite.
+This is done by selecting the desired symbol from the symbollist and double clicking it, or pressing Enter.
+Ctrl+P is the quick way, type any part of a symbol's name and Enter opens it.
+A map viewer will appear and you can manually alter the values in the map.
+The Tuning menu opens the most important maps directly, grouped by injection, ignition, turbo control, knock detection, warmup and idle.
 
 #### Map presentation
 
 You can view the data in a map in several ways: hexadecimal, decimal and easy.
+The box at the left of the map viewer's toolbar switches between them (Hex, Decimal, Easy and ASCII, the last one is read only).
+File → Settings → Common → Default view type for maps sets the view a map opens in.
 
 In hexadecimal mode the numbers in the map are displayed as hexadecimal numbers (0-F).
 If you don’t know how to interpret hexadecimal numbers you can switch the view to decimal numbers (0-9) or even easy view.
 Easy view lets you view the map in understandable numbers for as much as the maps are known.
 Boost pressure maps for example are converted from numbers ranging from 0 to 255 to actual boost pressure values (-1 bar to 1.55 bar).
 
+With a 3.0, 3.5, 4.0 or 5.0 bar MAP sensor the boost pressure maps and the MAP axes show the pressure for that sensor.
+TxSuite takes the sensor from the file, Mapsensor in Actions → Firmware information.
+Most pro made tunes don't have that marker, File → Settings → T5 → Auto detect mapsensor type lets TxSuite find the sensor by examining certain maps.
+
 #### Color indicators
 
-The map can be displayed in table form as well as in graphical form.
-The values can (depending on settings made by the user) be displayed in colors ranging either from transparent to red or from green to red.
-The coloring can be disabled altogether for performance reasons.
+The map can be displayed in table form as well as in graphical form, the 3D Graph and 2D Graph tabs under the table.
+The values are displayed in colors from green (low values) through yellow to red (high values), over the smallest and largest value of that map.
+File → Settings → Common → Color blind mode has other colour scales if you find these hard to tell apart.
+The graphs can be switched off for performance reasons, File → Settings → Common → Show graphs in mapviewer.
 
 #### Altering values in a map
 
-To edit a value in a map just point and click on the specific cell.
+To edit a value in a map just point and click on the specific cell and type the new value.
 To edit several cells at once you can hold the Ctrl-button on your keyboard then point and click on each individual cell you want to edit the same way.
 Finally you can click, hold and drag to select several cells in the same box.
+A value typed with several cells selected goes into all of them.
 To avoid that you have to adjust all values of a “large” map manually some features have been added to the map editor:
 
 - Plus key: adds 1 to all selected cells
 - Minus key: subtracts 1 from all selected cells
-- PageUp key: adds 10 to all selected cells
-- PageDown key: subtracts 10 from all selected cells
+- PageUp key: adds 10 to all selected cells (0x10 in hex view)
+- PageDown key: subtracts 10 from all selected cells (0x10 in hex view)
 - Home key: sets all selected cells to the maximal value
-- End key: sets all selected cells to the minimal values
+- End key: sets all selected cells to 0
 
-And a mathematics tab where you can select:
+And the toolbar above the table does math on the selected cells, pick one of:
 
-- A value to fill the selected cells with.
-- A value to add to the selected cells.
-- A value to multiply the selected cells by.
-- A value to divide the selected cells by.
+- Fill: a value to fill the selected cells with.
+- Add: a value to add to the selected cells.
+- Multiply: a value to multiply the selected cells by.
+- Divide: a value to divide the selected cells by.
 
-To execute what you have selected in this tab, push the lightning button.
+Type the value in the box next to it and click Execute.
+Ctrl+Z undoes the last change and Ctrl+Y redoes it, as many steps back as you like.
 
-You can also select one or multiple cells, right click and chose “copy selected cells” or “Paste selected cells” where you could choose: “At original position” or “At currently selected position”.
+You can also select one or multiple cells, right click and chose “Copy selected cells” or “Paste selected cells” where you could choose: “At original position” or “At currently selected location”.
+
+Save to file writes the map into the binary and updates the checksum, Read from file throws away the changes.
 
 ### Tuning wizard
 
-T5Suite can tune most binaries automatically.
+TxSuite can tune most binaries automatically.
 Stages I, II, III are standard.
-After selecting a stage a wizard will appear.
+Tuning → Tuning wizards → Tune me up ® opens the tuning wizard, choose the stage and click Ok.
 Please check appendix V for hardware requirements.
 
-![](images/p080-1.png){width=75%}
+![](images/txsuite/tune-me-up-stage1.png){width=55%}
 
-When the user selects to continue with the wizard, adaptions will be made to boost request tables, injection table, knocking map tables etc.
-After making the changes a report will be generated indicating exactly which changes have been made to your software.
+After Ok adaptions will be made to boost request tables, injection table, knocking map tables etc.
+After making the changes a report will be generated indicating exactly which changes have been made to your software, Save... stores it as a text file.
 Of course a backup of your binary is created before making the changes.
+A file that is already tuned to a higher stage isn't touched.
 
 | Stage | Boost B234E/L | Boost B234R, B204E/L/R | Boost B234E/L (AUT) | Boost B234R, B204E/L/R (AUT) |
 |-------|---------------|------------------------|---------------------|------------------------------|
@@ -514,9 +528,12 @@ Of course a backup of your binary is created before making the changes.
 | II    | 1.15          | 1.25                   | 1.04                | 1.13                         |
 | III   | 1.25          | 1.35                   | 1.13                | 1.22                         |
 
-Tuning to stage X enables you to set the parameters for the wizard manually.
+Stage 4 and higher enables you to set the parameters for the wizard manually, the free tuning settings under the list.
+They are the MAP sensor, injectors and turbo, tune on torque or on boost with the peak torque or peak boost, the boost control valve (BCV) type, the RPM limiter and the knock time.
+Depending on your input TxSuite will try to generate a close as possible match to your hardware.
+Tuning beyond stage III requires you to verify AFR and knock sensitivity in realtime to make sure everything is working properly.
 
-![](images/p080-2.png){width=67%}
+![](images/txsuite/tune-me-up-stage4.png){width=55%}
 
 ## Converting to 3 bar mapsensor
 
@@ -534,7 +551,7 @@ The real issues we’re faced with when doing this conversion are not of the har
 Boost pressure calculation is one of the smaller issues that we encounter.
 Suppose we are working on a binary that has the following boost request map (Tryck_mat).
 
-![Standard FPT boost request map](images/p081-1.jpg){#fig-boost-request-map width=52%}
+![Standard FPT boost request map](images/txsuite/tryck-mat-fpt.png){#fig-boost-request-map width=40%}
 
 The values displayed are the requested boost pressure for a given throttle position and rpm.
 The boost requested at 2000 rpm at wide open throttle (WOT) is 1.00 bar.
@@ -553,8 +570,10 @@ For the 3 bar sensor these are the approximate values:
 ![](images/p082-2.svg){width=93%}
 
 Hence, we could change the map to the boost levels the Trionic would be trying to reach.
+TxSuite shows this when you set Mapsensor to 3.0 bar in Actions → Firmware information without converting anything, the map viewers then show the pressure maps and the MAP axes as a 3.0 bar sensor reads them.
+@fig-boost-request-map-3bar and @fig-ignition-map-3bar-axis are the same file marked that way.
 
-![Standard boost request map in 3 bar view](images/p083-1.jpg){#fig-boost-request-map-3bar width=51%}
+![Standard boost request map in 3 bar view](images/txsuite/tryck-mat-3bar.png){#fig-boost-request-map-3bar width=40%}
 
 Now we can clearly see that the boost levels the Trionic would be trying to reach are way higher.
 But… now we come to the real issues…
@@ -562,11 +581,11 @@ But… now we come to the real issues…
 Imagine the ignition map having boost pressure as x axis.
 Normally the most ignition advance will be around a certain boost pressure level.
 
-![Standard ignition map](images/p083-2.jpg){#fig-ignition-map width=84%}
+![Standard ignition map](images/txsuite/ign-map-0-fpt.png){#fig-ignition-map width=80%}
 
 Now let’s change the boost pressure axis to the values the Trionic would be measuring when a 3 bar mapsensor would be installed.
 
-![Ignition map with 3 bar mapsensor axis](images/p084-1.jpg){#fig-ignition-map-3bar-axis width=85%}
+![Ignition map with 3 bar mapsensor axis](images/txsuite/ign-map-0-3bar.png){#fig-ignition-map-3bar-axis width=80%}
 
 Now we can clearly see that the ignition advance shifts over the boost pressure axis.
 The 35 degrees advance we see in @fig-ignition-map is set for -0.68 bar boost pressure.
@@ -577,9 +596,10 @@ Ignition advance for -0.68 bar should remain the same.
 So, the entire map should be shifted to the left a bit when using a 3 bar sensor.
 
 An example for such an ignition map is given in @fig-ignition-map-3bar.
-Please note that this is not the same table but is only displayed for reference reasons.
+This is the same table after TxSuite converted the file to a 3.0 bar sensor (see Implementation in TxSuite below).
+The axis runs up to 1.80 bar now and the advance stays at the same boost pressure, the 35 degrees are at -0.69 bar, close to the -0.68 bar of @fig-ignition-map.
 
-![An altered table for 3 bar sensor](images/p085-1.jpg){#fig-ignition-map-3bar width=84%}
+![An altered table for 3 bar sensor](images/txsuite/ign-map-0-3bar-converted.png){#fig-ignition-map-3bar width=80%}
 
 Now you can see that not only the pressure maps should be altered but also every single table that has a boost pressure dependency.
 One can easily understand the complexity of the conversion problem.
@@ -637,14 +657,16 @@ Still investigating tables:
 
 *Overs_tab_xaxis*
 
-### Implementation in T5Suite
+### Implementation in TxSuite
 
-T5Suite has a “convert to 3 bar mapsensor “wizard” build in that allows you to alter your binary so that all the before mentioned parameters are automatically changed.
+TxSuite has a “convert to different MAP sensor” wizard build in that allows you to alter your binary so that all the before mentioned parameters are automatically changed.
+It's in Tuning → Tuning wizards → Convert to different MAP sensor, with an item for a 2.5, 3.0, 3.5, 4.0 and 5.0 bar sensor, and only shows with File → Settings → T5 → Advanced mode enabled.
+TxSuite asks before it converts (see the picture below), Yes alters the file and shows a report of the changes, Save... stores it as a text file.
 
 NOTE: Converting to a 3 bar mapsensor is a very complex procedure.
 You will have to verify all settings after converting the binary and check operation using knock sensing LED, EGT meter and wideband lambda sensor.
 
-![](images/p087-1.png){width=99%}
+![](images/txsuite/map-sensor-wizard.png){width=65%}
 
 ## Converting T5 to larger injectors
 
@@ -841,7 +863,7 @@ Up to ~25% larger injectors can be used without many problems.
 The change in opening times are relative small and can be altered using a constant in the software.
 The remainder of the difference in injected fuel can be adapted by the Trionic using the lambda values measured (there’s a limit to this adaption of course).
 
-![Injector constant shown in T5Suite](images/p096-1.png){#fig-injector-constant width=49%}
+![Injector constant shown in TxSuite](images/txsuite/inj-konst.png){#fig-injector-constant width=40%}
 
 If we look at the Trionic software we find that there’s a constant called Inj_konst present.
 This constant lets us influence the factor used in the fuel injection calculation.
@@ -889,7 +911,7 @@ Trionic won’t be able to adapt the injection time difference that will occur b
 
 In this case we’ll need to alter the injector constant as well as remap the entire injection map (insp_mat).
 
-![Injection map shown in T5Suite](images/p097-1.jpg){#fig-injection-map width=81%}
+![Injection map shown in TxSuite](images/txsuite/insp-mat-b234r.png){#fig-injection-map width=65%}
 
 Since the injection map is already mapped up to its limit in the stock software we need to make sure that we alter the injector constant in such a way that too much fuel is injected.
 That way, we can drop the injection map later on to get the fueling spot on.
@@ -917,20 +939,23 @@ To be able to remap the injection matrix properly you’d ideally need an exhaus
 
 The latter is to make sure you can determine on which load and rpm site you are working.
 
-### Implementation in T5Suite
+### Implementation in TxSuite
 
-T5Suite gives the user the possibility to re-calculate the injector constant with given injector flowrates and fuel pressure values.
+TxSuite has a wizard for this, Tuning → Tuning wizards → Convert to larger injectors, it only shows with File → Settings → T5 → Advanced mode enabled.
+Choose your injector type (stock, green giants or Siemens 630, 875 or 1000 cc) and it shows the current and proposed values: the injector constant, the crank factor and the battery correction from 15 V down to 5 V.
+The picture below is a stock B234R with the Siemens 630 cc injectors chosen, the injector constant goes from 21 to 16.
+Ok writes the proposal into the binary, Cancel leaves it alone.
 
-The above formulas have been implemented for this with one addition.
+The wizard doesn't take flow rates or fuel pressure, it moves the injector constant by a fixed step for each injector type.
+For a different fuel pressure or other injectors use the formulas above and change Inj_konst! yourself.
 
-To compensate for the injector latency increase in larger injectors (more time needed to open) T5Suite increases the newly calculated injector constant with one (1) for every 100 cc / minute increase in injector flow \@ 3 bar.
-This is only guesstimating but there’s nothing better at this time.
+<!-- TODO roffe: T5Suite's "Fuel tuning..." calculator (flow rate and fuel pressure in, injector constant out, +1 per 100 cc for latency) is gone in TxSuite. Is "use the formulas above" enough here, or is there a tool to point at? -->
 
 Again: when injectors flow changes by more than 25 percent the injector constant and injection map needs verification too.
 
 NOTE: minimum time for normal idle ~ 1.2 ms.
 
-![](images/p099-1.png){width=100%}
+![](images/txsuite/injector-wizard.png){width=55%}
 
 ## Adjusting supporting axis
 
@@ -938,20 +963,21 @@ If you want to rescale maps – for example – to support higher engine speeds 
 
 Open the map you want the axis changed for.
 
-![](images/p100-1.jpg){width=71%}
+![](images/txsuite/insp-mat-4301941.png){width=71%}
 
 Suppose we want to change the Y-axis (RPM) here.
-Right click on the Y axis and select “Edit y-axis)
+Right click in the table and select “Edit y-axis”.
 
-![](images/p100-2.jpg){width=71%}
+![](images/txsuite/insp-mat-menu.png){width=71%}
 
-A new map will appear called “Fuel_map_yaxis!”.
-This map contains the axis numbers for the given map.
+A new map viewer will appear with the map called “Fuel_map_yaxis!”.
+This map contains the axis numbers for the given map, the rpm divided by 10 (88 is 880 rpm).
 
-![](images/p101-1.jpg){width=73%}
+![](images/txsuite/fuel-map-yaxis-tiled.png){width=95%}
 
-Now you can edit this map with axis values, save it and reload the original map (insp_mat in this case).
+Now you can edit this map with axis values, save it with Save to file, then close the original map (insp_mat in this case) and open it again.
 The map will now have the new axis values.
+Read from file on the original map isn't enough, it only reads the map's values again, not its axis.
 
 **WARNING**
 
@@ -959,4 +985,4 @@ The map will now have the new axis values.
 If you don’t rescale everything the way it is supposed to be Trionic will fetch the wrong values from the map while the engine is running which may result in engine damage.
 
 **NOTEII:** Also note that support axis may be used by more than one map.
-Please check the axis browser in T5Suite to confirm that there are no more maps that you need to rescale other than the one you started out with.
+Please check Actions → Browse axis information in TxSuite to confirm that there are no more maps that you need to rescale other than the one you started out with.

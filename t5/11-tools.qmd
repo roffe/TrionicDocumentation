@@ -1,31 +1,39 @@
 # Tools
 
-## T5Suite
+## TxSuite
 
 T5Suite was initially build to contain all separate tools available for T5.
-It grew a little and at the moment of writing this document it has these functions:
+TxSuite is T5Suite, T7Suite and T8Suite in one program.
+For a T5 it has these functions:
 
-- Checksum verification and correction
-- Software ID adjustment
-- Immobilizer code adjustment
-- File comment adjustment
-- Box number adjustment
-- VSS enable and disable
-- Splitting binaries
-- Merging binaries
-- Extraction of symbol table
-- Generation of XDF file for TunerPro
-- Map visualization
-- Compare maps in binary to another binary.
-- Tuning wizard to stage 1, 2, 3 and X (X means free parameter input)
-- Modify binary for use with 3 bar mapsensor
-- Modify injector constant for use with larger injectors
-- Check binary for anomalies (see next chapter)
-- Realtime monitoring of data
-- Realtime mapping of data
-- Logging in T5Suite format and exporting to LogWorks©
+- Checksum verification and correction (Actions → Verify checksum, and every time it writes a map)
+- Partnumber and VSS code adjustment, VSS enable and disable (Actions → Firmware information)
+- Program mode flags and the injector, MAP sensor and turbo markers (Actions → Firmware information)
+- Splitting and merging binaries (Actions → Split binary file and Merge binary files)
+- Extraction of symbol table (when it opens a file)
+- Map visualization and editing (the map viewer)
+- Compare maps in binary to another binary (Actions → Compare symbols with other binary)
+- Move maps from one binary to another (Actions → Transfer maps to another binary)
+- Tuning wizard to stage 1, 2, 3 and 4 and higher, the last with free parameter input (Tuning → Tuning wizards → Tune me up ®)
+- Modify binary for use with a 2.5, 3.0, 3.5, 4.0 or 5.0 bar mapsensor (Tuning → Tuning wizards → Convert to different MAP sensor)
+- Modify injector constant for use with larger injectors (Tuning → Tuning wizards → Convert to larger injectors)
+- Convert to E85, change the boost adaption ranges, the boost bias range and the RPM limit (the other Tuning → Tuning wizards)
+- Check binary for anomalies and examine what an unknown binary was made for (Actions → Check for anomalies and Examine binary)
+- Dyno graph, compressor map and injection timing estimates (Actions → Show dyno graph, Show compressor map and Injection timing viewer)
+- Disassembly and an IDC script for IDA Pro (Actions → Show disassembly and File → Generate Idc file)
+- Reading and flashing the ECU over CAN (ECU menu)
+- SRAM snapshots, comparing them and importing the adaption data into the binary (ECU → Get SRAM snapshot and the Actions menu)
+- Realtime monitoring of data (Realtime menu)
+- Realtime mapping of data (map viewers while connected, and Autotune)
+- AFR target, feedback and error maps from a wideband (Realtime → AFR maps)
+- Logging to .t5l files and exporting to LogWorks© and CSV (Realtime menu)
+- Projects that log every change, with roll back and roll forward (File → Project)
 
-For usage of this tool please refer to its user manual.
+The wizards other than Tune me up ® only show with File → Settings → T5 → Advanced mode enabled.
+
+<!-- TODO roffe: T5Suite's list also had Software ID, immobilizer code, file comment and box number adjustment and XDF generation for TunerPro. TxSuite's Firmware information only changes the partnumber and the VSS code (Software ID is read only) and there's no XDF export, so they're left out. OK, or is one of them somewhere else? -->
+
+For usage of this tool please refer to its user manual, Help → T5 → User manual.
 
 ## BD32
 
@@ -33,6 +41,7 @@ BD32.exe is the tool used to interface with the ECU through a BDM interface.
 It is DOS based and will run normally on Win95/98/Me.
 Ideally the user would boot into a DOS environment to use the tool.
 There is a windows version available but the author has no experience with that specific tool.
+TxSuite has no BDM support, it reads and flashes the ECU over CAN.
 
 ## IDA Pro {.advanced}
 

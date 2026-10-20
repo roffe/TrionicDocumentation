@@ -104,7 +104,7 @@ Trionic uses the battery voltage as an input to compensate for lag in the openin
 Lower battery voltage means that the injectors will open slower and hence injector open time needs to be longer to get the same amount of fuel injected into the cylinders.
 The table below shows the battery voltage correction table.
 
-![](images/p159-2.png){width=39%}
+![](images/txsuite/batt-korr-tab.png){width=37%}
 
 ### Throttle Position sensor (TPS)
 
@@ -212,7 +212,7 @@ Opening the injector for a certain amount of time will inject a known amount of 
 See chapter “Converting T5 to larger injectors” for more information.
 The image below shows how a injector is build up.
 The injectors are triggered by pinnumbers 3, 4, 5, and 6 on the ECU for - respectively - injector 1, 2, 3, and 4.
-The value for actual injection duration can be monitored through CAN bus using symbol *Insp_tid10.*
+The value for actual injection duration can be monitored through CAN bus using symbol *Insptid_ms10*.
 
 ![](images/p164-1.png){width=25%}
 

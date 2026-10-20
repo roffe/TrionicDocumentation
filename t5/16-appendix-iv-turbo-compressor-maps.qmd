@@ -242,7 +242,7 @@ If we want to draw a line into the compressor map for our engines needs we need 
 | 1.4 bar (20.3 psi)      | 30.8        | 35.4        |
 | 1.6 bar (23.2 psi)      | 33.4        | 38.3        |
 
-In T5Suite 2.0 you can see your maximum boost request curve plotted in the compressor map of your choice.
+In TxSuite you can see your maximum boost request curve plotted in the compressor map of your choice, Actions → Show compressor map.
 
 ### Determining the Best Wheel Trim-Housing A/R Combination
 

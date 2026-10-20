@@ -15,8 +15,11 @@ This way, new firmware can be flashed with a normal flash programmer.
 The other way to download the code is to hook up a BDM (background debugger module) to the ECU and use BD32.exe to download the code from the flash with the ECU running (not in a car though, on the bench ☺).
 Last but not least, the binary file can be downloaded from the ECU through a Canbus interface for which you need an adapter and some wiring.
 More will be written about this later in this document.
+In TxSuite that's ECU → Read ECU and ECU → Flash current file to ECU, see chapter CAN Bus interface.
 
 ## Using public domain LPT BDM interface
+
+<!-- TODO roffe: trionic.mobixs.eu is gone, so the BD32, T5dumper and FlashT5 links in this chapter are dead. Where should they point now (archive.org, a copy in this repo, TuningSuites' OldSuites/Scripts has flasht5.d32 and prepT5.do but no BD32 or dumpt5)? -->
 
 To download the code you’ll need to have a T5 on your desk, a power supply that can supply +12 volts regulated, some wiring, **a Win9x (!!!) or DOS PC** with a parallel port, a BDM interface (see appendix III for more information), a 8 pin DIL header, a soldering iron, the BDM software (<http://trionic.mobixs.eu/bd32-122.zip>), the T5dumper scripts available from the <http://trionic.mobixs.eu> and some patience.
 
@@ -87,6 +90,9 @@ If you run into problem when you are flashing try this:
 
 ## Downloading with PEMicro USB BDM interface
 
+TxSuite has no P&E Micro support, there is no driver for it on .NET 10.
+The PEMicro software still reads and flashes a T5 on its own with the batch files below.
+
 Install the PEMicro device driver as described in the PEMicro documentation.
 
 Install the PEMicro software as described in the PEMicro documentation.
@@ -110,13 +116,13 @@ UM c:\pemicro\FROM_ECU.S19
 The read batchfile should be tailored to your specific needs.
 If you installed the PEMicro software in another location then C:\\Pemicro, the batchfile should be altered likewise.
 
-Once you’ve got the batchfile running you can enter it as a parameter in T5Suite.
-
 The config file tells which filename should be used by the PEMicro software.
 In the example the filename is FROM_ECU.S19.
 Make sure this result file is the same as in the read batchfile.
 
-![](images/p017-1.png){width=56%}
+TxSuite opens the S19 with File → Open file..., it converts it to a .bin next to it.
+
+<!-- TODO roffe: TxSuite converts an S19 as a file of the ECU opened last (the ponytail in MainWindowViewModel.OpenFileAsync), so FROM_ECU.S19 only opens as a T5 after a T5 bin was open. Fix that in TxSuite or say it here? -->
 
 ## Flashing with PEMicro USB BDM interface
 
@@ -141,9 +147,10 @@ VM
 RE
 ```
 
-T5Suite creates a TO_ECU.S19 automatically when writing to the ECU so this filename should also be used in the write config file.
+T5Suite created a TO_ECU.S19 automatically when writing to the ECU.
+TxSuite doesn't write S19 files for a T5, so the binary you want to flash has to be converted to TO_ECU.S19 some other way.
 
-![](images/p017-2.png){width=55%}
+<!-- TODO roffe: what should people use to turn a T5 bin into TO_ECU.S19 now that TxSuite has no T5 S19 export (SrecordT5 in T5Core can, but no menu calls it)? Or drop the PEMicro sections and point at flashing over CAN only? -->
 
 ## Checksum {.advanced}
 
@@ -157,4 +164,5 @@ This byte is the last byte that should be calculated in the checksum.
 Normally this is immediately after a certain marker.
 This marker is 4E FA FB CC for normal binaries.
 If you alter any code between 0x00000 and the endmarker the checksum will have to be updated.
-The checksum verification and update routines are also implemented in T5Suite.
+The checksum verification and update routines are also implemented in TxSuite.
+It updates the checksum every time it writes a map into the binary, and Actions → Verify checksum checks it by hand.

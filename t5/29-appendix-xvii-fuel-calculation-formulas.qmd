@@ -16,7 +16,7 @@ Here are the formulas that Trionic’s injection calculation uses to achieve the
 | Cylinder compensation correction              | (Cyl_komp[Cyl_nr]+384)/512                         |       |        |
 | Lambdaint Correction                          | (Lambdaint+384)/512                                |       |        |
 | Load/TPS acceleration/deceleration correction | (Lacc_konst+256)/256                               |       |        |
-|                                               | (Accell_konst+256)/256                             |       |        |
+|                                               | (Accel_konst+256)/256                              |       |        |
 |                                               | (Lret_konst+256)/256                               |       |        |
 |                                               | (retard_konst+256)/256                             |       |        |
 |                                               | ((Ret_fuel_fak+1024)\*fuel_tmp_cor[cyl_nr])/1024   |       |        |
@@ -27,7 +27,7 @@ The corresponding map value is always interpolated from the table and then this 
 For example acceleration enrichment is never under 1,00 which is logical.
 
 Trionic starts off by calculating base injection time (based on IAT and MAP and Inj_konst) and then in a sequence goes through different corrections depending on the driving conditions etc.
-For example the Insp_mat (it's not VE but of course depends on the physical VE characteristics of the engine) and Knock_fuel_mat are examples of these.
+For example the Insp_mat (it's not VE but of course depends on the physical VE characteristics of the engine) and Fuel_knock_mat are examples of these.
 These corrections multiply the injection time (fuel_tmp_cor[cyl_nr]) in each step, so if you have 128 in your Insp_mat, you end up multiplying with 1,00.
 
 Simplified example Insp_mat + Lacc_konst, base time = a, final fuel = x:

@@ -40,6 +40,9 @@ To get the code disassembled in IDA Pro you need to do at least these steps.
 
 There is an easier way to do this but you will need a script that has been made by sandy_rus which is available from <http://www.ecuproject.com>.
 
-Another route is to use the – simpler – disassembler that has been build into T5Suite.
+TxSuite's File → Generate Idc file writes an IDC script for the symbol table next to the bin, `<bin>-autogen.idc`, that IDA Pro can run.
+
+Another route is to use the – simpler – disassembler that has been build into TxSuite, Actions → Show disassembly.
+It saves the listing next to the bin as `<bin>.asm`.
 
 ![Result of disassembly](images/p020-1.jpg){#fig-disassembly width=100%}

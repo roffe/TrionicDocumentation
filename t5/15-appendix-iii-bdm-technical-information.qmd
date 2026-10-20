@@ -8,6 +8,8 @@ This mode enables us to hold the processor in the program execution and read and
 In this way we can download and program the flash contents which gives us access to the binaries we like so much!
 The BDM software you need can be downloaded from <http://trionic.mobixs.eu/bd32-122.zip>.
 
+<!-- TODO roffe: trionic.mobixs.eu is gone, so this BD32 link is dead. Where should it point now? -->
+
 ## Home build 2 chips design schema
 
 An alternative to buying a BDM interface can be building one yourself.

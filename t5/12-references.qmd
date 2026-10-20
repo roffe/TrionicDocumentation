@@ -2,12 +2,14 @@
 
 ## Webreferences
 
+<!-- TODO roffe: trionic.mobixs.eu is gone, the BDM software and T5 scripts links below are dead. Where should they point now? -->
+
 - ECUproject initiative \[ [www.ecuprojct.com](http://www.ecuprojct.com) Steve Hayes and friends \]
 - Xendus \[ [www.xendus.se](http://www.xendus.se) General Failure \]
 - SaabCentral \[ [www.saabcentral.com](http://www.saabcentral.com) \]
 - Motorola datasheet on MC68332
 - Trionic Wiki pages \[ <http://en.wikipedia.org/wiki/Trionic> \]
-- T5Suite homepage \[ <http://trionic.mobixs.eu> \]
+- TxSuite releases \[ <https://github.com/roffe/TuningSuites/releases/latest> \]
 - Townsendimports \[ [www.townsendimports.com](http://www.townsendimports.com) \]
 - BDM Software \[ <http://trionic.mobixs.eu/bd32-122.zip> \]
 - T5 scripts including T5.2 \[ <http://trionic.mobixs.eu/FLASHT5ANDT52.zip> \]

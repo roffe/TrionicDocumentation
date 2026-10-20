@@ -4,6 +4,9 @@
 
 This how to describes the procedure for writing a binary file to the flash in a T5 ECU.
 It also describes how to dump the flash memory to a binary file.
+This is the BDM way, TxSuite reads and flashes over CAN with ECU → Read ECU and ECU → Flash current file to ECU (see chapter CAN Bus interface).
+
+<!-- TODO roffe: trionic.mobixs.eu is gone, so the FlashT5 download link in this appendix is dead. Where should it point now? -->
 
 ***Important note:***
 

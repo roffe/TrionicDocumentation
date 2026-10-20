@@ -2,6 +2,8 @@
 
 ## Overview
 
+<!-- TODO roffe: trionic.mobixs.eu is gone, so the BD32 download links in this appendix are dead. Where should they point now? -->
+
 This Howto describes how to install BD32 (found at <http://trionic.mobixs.eu>) with a PD (public domain) BDM interface.
 The software will also work with an ICD interface but this is not covered in this Howto.
 

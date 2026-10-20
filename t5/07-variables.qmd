@@ -3,7 +3,7 @@
 ## Program mode
 
 This next table gives an overview of “program mode” options for Trionic.
-These are stored bitwise (one single bit switches functionality on or off) in the variable “Pgm_mod” and can be accessed by using the firmware options screen in T5Suite.
+These are stored bitwise (one single bit switches functionality on or off) in the variable “Pgm_mod” and can be changed in TxSuite with Actions → Firmware information.
 
 | Byte | Bit | Mask | Description                                           |
 |------|-----|------|-------------------------------------------------------|
@@ -54,7 +54,7 @@ Data_namn = Software version (e.g. A5COP47T.35G)
 
 ## Footer information {.advanced}
 
-If we look at the footer in the binary (last page in hexviewer) we see a set of reversed strings.
+If we look at the footer in the binary (the last page in Actions → View file in hex) we see a set of reversed strings.
 Each of these strings contains an identifier.
 These identifiers have a hardcoded meaning.
 

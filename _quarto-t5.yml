@@ -1,5 +1,6 @@
 book:
   title: Trionic 5
+  subtitle: Analyzing Trionic 5 with TxSuite
   output-file: Trionic 5
   chapters:
     - index.qmd
@@ -39,7 +40,7 @@ project:
   output-dir: _book/t5
 
 trionic:
-  running-title: Analyzing Trionic 5 with T5Suite 2.0
-  copyright: © Dilemma & J.K. Nilsson 2010
-  revision: rev 1.24
-  cover: [t5/images/p001-1.png, t5/images/p001-2.jpg]
+  running-title: Analyzing Trionic 5 with TxSuite
+  copyright: © Dilemma & J.K. Nilsson 2010, Roffe 2026
+  revision: TxSuite edition
+  cover: [t5/images/p001-2.jpg, txsuite/images/t5/mapviewer.png]

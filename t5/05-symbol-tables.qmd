@@ -58,15 +58,19 @@ After subtracting 0x040000 (![](images/icon-t52.png){height=1.2em} T5.2: 0x60000
 The symbol which belongs to this address has SRAM address 0x3CB2.
 While writing this document I haven’t figured out what the other information contained in the lookup table means.
 
-To save you the time to lookup all addresses manually the T5Suite application will extract all symbol information in one run.
-Symbol name, SRAM address, flash address and length will be displayed all together.
+To save you the time to lookup all addresses manually TxSuite will extract all symbol information in one run when it opens the file.
+Symbol name, flash address (the Address column), length and description will be displayed all together.
+The SRAM address is a hidden column, right-click a column header and pick it in the Column chooser.
 Some symbols don’t have a corresponding flash address although they do have an sram-address.
 These are runtime only symbols that are used by Trionic (variables, buffers etc).
+The filter above the list shows "Only symbols within binary" by default, choose "All symbols" to see these too.
 
 This @fig-symbol-table-screenshot will give you an idea of what the symbol table should look like once it has been extracted.
+TxSuite groups the symbols by category, a category stays folded until you open it.
 See appendix I for a complete list of known symbols.
 
-![Screenshot of a part of the symbol table](images/p024-1.jpg){#fig-symbol-table-screenshot width=91%}
+![Screenshot of a part of the symbol table](images/txsuite/symbol-list.png){#fig-symbol-table-screenshot width=65%}
 
-When the user double clicks one of the symbols that has a flash address attached to it, T5Suite will display the corresponding symbol in a viewer.
-This viewer will display the data in table form was well as in graphical form.
+When the user double clicks one of the symbols that has a flash address attached to it, or selects it and presses Enter, TxSuite will display the corresponding symbol in a viewer.
+Ctrl+P is the quick way, type any part of a symbol's name and Enter opens it.
+This viewer will display the data in table form as well as in graphical form, in the 3D Graph and 2D Graph tabs under the table.

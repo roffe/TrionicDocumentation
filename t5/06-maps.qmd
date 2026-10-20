@@ -66,7 +66,7 @@ With a warm engine and normal battery voltage the duration of injection varies b
 
 After the calculation for injection time a constant is used to determine the actual time for injector opening time.
 This constant is also used for example to compensate for different fuel type (e.g. alcohol based fuels).
-When using standard injectors on a turbo engine (should also be used on a N/A engine but according to EPC there are different injectors) with normal displacement the injection constant is 20-21 in easy mode in T5Suite.
+When using standard injectors on a turbo engine (should also be used on a N/A engine but according to EPC there are different injectors) with normal displacement the injection constant is 20-21 in Easy view in TxSuite.
 The first calculation of injection time is:
 
 $$
@@ -90,14 +90,14 @@ $$
 Note that the minimum injection duration is determined by the variable Min_tid!.
 This variable normally has a value of 250. (1 ms) and that the battery voltage will adjust final duration through table Batt_korr!.
 
-![](images/p029-1.jpg){width=50%}
+![](images/txsuite/insp-mat.png){width=60%}
 
 ### Cranking enrichment
 
 To facilitate a better start cranking enrichment is needed.
 The factor that compensates which is coolant temperature dependant is stored in Startvev_fak! (what’s in a name).
 
-![](images/p029-2.png){width=37%}
+![](images/txsuite/startvev-fak.png){width=37%}
 
 ### Lambda correction
 
@@ -119,10 +119,10 @@ Operation can be divided into two parts, open loop mode and closed loop mode.
 In closed loop mode the feedback signal from the lambda sensor is used to keep the mixture stoichiometric (approx. 14.7 : 1) while in open loop mode the system only depends on the maps, no feedback from the lambda sensor is used to compensate for lean or rich mixture.
 The point where the system switches from closed to open loop mode is determined by a couple of maps of which the most important one is: Open_loop!
 This map indicates the load levels for each rpm site from which the system should run in open loop mode.
-This is also indicated in T5Suite in the main injection map and the fuel knock map.
+TxSuite also shows this in the main injection map and the fuel knock map, with a black rectangle around the cells that operate in closed loop.
 The load levels in knock mode are different from the ones for normal mode operation and are stored in Open_loop_knock!
 
-![](images/p030-1.png){width=94%}
+![](images/txsuite/open-loop-tiled.png){width=75%}
 
 ### Acceleration and deceleration
 
@@ -143,14 +143,14 @@ Lret_konst is a function of engine load and Retard_konst is a function of thrott
 Both tables result in an enleanment factor.
 The largest value is the value that will be applied.
 
-![](images/p031-1.png){width=59%}
+![](images/txsuite/acc-ret-konst-tiled.png){width=65%}
 
 ### Idle correction
 
 To be able to maintain a steady idle state a separate idle fuel map is used (Idle_fuel_korr).
 This table aids in keeping the idle rpm smooth by correcting fuel injection a bit.
 
-![](images/p032-1.jpg){width=45%}
+![](images/txsuite/idle-fuel-korr.png){width=50%}
 
 ### Knocking
 
@@ -160,26 +160,26 @@ This map enriches the fuel mixture so that the engine cools down (extra fuel mea
 If the knocking map kicks in, something is actually wrong in the rest of the mapping (ignition, injection etc).
 Try to prevent entering the knocking map at all times!
 
-![](images/p033-1.jpg){width=42%}
+![](images/txsuite/fuel-knock-mat.png){width=50%}
 
 ### Knock sensitivity
 
 For Trionic to be able to determine what received knock signals from the DI cassette are actually knock and which are not, it looks up reference signals from several maps.
 The most important one is Knock_ref_matrix! shown below.
 
-![](images/p034-1.jpg){width=59%}
+![](images/txsuite/knock-ref-matrix.png){width=65%}
 
 If knock is detected and adding extra fuel and pulling ignition timing doesn’t help, Trionic starts to decrease boost.
 The steps in which this is done are listed in the map “ Apc_knock_tab!”.
-In the map shown below all values are 8 which means that every increase will pull 0.08 bar of boost pressure.
+In the map shown below all values are 0.08 (8 in Decimal view) which means that every increase will pull 0.08 bar of boost pressure.
 The current value for this (boost reduction) is stored in Apc_decrese which can be monitored using the CAN bus connection.
 
-![](images/p034-2.png){width=42%}
+![](images/txsuite/apc-knock-tab.png){width=37%}
 
 Knock detection is only active above a preset level of boost.
 These levels are stored in Knock_press_tab!.
 
-![](images/p035-1.png){width=37%}
+![](images/txsuite/knock-press-tab.png){width=37%}
 
 ### Altering VE map
 
@@ -193,16 +193,16 @@ In wide open throttle situations an AFR of 12 or even a bit richer are required.
 This job is already done by the ECU when it regulates the fuel injection in respect of lambda and storing the result in the Adapt_korr!.
 To be able to use adaption maps you must be able to pull this data from your ECU without disconnecting the power and use it to adapt the initial VE map (see chapter CAN Bus).
 
-![](images/p036-1.jpg){width=47%}
+![](images/txsuite/adapt-korr.png){width=60%}
 
-When the engine is run at WOT conditions, Fload_throttle_tab! indicates when the throttle is considered to be wide open and full load enrichment is activated.
+When the engine is run at WOT conditions, Fload_throt_tab! indicates when the throttle is considered to be wide open and full load enrichment is activated.
 The WOT enrichment map Fload_tab! is used to add more fuel to the calculated amount of fuel to be injected.
 Note the interesting original Fload_tab!
 Over 2400 RPM the lambda is masked when the throttle is fully pressed down but there is no additional fuel than what is allowed from the VE matrix.
 Below 2400 RPM the lambda is masked and extra fuel is injected.
 Here are the right tables for adding fuel to cool your exhaust gases.
 
-![](images/p037-1.png){width=66%}
+![](images/txsuite/fload-tiled.png){width=75%}
 
 The values shown in Fload_throt_tab are throttle position sensor values and in Fload_tab the values are values to add to the fuel calculation.
 
@@ -290,7 +290,7 @@ The wire from the ECU to the third injector is also connected to the main instru
 The main instrument calculates the fuel consumption based on the injection pulses duration.
 The fuel consumption is used to help getting an accurate presentation of the fuel level in the fuel tank and to calculate average fuel consumption in the SID.
 
-![Stock fuel injection table (9000 FPT 200bhp T25 turbo)](images/p039-1.jpg){#fig-stock-fuel-table width=75%}
+![Stock fuel injection table (9000 FPT 200bhp T25 turbo)](images/txsuite/insp-mat.png){#fig-stock-fuel-table width=70%}
 
 ### HOWTO: Get your fuelling under control
 
@@ -335,10 +335,10 @@ So, always make sure that this map has higher values (5-10%) then the main fuel 
 #### Open loop vs. closed loop [open_loop]
 
 If you want the system to leave closed loop at different rpm/load point you can alter the settings in this map.
-So, if you want to run different AFR values for a rpm/load point that is actually in the closed loop range (these ranges are indicated in T5Suite by marking the cells in the main fuel map) and would thus be 14.7, you will have to alter the open_loop map.
+So, if you want to run different AFR values for a rpm/load point that is actually in the closed loop range (TxSuite marks these ranges with a black rectangle around the cells in the main fuel map) and would thus be 14.7, you will have to alter the open_loop map.
 In this way you can determine the AFR value by changing the values in the main fuel map.
 Note that in knocking conditions a different map is used.
-You can also switch off closed loop as a whole by changing the firmware settings in the system.
+You can also switch off closed loop as a whole by changing the firmware settings in the system (Lambda control in Actions → Firmware information).
 This way you gain full control of the fuelling part but lose the system’s ability to adapt for fuel pump wear etc.
 
 #### Coldstart enrichment [Eftersta_fak\*]
@@ -470,17 +470,17 @@ When the piston rod is shorter than infinite length the reciprocating motion doe
 The different stroke doesn’t change the ignition advance in any easy predictable way.
 See the difference between the ignition advance on 2.0 LPT and 2.3 LPT engines.
 
-![Normal ignition map (warm engine)](images/p044-1.png){#fig-ign-map-normal width=56%}
+![Normal ignition map (warm engine)](images/txsuite/ign-map-0.png){#fig-ign-map-normal width=70%}
 
 On the B204E in NG900 the ignition timing is well advanced in low RPM/Load during warm up to make the engine work harder and inefficient, more heat is generated inside the cylinders.
 This inefficiency enables the catalyst to heat up and start working quicker.
 The warm up ignition map is Ign_map_4! and the normal ignition map is Ign_map_0!
 
-![Warmup ignition map](images/p045-1.jpg){#fig-ign-map-warmup width=59%}
+![Warmup ignition map (NG900 B204L)](images/txsuite/ign-map-4.png){#fig-ign-map-warmup width=70%}
 
 When idling the idle ignition map “Ign_map_1!” is used to control the engine´s torque at idle, this compensates for rough idling.
 
-![Idle ignition map](images/p045-2.png){#fig-ign-map-idle width=32%}
+![Idle ignition map](images/txsuite/ign-map-1.png){#fig-ign-map-idle width=37%}
 
 In case of detonation/knocking the ignition timing is retarded by 1,5° in steps for that specific cylinder until the knocking stops.
 This is done to a maximum retardation of 12°.
@@ -488,7 +488,7 @@ In an event of all four cylinders knocking and it´s the same ignition timing re
 If manifold pressure (MAP) is over 140 kPa when knocking occurs the ignition map is switched to Ign_map_2!
 This map indicates how much ignition timing to pull (retard) from the original values as a countermeasure to stop the knocking.
 
-![](images/p046-1.jpg){width=52%}
+![](images/txsuite/ign-map-2.png){width=35%}
 
 ### Altering ignition maps
 
@@ -521,7 +521,7 @@ After mapping fuel you can start working at optimizing ignition timing.
 To get the most of the engine in a safe way you need – of course – at least a wideband lambda controller and an EGT gauge.
 The latter is firstly to check if you’re not passing 950° C and secondly to be able to see the effect your ignition trimming has on EGT values.
 I find that the easiest way to map ignition timing is to get fuel mapped properly first, then boost control to a very stable level and then request boost to match on of the ignition map columns (for example 1.2 bar).
-Do a run and see if knock occurs using T5Suite or the dashboard.
+Do a run and see if knock occurs using the Knock tab of TxSuite's realtime panel or the dashboard.
 If you have no knock, increase timing a little bit and rerun.
 Continue to map all relevant cells until you are at approximately 1 degree timing from knock (so, if knock occurs at 7 degrees, you should map for 6 degrees advance).
 Start at a low advance (known to work well) and work your way up from there, not the other way around!
@@ -584,9 +584,9 @@ The regulation table determines the bias (sort of pre-tension) for the pulse wid
 It can be considered an offset for the PID controller.
 So PID and regulation bias determine the pulse width on the boost control valve taking the pressure error (boost request minus actual boost) as an input value.
 
-![Boost regulation table](images/p050-1.jpg){#fig-boost-regulation-table width=48%}
+![Boost regulation table](images/txsuite/reg-kon-mat.png){#fig-boost-regulation-table width=35%}
 
-![](images/p050-2.jpg){width=94%}
+![](images/txsuite/pid-tiled.png){width=95%}
 
 Above you see an example of the PID control tables that are used in a stock firmware.
 
@@ -606,7 +606,7 @@ You can see that the requested pressure drops when RPM values go over ~4500.
 This is because the little T25 turbo cannot maintain higher pressure values at these engine speeds, it is simply too small for that.
 In modified cars containing a larger turbocharger these values will keep rising with engine speed.
 
-![Boost request map for B234L](images/p051-1.jpg){#fig-boost-request-b234l width=47%}
+![Boost request map for B234L](images/txsuite/tryck-mat.png){#fig-boost-request-b234l width=35%}
 
 ### Limiters
 
@@ -619,15 +619,15 @@ If the boost request is higher than the value from the limiter, the limiter valu
 The first and second gear limiters are only present to prevent the ECU to use the main boost request map in first and second gear.
 If these limiters are set ABOVE the values in the main request map, the limiters are switched off.
 
-![](images/p052-1.png){width=81%}
+![](images/txsuite/regl-tryck-tiled.png){width=75%}
 
 ### Fuel cut limiter
 
 To prevent damage to the engine caused by faulty hardware or overshooting boost, fuel will be cut off when charging pressure gets higher than set in the fuel cut map (Tryck_vakt_tab).
 
-![Stock max. boost pressure table](images/p053-1.png){#fig-max-boost-table width=35%}
+![Stock max. boost pressure table](images/txsuite/tryck-vakt-tab.png){#fig-max-boost-table width=37%}
 
-This example shows that the maximum boost level is always 0xEB, this is the standard cut-off value of 1.35 bar.\
+This example shows that the maximum boost level is always 1.35 bar (0xEB in Hex view), this is the standard cut-off value.\
 0xFE would be highest possible, around 1.54 bar.\
 0xFF would turn off the fuel cut totally.
 
@@ -698,11 +698,19 @@ Trionic calculates in which gear it is currently driving by using the engine spe
 Combined with the gear ratio settings (maps) in can make a calculation on which gear is currently engaged.
 This is important for boost limiting in 1^st^ and 2^nd^ gear.
 
-![](images/p059-1.png){width=81%}
+![](images/txsuite/gear-st.png){width=37%}
 
-Tables Gear_st and Gear_ratio hold information about the different values for this calculation.
+| Gearbox marking | Final drive ratio | 1st   | 2nd  | 3rd  | 4th  | 5th  | Reverse |
+|-----------------|-------------------|-------|------|------|------|------|---------|
+| FM53            | 89:20, 4.45       | 15.06 | 7.83 | 5.25 | 3.98 | 2.94 | 14.09   |
+| FM55            | 84:22, 4.05       | 13.70 | 7.12 | 4.77 | 3.62 | 2.67 | 12.82   |
+| FM57            | 84:22, 3.82       | 12.92 | 6.72 | 4.50 | 3.41 | 2.52 | 12.09   |
+
+: Overall gear ratios from the service manual {#tbl-gear-ratio}
+
+Tables Gear_st and Gear_ratio_delta hold information about the different values for this calculation.
 Gear_st is the overall ratio per gear.
-In the example above the ratio for first gear is 13.7 according to the service manual for this car and model.
+In the example above the ratio for first gear is 13.7 according to the service manual for this car and model, the FM55 gearbox in @tbl-gear-ratio.
 The bottom value show in Gear_st is this exact value.
 5^th^ gear shows 2.67 in the service manual and so does the upper value in the table (2.70).
 So, what does this figure mean?
