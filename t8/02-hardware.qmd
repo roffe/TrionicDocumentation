@@ -17,6 +17,8 @@ This is just to give you an idea on what to expect.
 
 ## Datasheets
 
+<!-- TODO roffe: trionic.mobixs.eu is gone, so these two links are dead. Where should the MC68377 and 29BL802C datasheets point now (manufacturer, archive.org, a copy in this repo)? -->
+
 Datasheets can be found on my website:
 
 <http://trionic.mobixs.eu/T8/hardware/MC68377.pdf>

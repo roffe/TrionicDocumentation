@@ -1,3 +1,15 @@
 # Tuning the T8
 
-## Tuning with T8Suite
+## Tuning with TxSuite
+
+TxSuite's Tuning menu gives you direct access to the most important maps, grouped by airmass, torque, injectors, fuel, boost, ignition and pedal.
+An entry only shows when the binary has the map.
+
+Tuning → Tuning Wizard applies a pre-defined set of Tuning Actions to your binary, the `.t8x` packs that come with TxSuite.
+It only offers the packs that fit your software and makes a backup of the binary first.
+
+Actions → Airmass result viewer shows what a tune ends up with: the airmass per combustion for each pedal position and rpm, and which limiter holds it back.
+
+How to use all of this is in the TxSuite user manual, Help → T8 → User manual.
+
+<!-- TODO roffe: Dilemma never wrote this section, it was an empty "Tuning with T8Suite" heading. Want a real walkthrough here (which maps to raise for a stage 1, in what order)? -->

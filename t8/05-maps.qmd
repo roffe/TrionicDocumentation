@@ -4,11 +4,11 @@
 
 A lot of maps in the T8 are not only made up of a piece of raw data.
 It also includes x-axis and y-axis information.
-T8Suite will automatically display all known axis information when a map is opened.
+TxSuite will automatically display all known axis information when a map is opened.
 In Trionic 8 most symbol have an English name (Trionic 5 has lots of Swedish names) that explains lots about its function.
 Also, the symbols are caterogised by name, which makes browsing the symbols much easier.
 All torque calibration symbols start with “TrqMastCal.”.
-T8Suite groups all symbols by their respective category by default.
+TxSuite groups all symbols by their respective category by default, every category starts folded.
 
 ## Fuel
 
@@ -32,23 +32,23 @@ In rough steps this seems to be the calculation’s flow:
 | 13  | Activation of injector                 | At a DETERMINED crank shaft angle, the microprocessor will control the transistor for the injector that is next in the firing order |
 
 The basic fuel quantity is calculated based on Airmass and Injector constant.
-This injector constant is called InjCorrCal.InjectorConstant.
+This injector constant is called InjCorrCal.InjectorConst.
 
-![](images/p020-1.png){width=80%}
+![](images/txsuite/injector-constant.png){width=57%}
 
 TODO: Insert fuel correction maps here
 
-Battery correction values for injector latency
+Battery correction values for injector latency, InjCorrCal.BattCorrTab
 
-![](images/p022-1.png){width=43%}
+![](images/txsuite/battery-correction.png){width=56%}
 
-Water temperature correction
+Water temperature correction while starting, StartCal.EnrFacManTab, an enrichment factor over coolant temperature (manual gearbox cars)
 
-![](images/p023-1.png){width=43%}
+![](images/txsuite/coolant-enrichment.png){width=56%}
 
-Fuel injection correction map for knock conditions
+Fuel injection correction map for knock conditions, KnkFuelCal.EnrichmentMap
 
-![](images/p024-1.jpg){width=100%}
+![](images/txsuite/knock-enrichment.png){width=80%}
 
 ## Ignition
 
@@ -91,15 +91,15 @@ TODO: Insert ignition idle control map here
 
 Ignition is normally controlled by the main ignition matrix: IgnAbsCal.fi_NormalMAP
 
-![](images/p027-1.jpg){width=50%}
+![](images/txsuite/ignition-normal.png){width=86%}
 
-For high octane fuel the map IgnAbsCal.fi_highOctaneMAP will be used
+For high octane fuel the map IgnAbsCal.fi_highOctanMAP will be used, in the stock binary in the picture it holds the same values as the normal map, not every binary has them the same
 
-![](images/p028-1.jpg){width=50%}
+![](images/txsuite/ignition-high-octane.png){width=86%}
 
-And for low octane fuel the map IgnAbsCal.fi_lowOctaneMAP
+And for low octane fuel the map IgnAbsCal.fi_lowOctanMAP
 
-![](images/p029-1.jpg){width=55%}
+![](images/txsuite/ignition-low-octane.png){width=94%}
 
 ## Torque
 
@@ -127,26 +127,30 @@ The basic procedure for the airmass controller is like in the table below.
 ### Torque request
 
 So, if the driver (or cruis control for that matter) pressed the accelerator pedal he actually requests a certain torque from the system.
-This value is fetched from the PedelMapCal.Trq_requestMap shown below.
+This value is fetched from the PedalMapCal.Trq_RequestMap shown below.
 
-![](images/p031-1.jpg){width=71%}
+![](images/txsuite/torque-request.png){width=90%}
 
-The table holds airmass values for each position of the accelerator pedal and each rpm site.
+The table holds the requested torque in Nm for each position of the accelerator pedal and each rpm site.
 Trionic now looks up the estimated engine output (torque) based on airmass and rpm.
 This is done through map “TrqMastCal.Trq_NominalMap” as shown next.
+
+<!-- TODO roffe: Dilemma's flow goes pedal → airmass → Trq_NominalMap, but Trq_RequestMap is a torque request in Nm (its description says so, and the T8 manual's airmass result viewer turns it into airmass through TrqMastCal.m_AirTorqMap). Keep his two sentences above or rewrite them? -->
+
+![](images/txsuite/torque-nominal.png){width=100%}
 
 ### Torque limiters
 
 TrqLimCal.\*
 
-![](images/p032-1.jpg){width=92%}
+<!-- TODO roffe: no TrqLimCal picture yet, the old one here was Trq_NominalMap (moved up). Add one to BookScreenshots, e.g. TrqLimCal.Trq_ManGear, or leave the heading without a picture? -->
 
 ### Airmass to torque calibration map
 
-![](images/p033-1.jpg){width=69%}
+![](images/txsuite/airmass-torque.png){width=71%}
 
 Maximum RPM depending on coolant temp:
 
-![](images/p034-1.png){width=44%}
+![](images/txsuite/rpm-limit.png){width=60%}
 
 ## Footer information {.advanced}

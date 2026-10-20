@@ -12,6 +12,7 @@ The most frequently used interface for this is the lawicel CANUSB interface that
 This interface can convert CAN signals onto you USB port and vice versa.
 The interface has a USB port on one side – that connects to you computer – and an male RS232 (DB9) connector on the other side.
 This side connects to the CAN bus of the Trionic.
+TxSuite works with more interfaces than the CANUSB, the list is under Supported interfaces in the TxSuite user manual.
 
 The lawicel interface has the following pinout on the DB9 connector.
 
@@ -68,9 +69,12 @@ The OBDII port enables you to connect to the I bus directly.
 P-bus on Trionic 8 vehicles is available from the OBDII socket in the car.
 It communicates with a bitrate of 500kb/s (high speed CAN), 11 bit frames.
 This bus will allow us to read from and write to the ECU.
-Currently, downloading flash and SRAM is supported as well as live data.
+Currently, downloading and programming the flash is supported, as well as reading SRAM and live data.
 
-Downloading of the entire flash contents from the ECU takes about 25 minutes and results in a 1Mbyte binary file that can be opened in T8Suite.
+Downloading the entire flash contents from the ECU results in a 1Mbyte binary file that can be opened in TxSuite.
+In TxSuite that's ECU → Read ECU.
+
+<!-- TODO roffe: Dilemma wrote "takes about 25 minutes" here, that was T8Suite in 2011. How long does ECU → Read ECU take now, with and without the Legion bootloader? -->
 
 The protocol complies largely with KWP2000.
 
@@ -114,7 +118,8 @@ key ^= 0x81BF;
 ```
 
 In all these functions LOOKUPTABLE is a 65536 integer long array with predefined values.
-You can find this list in the T8Suite sourcecode which is installed along with the application.
+TxSuite talks to the ECU through TrionicCANLib, its seed and key code is in `TrionicCANLib/SeedToKey.cs` in <https://github.com/roffe/Trionic>.
+There the table lookup and the first XOR are one calculation: the 16 bit seed rotated right by 5 bits, plus 0xB988.
 
 ### Data encryption
 

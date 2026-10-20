@@ -1,5 +1,6 @@
 book:
   title: Trionic 8
+  subtitle: Analyzing Trionic 8 with TxSuite
   output-file: Trionic 8
   chapters:
     - index.qmd
@@ -28,7 +29,7 @@ project:
   output-dir: _book/t8
 
 trionic:
-  running-title: Analyzing Trionic 8 with T8Suite
-  copyright: © Dilemma 2011
-  revision: rev 1.03
-  cover: [t8/images/p001-1.jpg]
+  running-title: Analyzing Trionic 8 with TxSuite
+  copyright: © Dilemma 2011, Roffe 2026
+  revision: TxSuite edition
+  cover: [t8/images/p009-1.jpg, txsuite/images/t8/mapviewer.png]

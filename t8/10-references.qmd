@@ -7,7 +7,7 @@
 - SaabCentral \[ [www.saabcentral.com](http://www.saabcentral.com) \]
 - Motorola datasheet on MC68337
 - Trionic Wiki pages \[ <http://en.wikipedia.org/wiki/Trionic> \]
-- T8Suite homepage \[ <http://trionic.mobixs.eu> \]
+- TxSuite (T8Suite is part of it) \[ <https://github.com/roffe/TuningSuites/releases/latest> \]
 - Townsendimports \[ [www.townsendimports.com](http://www.townsendimports.com) \]
 - BDM Software \[ <http://www.xendus.se/bdm/bd32-122.zip> \]
 - Ion sensing for knock detection \[ <http://www.fs.isy.liu.se/~larer/Projects/main.html> \]
