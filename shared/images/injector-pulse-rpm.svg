@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Injector drive signal at higher RPM: narrow pulses, twice as many in the
+  same time. The original has no "time" label on this one.
+  T5 book, "Tuning the T5", image "Frequency increased with higher RPM".
+  Same frame as injector-pulse.svg, shown at 60 % of the text width.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="290" height="140" viewBox="0 28 290 140">
+  <!-- time axis -->
+  <line x1="13" y1="145" x2="278" y2="145" stroke="#a0a0a0" stroke-width="1.6"/>
+
+  <!-- pulses -->
+  <path d="M 44 145 V 42 H 71 V 145
+           M 102 145 V 42 H 129 V 145
+           M 160 145 V 42 H 187 V 145
+           M 218 145 V 42 H 245 V 145"
+        fill="none" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Narrowband lambda sensor output voltage vs. mixture: ~0.9 V rich, ~0.1 V
+  lean, the steep part between lambda 0.97 and 1.03 is the effective zone.
+  T5 book, "Appendix VIII: Sensors and actuators", lambda sonde. Drawn on
+  the 260x260 grid of the original picture; shown at 47 % of the text width
+  the 11 unit labels come out at about 8.5 pt.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="262" height="236" viewBox="0 14 262 236"
+     font-family="DejaVu Sans" font-stretch="condensed" font-size="11">
+
+  <!-- axes, ticks every 0.1 V -->
+  <g fill="none" stroke="#000">
+    <path d="M 55 20.5 V 193.2 M 51 191.8 H 234" stroke-width="3"/>
+    <path d="M 49.5 20.75 H 55 M 49.5 37 H 55 M 49.5 54.3 H 55 M 49.5 71.6 H 55
+             M 49.5 88.8 H 55 M 49.5 106.1 H 55 M 49.5 123.4 H 55 M 49.5 140.7 H 55
+             M 49.5 157.9 H 55 M 49.5 175.2 H 55" stroke-width="2.5"/>
+    <!-- lambda 1.00 -->
+    <path d="M 156.8 191.8 V 207.5" stroke-width="2.5"/>
+    <!-- effective zone, lambda 0.97 to 1.03 -->
+    <path d="M 135.8 28 V 195.5 M 179.3 65 V 195.5" stroke-width="1.2" stroke-dasharray="4 3"/>
+  </g>
+
+  <!-- sensor voltage -->
+  <path d="M 55 40 C 90 41 115 41.5 128 46 C 140 50 148 58 152 70
+           C 156 82 159 120 162 133 C 165 146 172 155 182 161
+           C 195 167 210 169 231 170"
+        fill="none" stroke="#000" stroke-width="1.4"/>
+
+  <!-- pointers -->
+  <g stroke="#000" stroke-width="1.4">
+    <path d="M 94.5 86.3 L 113.9 55.6"/>
+    <path d="M 86.3 215 L 125.4 199.6"/>
+    <path d="M 230 213.8 L 191.7 199.4"/>
+  </g>
+  <g fill="#000">
+    <path d="M 118.8 48 L 116.9 57.5 L 110.9 53.7 Z"/>
+    <path d="M 133.8 196.3 L 126.7 202.9 L 124.1 196.3 Z"/>
+    <path d="M 183.3 196.3 L 192.9 196.1 L 190.5 202.7 Z"/>
+  </g>
+
+  <g text-anchor="end">
+    <text x="48.5" y="41">0.9v</text>
+    <text x="48.5" y="110">0.5v</text>
+    <text x="48.5" y="195.5">0.0v</text>
+  </g>
+  <text x="155.5" y="55">Effective Zone</text>
+  <text x="95.5" y="97" text-anchor="middle">Lambda</text>
+  <text x="95.5" y="108.5" text-anchor="middle">Sensor Voltage</text>
+
+  <text x="19.5" y="226.5">Lambda 0.97</text>
+  <text x="19.5" y="241.5">A/F: 14.3 / 1</text>
+  <text x="110.5" y="226.5">Lambda 1.00</text>
+  <text x="110.5" y="241.5">A/F: 14.7 / 1</text>
+  <text x="190" y="226.5">Lambda 1.03</text>
+  <text x="190" y="241.5">A/F: 15.1 / 1</text>
+</svg>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Trionic 5 hardware block diagram: sensors and actuators outside the ECU
+  (pink), driver/converter chips (yellow) and the core with CPU, SRAM and
+  flash (green).
+  T5 book, "Hardware". Drawn on the 800x600 grid of the original picture;
+  shown at full text width the 14 unit labels come out at about 8 pt.
+  Arrows are half arrow heads (harpoons) like in the original.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+     width="752" height="588" viewBox="12 0 752 588"
+     font-family="DejaVu Sans" font-stretch="condensed" font-size="14">
+
+  <!-- ===== areas ===== -->
+  <rect x="16.5" y="2" width="139.5" height="558" fill="#ffb0ff"/>
+  <path d="M 164 2 H 346 V 413 H 579 V 563 H 164 Z" fill="#ffff99"/>
+  <path d="M 352 2 H 759 V 482 H 586 V 405 H 352 Z" fill="#99ffcc"/>
+
+  <!-- ===== outside ECU: sensors and actuators ===== -->
+  <g fill="#660066">
+    <!-- BCV (boost control valve) -->
+    <rect x="91" y="31" width="15" height="29"/>
+    <rect x="86" y="60.5" width="26" height="6"/>
+    <rect x="83" y="33.5" width="8" height="2.5"/>
+    <rect x="83" y="40.5" width="8" height="2.5"/>
+    <rect x="83" y="47.5" width="8" height="2.5"/>
+
+    <!-- 4 injectors -->
+    <g id="injector">
+      <rect x="83" y="105.5" width="8" height="5" rx="2"/>
+      <path d="M 93 104 H 101 V 102 H 104 V 112 H 93 Z"/>
+    </g>
+    <use xlink:href="#injector" y="13"/>
+    <use xlink:href="#injector" y="26"/>
+    <use xlink:href="#injector" y="39"/>
+
+    <!-- 4 ignition cassette coils / spark plugs -->
+    <g id="plug">
+      <rect x="71" y="168" width="5" height="1.6"/>
+      <rect x="75" y="166.8" width="26" height="4.6"/>
+      <rect x="80" y="164.6" width="7" height="9"/>
+      <rect x="100" y="168.2" width="4" height="1.8"/>
+    </g>
+    <use xlink:href="#plug" y="14"/>
+    <use xlink:href="#plug" y="28"/>
+    <use xlink:href="#plug" y="42"/>
+
+    <!-- MAP sensor (the arrowhead is grey) -->
+    <rect x="33" y="278" width="26" height="6"/>
+
+    <!-- battery -->
+    <rect x="30" y="298" width="4.5" height="4"/>
+    <rect x="56" y="298" width="4.5" height="4"/>
+    <rect x="25" y="301.8" width="43" height="2.4"/>
+    <rect x="27" y="307" width="39" height="18"/>
+    <rect x="25" y="327.6" width="43" height="2.4"/>
+
+    <!-- IAT sensor -->
+    <rect x="29" y="348" width="16" height="2"/>
+    <rect x="45" y="346" width="7" height="6"/>
+    <rect x="53.5" y="344.6" width="4" height="1.6"/>
+    <rect x="53.5" y="348.2" width="4" height="1.6"/>
+    <rect x="53.5" y="351.8" width="4" height="1.6"/>
+    <path d="M 58.5 344.5 H 60 A 3.7 4.6 0 0 1 60 353.7 H 58.5 Z"/>
+
+    <!-- engine (coolant) temperature sensor -->
+    <rect x="33" y="370" width="6.5" height="2"/>
+    <rect x="39.5" y="368" width="7" height="6"/>
+    <rect x="48.5" y="366.8" width="4" height="1.6"/>
+    <rect x="48.5" y="370.2" width="4" height="1.6"/>
+    <rect x="48.5" y="373.6" width="4" height="1.6"/>
+    <path d="M 53.5 367 H 55 A 3.7 4.4 0 0 1 55 375.8 H 53.5 Z"/>
+
+    <!-- TPS -->
+    <rect x="36" y="388.5" width="26.5" height="17"/>
+    <rect x="63.8" y="391" width="2.9" height="13"/>
+
+    <!-- lambda sensor -->
+    <rect x="31" y="424.2" width="4" height="1.6"/>
+    <rect x="31" y="427.4" width="4" height="1.6"/>
+    <rect x="31" y="430.6" width="4" height="1.6"/>
+    <rect x="37" y="423.5" width="23" height="9.5" rx="1.5"/>
+    <path d="M 62 424 H 63.5 A 3.8 4.25 0 0 1 63.5 432.5 H 62 Z"/>
+
+    <!-- knock signal -->
+    <path d="M 28.5 474 L 37.5 456 Q 40.5 450.5 44 451 Q 47 451.5 49 453.5
+             Q 51.5 457 53 461 Q 58 468.5 72 474 Z"/>
+
+    <!-- crank position (teeth with the gap) -->
+    <rect x="42" y="514.3" width="13" height="3"/>
+    <rect x="42" y="519.3" width="13" height="3"/>
+    <rect x="42" y="524.3" width="13" height="3"/>
+    <rect x="42" y="533.2" width="13" height="3"/>
+    <rect x="42" y="538.2" width="13" height="3"/>
+  </g>
+  <g fill="none" stroke="#660066" stroke-width="1.5">
+    <rect x="44" y="382.5" width="4" height="5"/>
+    <rect x="44" y="406.5" width="4" height="4.5"/>
+    <rect x="24" y="425.2" width="5.5" height="6"/>
+  </g>
+  <path d="M 40 249 L 46 255 L 52 249 L 46 270 Z" fill="#666666"/>
+
+  <!-- wiring into the ECU -->
+  <g fill="none" stroke="#660066" stroke-width="2">
+    <path d="M 121 50 H 164"/>
+    <path d="M 112 108 H 125 V 147 H 112 M 112 121 H 125 M 112 134 H 125 M 125 129 H 163"/>
+    <path d="M 112 169 H 125 V 208 H 112 M 112 183 H 125 M 112 196 H 125 M 125 190 H 163"/>
+    <path d="M 70 280 H 144 V 327 H 164"/>
+    <path d="M 74 317 H 132 V 341 H 164"/>
+    <path d="M 74 349 H 123.5 V 356 H 164"/>
+    <path d="M 74 372 H 164"/>
+    <path d="M 75 396 H 164"/>
+    <path d="M 75 428 H 164"/>
+    <path d="M 75 464 H 164"/>
+    <path d="M 65 538 H 159"/>
+  </g>
+
+  <g fill="#660066">
+    <text x="72" y="276">MAP</text>
+    <text x="74" y="311">Battery</text>
+    <text x="77" y="346">IAT</text>
+    <text x="77" y="367">Engine temp</text>
+    <text x="77" y="393">TPS</text>
+    <text x="77" y="425">Lambda</text>
+    <text x="78" y="460">DI knock</text>
+    <text x="62" y="533">Crank position</text>
+  </g>
+
+  <!-- ===== external functions (yellow) ===== -->
+  <g fill="none" stroke="#666600" stroke-width="1.5">
+    <rect x="168" y="22" width="110" height="60"/>
+    <rect x="168" y="109" width="110" height="39"/>
+    <rect x="168" y="169" width="110" height="39"/>
+    <rect x="171" y="316" width="110" height="162"/>
+    <rect x="171" y="513" width="110" height="38"/>
+    <rect x="385" y="447" width="100" height="83"/>
+  </g>
+  <g fill="none" stroke="#666600" stroke-width="2" stroke-linejoin="miter">
+    <!-- CPU to BCV, injector and DI drivers -->
+    <path d="M 345 154 H 330 V 52 H 290 L 301 46"/>
+    <path d="M 345 173 H 316 V 127 H 290 L 302 121"/>
+    <path d="M 345 193 H 291 L 302 187"/>
+    <!-- A/D converter to CPU -->
+    <path d="M 292 325 H 345 L 335 320"/>
+    <path d="M 292 335 H 345 M 292 345 H 345"/>
+    <path d="M 292 355 H 345 L 336 360"/>
+    <!-- sensor amplifier (crank) to CPU -->
+    <path d="M 292 532 H 323 V 380 H 346 L 337 386"/>
+    <!-- CAN controller to SFI socket -->
+    <path d="M 438 539 V 563"/>
+  </g>
+  <g fill="#666600" text-anchor="middle">
+    <text x="222" y="15">BCV driver</text>
+    <text x="221" y="39">MTP3055</text>
+    <text x="221" y="55">MOSFETs</text>
+    <text x="223" y="102">Injector drivers</text>
+    <text x="221" y="125">MTD3055</text>
+    <text x="221" y="141">MOSFETs</text>
+    <text x="222" y="165">DI drivers</text>
+    <text x="223" y="186">CA3262E</text>
+    <text x="226" y="308">A/D converter</text>
+    <text x="221" y="334">TLC546</text>
+    <text x="226" y="507">Sensor amplifier</text>
+    <text x="221" y="529">LM1815</text>
+    <text x="435" y="440">CAN controller</text>
+    <text x="435" y="464">AN82526</text>
+  </g>
+  <text x="438" y="579" text-anchor="middle" fill="#000033">SFI socket</text>
+
+  <!-- ===== internal functions (green) ===== -->
+  <g fill="none" stroke="#006633" stroke-width="1.5">
+    <rect x="360" y="145" width="150" height="250"/>
+    <rect x="625" y="50" width="98" height="100"/>
+    <rect x="625" y="177" width="98" height="292"/>
+  </g>
+  <g fill="none" stroke="#006633" stroke-width="2" stroke-linejoin="miter">
+    <!-- CPU <-> SRAM -->
+    <path d="M 547 173 L 536 179 H 573.5 V 92 H 600 L 590 86.5"/>
+    <!-- CPU <-> flash -->
+    <path d="M 553 295 L 542 301 H 596"/>
+    <path d="M 542 311 H 596 L 586 317"/>
+    <!-- CPU <-> CAN controller -->
+    <path d="M 426 411 L 431 400 V 422"/>
+    <path d="M 441 400 V 422 L 447 412"/>
+  </g>
+  <g fill="#006650" text-anchor="middle">
+    <text x="435" y="138">micro controller</text>
+    <text x="435" y="164">MC68332</text>
+    <text x="674" y="44">SRAM memory</text>
+    <text x="674" y="67">TC55257</text>
+    <text x="674" y="170">Flash memory</text>
+    <text x="674" y="197">28F010 (T5.5)</text>
+    <text x="674" y="215">28F512 (T5.2)</text>
+  </g>
+
+  <!-- ===== legend ===== -->
+  <rect x="589" y="490" width="19" height="15" fill="#99ffcc"/>
+  <rect x="589" y="507" width="19" height="15" fill="#ffff99"/>
+  <rect x="589" y="524" width="19" height="15" fill="#ffb0ff"/>
+  <g fill="#888888">
+    <text x="616" y="503">Internal functions</text>
+    <text x="616" y="520">External functions</text>
+    <text x="616" y="537">Outside ECU</text>
+  </g>
+</svg>

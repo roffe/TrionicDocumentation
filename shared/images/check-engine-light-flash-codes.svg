@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Check engine light (MIL) blink sequence after key on: bulb check and MIL
+  ident, then each stored fault code as a number of short flashes, MIL
+  ident again and the codes repeat.
+  T5 book, "Appendix VI: Check engine light (CEL)". Drawn on the 661x117
+  grid of the original picture; shown at full text width the 13 unit labels
+  come out at about 8.6 pt.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="650" height="110" viewBox="6 2 650 110"
+     font-family="DejaVu Sans" font-stretch="condensed" font-size="13">
+
+  <!-- ===== timeline, y 45..81; left and right ends are torn off ===== -->
+  <g stroke="#2b2b2b" stroke-width="1.2" stroke-linejoin="round">
+    <!-- MIL off (dark) -->
+    <g fill="#4e3804">
+      <path d="M 10 45 H 63 V 81 H 15 L 10 74 L 16 65 V 57 Z"/>
+      <rect x="183" y="45" width="35" height="36"/>
+      <rect x="230.5" y="45" width="13" height="36"/>
+      <rect x="254.5" y="45" width="37" height="36"/>
+      <rect x="302.5" y="45" width="13" height="36"/>
+      <rect x="327" y="45" width="13" height="36"/>
+      <rect x="350" y="45" width="50" height="36"/>
+      <rect x="446" y="45" width="36.5" height="36"/>
+      <rect x="493.5" y="45" width="14" height="36"/>
+      <path d="M 518 45 H 547.5 L 545 54 V 67 L 547.5 74 L 543 81 H 518 Z"/>
+    </g>
+    <!-- MIL on (light) -->
+    <g fill="#f6bd42">
+      <rect x="63" y="45" width="120" height="36"/>
+      <rect x="218" y="45" width="12.5" height="36"/>
+      <rect x="243.5" y="45" width="11" height="36"/>
+      <rect x="291.5" y="45" width="11" height="36"/>
+      <rect x="315.5" y="45" width="11.5" height="36"/>
+      <rect x="340" y="45" width="10" height="36"/>
+      <rect x="400" y="45" width="46" height="36"/>
+      <rect x="482.5" y="45" width="11" height="36"/>
+      <rect x="507.5" y="45" width="10.5" height="36"/>
+    </g>
+  </g>
+
+  <!-- ===== labels above ===== -->
+  <text x="121" y="29" font-size="12" text-anchor="middle">Bulb check and MIL ident</text>
+  <g font-weight="bold" text-anchor="middle">
+    <text x="121" y="42.5">6s</text>
+
+    <text x="237" y="14.5">Fault</text>
+    <text x="237" y="28">Code</text>
+    <text x="237" y="41.5">no. 1</text>
+
+    <text x="321" y="14.5">Fault</text>
+    <text x="321" y="28">Code</text>
+    <text x="321" y="41.5">no. 2</text>
+
+    <text x="423" y="14.5">MIL</text>
+    <text x="423" y="28">Ident</text>
+    <text x="423" y="41.5">3s</text>
+
+    <text x="500" y="14.5">Fault</text>
+    <text x="500" y="28">Code</text>
+    <text x="500" y="41.5">no. 1</text>
+  </g>
+
+  <!-- ===== labels below ===== -->
+  <g font-weight="bold">
+    <text x="52.5" y="94">Key</text>
+    <text x="52.5" y="107">on</text>
+    <g text-anchor="middle">
+      <text x="202.5" y="94">2s</text>
+      <text x="275.5" y="94">2s</text>
+      <text x="377" y="94">3s</text>
+      <text x="467" y="94">2s</text>
+    </g>
+  </g>
+
+  <!-- ===== legend ===== -->
+  <g stroke="#2b2b2b" stroke-width="1.2">
+    <rect x="554.5" y="45" width="23" height="11" fill="#f6bd42"/>
+    <rect x="554.5" y="72.5" width="23" height="11" fill="#4e3804"/>
+  </g>
+  <g font-weight="bold">
+    <text x="583" y="55.5">MIL ON</text>
+    <text x="583" y="83">MIL OFF</text>
+  </g>
+</svg>

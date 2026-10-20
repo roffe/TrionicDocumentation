@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  How to read a Saab engine code: B204E = identifier (B), engine size (204)
+  and power level (E).
+  T5 book, "Tuning the T5", engine types. Drawn on the 300x200 grid of the
+  original picture; shown at 36 % of the text width the 14 unit labels come
+  out at about 8.7 pt.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="250" height="180" viewBox="12 8 250 180"
+     font-family="DejaVu Sans" font-stretch="condensed">
+  <text x="19" y="44.5" font-size="34" font-weight="bold">B204E</text>
+
+  <g fill="none" stroke="#cc0000" stroke-width="1.6">
+    <path d="M 29 53.5 V 176 H 165"/>
+    <path d="M 75 55.5 V 115.5 H 165"/>
+    <path d="M 119 55.5 V 72.5 H 165"/>
+  </g>
+
+  <g font-size="14">
+    <text x="178" y="77">Power level</text>
+    <text x="178" y="120">Engine size</text>
+    <text x="178" y="180.5">Identifier</text>
+  </g>
+</svg>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  D9 (DB9) pinout of the CAN interface (Lawicel CANUSB and compatibles),
+  standard CiA DS-102 assignment. Used in the CAN bus chapter of the
+  T5/T7/T8 books.
+  Drawn on the 450x174 grid of the original picture; printed at 64 % of the
+  text width the 13 unit labels come out at about 8 pt.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="430" height="174" viewBox="10 0 430 174">
+  <!-- connector shell, pins 1-5 on the long (right) side -->
+  <path d="M 188.5 30
+           C 188.5 20, 196 15, 208 10.5
+           L 236 2.5
+           C 248 -0.5, 260.5 2, 260.5 14
+           L 260.5 160
+           C 260.5 172, 248 174, 236 170.5
+           L 208 163
+           C 196 159.5, 188.5 153, 188.5 143
+           Z"
+        fill="#cddff6" stroke="#000" stroke-width="1.5"/>
+
+  <!-- wires from the pins out to the labels -->
+  <g stroke="#000" stroke-width="2.2">
+    <line x1="143" y1="48"    x2="200" y2="48"/>
+    <line x1="143" y1="73"    x2="200" y2="73"/>
+    <line x1="143" y1="98"    x2="200" y2="98"/>
+    <line x1="143" y1="122.5" x2="200" y2="122.5"/>
+    <line x1="251" y1="35.5"  x2="307" y2="35.5"/>
+    <line x1="251" y1="60"    x2="307" y2="60"/>
+    <line x1="251" y1="85"    x2="307" y2="85"/>
+    <line x1="251" y1="110"   x2="307" y2="110"/>
+    <line x1="251" y1="135"   x2="307" y2="135"/>
+  </g>
+
+  <!-- pins -->
+  <g fill="#8c8c8c" stroke="#000" stroke-width="1.5">
+    <circle cx="204.5" cy="48"    r="5"/>
+    <circle cx="204.5" cy="73"    r="5"/>
+    <circle cx="204.5" cy="98"    r="5"/>
+    <circle cx="204.5" cy="122.5" r="5"/>
+    <circle cx="246"   cy="35.5"  r="5"/>
+    <circle cx="246"   cy="60"    r="5"/>
+    <circle cx="246"   cy="85"    r="5"/>
+    <circle cx="246"   cy="110"   r="5"/>
+    <circle cx="246"   cy="135"   r="5"/>
+  </g>
+
+  <!-- wire ends -->
+  <g fill="#fff" stroke="#000" stroke-width="1.2">
+    <circle cx="140" cy="48"    r="3"/>
+    <circle cx="140" cy="73"    r="3"/>
+    <circle cx="140" cy="98"    r="3"/>
+    <circle cx="140" cy="122.5" r="3"/>
+    <circle cx="310" cy="35.5"  r="3"/>
+    <circle cx="310" cy="60"    r="3"/>
+    <circle cx="310" cy="85"    r="3"/>
+    <circle cx="310" cy="110"   r="3"/>
+    <circle cx="310" cy="135"   r="3"/>
+  </g>
+
+  <!-- pin numbers -->
+  <g font-family="DejaVu Sans" font-size="14" fill="#000">
+    <text x="211" y="53">6</text>
+    <text x="211" y="78">7</text>
+    <text x="211" y="103">8</text>
+    <text x="211" y="127.5">9</text>
+    <g text-anchor="end">
+      <text x="239" y="40.5">1</text>
+      <text x="239" y="65">2</text>
+      <text x="239" y="90">3</text>
+      <text x="239" y="115">4</text>
+      <text x="239" y="140">5</text>
+    </g>
+  </g>
+
+  <!-- signals -->
+  <g font-family="DejaVu Sans" font-size="13" fill="#000">
+    <g text-anchor="end">
+      <text x="129" y="52.7">CAN_GND / nc</text>
+      <text x="129" y="77.7">CAN_H</text>
+      <text x="129" y="102.7">nc</text>
+      <text x="129" y="127.2">+ 12V / + 5V / nc</text>
+    </g>
+    <text x="321" y="40.2">+ 12V / + 5V / nc</text>
+    <text x="321" y="64.7">CAN_L</text>
+    <text x="321" y="89.7">CAN_GND / nc</text>
+    <text x="321" y="114.7">nc</text>
+    <text x="321" y="139.7">nc</text>
+  </g>
+</svg>

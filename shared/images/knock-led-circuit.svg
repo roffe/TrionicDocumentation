@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Knock LED: switched +12 V through a 680 Ohm resistor and a LED to the
+  Trionic 5 "service" output on ECU pin 8, which pulls to ground on knock.
+  Used in "Appendix XIII: Installing a knock LED" of the T5 book.
+  Drawn on the 338x176 grid of the original picture; printed at 58 % of the
+  text width the 12.5 unit labels come out at about 9 pt.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="342" height="158" viewBox="0 6 342 158">
+  <!-- wiring -->
+  <path d="M 141.5 21 H 264 V 32.5 M 264 63 V 83 M 264 101 V 157 H 141.5"
+        fill="none" stroke="#000" stroke-width="1.6"/>
+
+  <!-- terminals -->
+  <g fill="#000">
+    <circle cx="141.5" cy="21"  r="4"/>
+    <circle cx="141.5" cy="157" r="4"/>
+  </g>
+
+  <!-- resistor -->
+  <rect x="256.5" y="32.5" width="15" height="30.5"
+        fill="none" stroke="#000" stroke-width="1.6"/>
+
+  <!-- LED: anode on top, cathode bar below, light arrows to the right -->
+  <g fill="none" stroke="#000" stroke-width="1.6">
+    <path d="M 254.5 83 H 273.5 L 264 100 Z" stroke-linejoin="miter"/>
+    <line x1="254" y1="101" x2="274" y2="101"/>
+    <line x1="273.5" y1="88.5" x2="282" y2="96.5" stroke-width="1.2"/>
+    <line x1="273.5" y1="96.5" x2="282" y2="104.5" stroke-width="1.2"/>
+  </g>
+  <g fill="#000">
+    <path d="M 286 100 L 279.5 97.5 L 283 93.7 Z"/>
+    <path d="M 286 108 L 279.5 105.5 L 283 101.7 Z"/>
+  </g>
+
+  <!-- labels -->
+  <g font-family="DejaVu Sans" font-size="12.5" fill="#000">
+    <g text-anchor="end">
+      <text x="134" y="25.5">+15 (switched 12 V)</text>
+      <text x="134" y="161.5">Trionic ECU pin 8</text>
+    </g>
+    <text x="279" y="52">680 Ohm</text>
+  </g>
+</svg>

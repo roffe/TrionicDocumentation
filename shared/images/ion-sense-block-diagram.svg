@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Ion sensing: the spark plug is both sensor and actuator, the ignition
+  system measures the ionization current and the interpretation block turns
+  it into knock, misfire, cam phase, lambda, peak pressure position and
+  measure of fit.
+  "Appendix VII: Knock and misfire detection" in the T5, T7 and T8 books.
+  Drawn on the 547x288 grid of the original picture; shown at 71 % of the
+  text width the 15 unit labels come out at about 8.2 pt.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="560" height="294" viewBox="-10 -4 560 294"
+     font-family="DejaVu Sans" font-stretch="condensed" font-size="15">
+
+  <g fill="none" stroke="#000" stroke-width="1.3">
+    <!-- blocks -->
+    <rect x="57" y="25" width="124" height="77"/>
+    <rect x="237" y="22" width="78" height="214"/>
+
+    <!-- ignition system to interpretation -->
+    <path d="M 181 64.5 H 218"/>
+    <!-- ignition system to spark plug, both ways -->
+    <path d="M 132.7 110 V 159"/>
+
+    <!-- outputs -->
+    <path d="M 315 40.3 H 470 M 315 79.3 H 470 M 315 117.3 H 470 M 315 156 H 470
+             M 315 195.3 H 526 M 315 220.3 H 526"/>
+    <path d="M 450 34.8 L 470 40.3 L 450 45.8
+             M 450 73.8 L 470 79.3 L 450 84.8
+             M 450 111.8 L 470 117.3 L 450 122.8
+             M 450 150.5 L 470 156 L 450 161.5"/>
+  </g>
+  <g fill="#000">
+    <path d="M 217 60 L 238 64.5 L 217 69 Z"/>
+    <path d="M 132.7 102.5 L 129.5 111 H 135.9 Z"/>
+    <path d="M 132.7 166.5 L 129.5 158 H 135.9 Z"/>
+    <path d="M 525 189.8 L 547 195.3 L 525 200.8 Z"/>
+    <path d="M 525 214.8 L 547 220.3 L 525 225.8 Z"/>
+  </g>
+
+  <!-- spark plug: terminal, insulator, hex, threaded body, electrodes -->
+  <g fill="none" stroke="#000" stroke-width="1.2">
+    <rect x="130.3" y="167" width="5.4" height="15"/>
+    <rect x="124.3" y="182" width="18.3" height="50"/>
+    <path d="M 112 232 H 153.7 V 251 L 152 253 H 113.7 L 112 251 Z
+             M 118.6 232 V 253 M 133.3 232 V 253 M 147.4 232 V 253"/>
+    <path d="M 114 254 H 152" stroke-width="2"/>
+    <path d="M 122 254 V 277 H 144 V 254" stroke-width="2"/>
+    <rect x="127" y="277.9" width="11.6" height="1.6"/>
+    <rect x="130.3" y="279.5" width="5.4" height="2.4"/>
+    <path d="M 139 278 V 282.5 Q 139 284.3 137 284.3 H 130.3 V 287.2 H 138.5
+             Q 142.5 287.2 142.5 283 V 278"/>
+  </g>
+
+  <text x="119" y="69" text-anchor="middle">Ignition System</text>
+  <text x="277" y="12" text-anchor="middle">Interpretation</text>
+  <text x="53" y="205" text-anchor="middle">Integrated Sensor</text>
+  <text x="53" y="224" text-anchor="middle">and Actuator</text>
+
+  <text x="325" y="35.5">Knock Intensity</text>
+  <text x="325" y="74.5">Misfire Detection</text>
+  <text x="325" y="113">Camphase Sensor</text>
+  <text x="325" y="152">Lambda</text>
+  <text x="354" y="189">Peak Pressure Position</text>
+  <text x="354" y="214">Measure of Fit</text>
+</svg>

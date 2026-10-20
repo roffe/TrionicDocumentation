@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Powering a Trionic 8 ECU on the bench for BDM: 12...16 V feeds ECU pins 2
+  and 3, an L7805 makes 5 V for the BDM adapter's VDD (pin 9, cut between
+  the ECU and the adapter, red cross), PIN63 and BDM pin 5 go to 0 V.
+  BDM pins 3 and 5 are bridged on both sides, pins 1 and 2 are not used.
+  Used in the flash chapter of the T8 book.
+  Drawn on the 600x376 grid of the original picture; printed at the full
+  text width the 12 unit labels come out at about 8.5 pt.
+  BDM header pins (10 ... 1) sit at x = 442.5 + 11.33 * (10 - pin).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="600" height="376" viewBox="0 0 600 376">
+  <!-- frame -->
+  <rect x="1.5" y="1.5" width="597" height="373"
+        fill="none" stroke="#000" stroke-width="2.5"/>
+
+  <!-- ===== wiring ===== -->
+  <g fill="none" stroke="#000" stroke-width="1">
+    <!-- +12V rail: terminal to L7805 pin 1, up to ECU PIN3 and PIN2 -->
+    <line x1="110" y1="138" x2="183" y2="138"/>
+    <polyline points="154.5,182 154.5,75 366,75"/>
+    <polyline points="331,75 331,50 366,50"/>
+    <line x1="154.5" y1="187" x2="154.5" y2="230"/>
+    <!-- 0V rail: terminal to BDM pin 5 -->
+    <line x1="110" y1="230" x2="499.2" y2="230"/>
+    <!-- L7805 pin 2 to 0V -->
+    <line x1="224" y1="166" x2="224" y2="230"/>
+    <!-- ECU PIN63 to 0V -->
+    <polyline points="366,101 331,101 331,230"/>
+    <!-- +5V from L7805 pin 3 to BDM VDD (pin 9), C2 -->
+    <line x1="267" y1="138" x2="453.8" y2="138"/>
+    <line x1="298.5" y1="138" x2="298.5" y2="182"/>
+    <line x1="298.5" y1="187" x2="298.5" y2="230"/>
+
+    <!-- ECU BDM header to BDM adapter, 1:1 -->
+    <line x1="442.5" y1="106" x2="442.5" y2="264.5"/>
+    <line x1="453.8" y1="106" x2="453.8" y2="264.5"/>
+    <line x1="465.2" y1="106" x2="465.2" y2="264.5"/>
+    <line x1="476.5" y1="106" x2="476.5" y2="264.5"/>
+    <line x1="487.8" y1="106" x2="487.8" y2="264.5"/>
+    <line x1="499.2" y1="106" x2="499.2" y2="264.5"/>
+    <line x1="510.5" y1="106" x2="510.5" y2="264.5"/>
+    <line x1="521.8" y1="106" x2="521.8" y2="264.5"/>
+    <!-- pins 2 and 1 not connected -->
+    <line x1="533.2" y1="106" x2="533.2" y2="264.5" stroke-dasharray="3 2"/>
+    <line x1="544.5" y1="106" x2="544.5" y2="264.5" stroke-dasharray="3 2"/>
+    <!-- pin 5 to pin 3 bridges, ECU side and adapter side -->
+    <line x1="499.2" y1="113" x2="521.8" y2="113"/>
+    <line x1="499.2" y1="255" x2="521.8" y2="255"/>
+  </g>
+
+  <!-- capacitors C1 and C2 -->
+  <g stroke="#000" stroke-width="2">
+    <line x1="147" y1="182" x2="162" y2="182"/>
+    <line x1="147" y1="187" x2="162" y2="187"/>
+    <line x1="291" y1="182" x2="306" y2="182"/>
+    <line x1="291" y1="187" x2="306" y2="187"/>
+  </g>
+
+  <!-- junctions -->
+  <g fill="#000">
+    <circle cx="154.5" cy="138" r="2"/>
+    <circle cx="331"   cy="75"  r="2"/>
+    <circle cx="298.5" cy="138" r="2"/>
+    <circle cx="453.8" cy="138" r="2"/>
+    <circle cx="154.5" cy="230" r="2"/>
+    <circle cx="224"   cy="230" r="2"/>
+    <circle cx="298.5" cy="230" r="2"/>
+    <circle cx="331"   cy="230" r="2"/>
+    <circle cx="499.2" cy="230" r="2"/>
+    <circle cx="499.2" cy="113" r="2"/>
+    <circle cx="521.8" cy="113" r="2"/>
+    <circle cx="499.2" cy="255" r="2"/>
+    <circle cx="521.8" cy="255" r="2"/>
+  </g>
+
+  <!-- supply terminals -->
+  <g fill="#fff" stroke="#000" stroke-width="1">
+    <circle cx="106.5" cy="138" r="3.5"/>
+    <circle cx="106.5" cy="230" r="3.5"/>
+  </g>
+
+  <!-- cut VDD (pin 9) between ECU and adapter -->
+  <g stroke="#e3241b" stroke-width="2.2" stroke-linecap="round">
+    <line x1="450.3" y1="125.5" x2="457.3" y2="132.5"/>
+    <line x1="457.3" y1="125.5" x2="450.3" y2="132.5"/>
+  </g>
+
+  <!-- ===== blocks ===== -->
+  <g fill="none" stroke="#000" stroke-width="2.2">
+    <rect x="183.5" y="112" width="83" height="53.5"/>   <!-- L7805 -->
+    <rect x="367"   y="28"  width="188.5" height="93"/>  <!-- ECU -->
+    <rect x="367"   y="245" width="188.5" height="92.5"/><!-- BDM adapter -->
+  </g>
+
+  <!-- BDM headers -->
+  <g fill="#fff" stroke="#000" stroke-width="1">
+    <circle cx="442.5" cy="102" r="4"/>
+    <circle cx="453.8" cy="102" r="4"/>
+    <circle cx="465.2" cy="102" r="4"/>
+    <circle cx="476.5" cy="102" r="4"/>
+    <circle cx="487.8" cy="102" r="4"/>
+    <circle cx="499.2" cy="102" r="4"/>
+    <circle cx="510.5" cy="102" r="4"/>
+    <circle cx="521.8" cy="102" r="4"/>
+    <circle cx="533.2" cy="102" r="4"/>
+    <circle cx="544.5" cy="102" r="4"/>
+    <circle cx="442.5" cy="268.5" r="4"/>
+    <circle cx="453.8" cy="268.5" r="4"/>
+    <circle cx="465.2" cy="268.5" r="4"/>
+    <circle cx="476.5" cy="268.5" r="4"/>
+    <circle cx="487.8" cy="268.5" r="4"/>
+    <circle cx="499.2" cy="268.5" r="4"/>
+    <circle cx="510.5" cy="268.5" r="4"/>
+    <circle cx="521.8" cy="268.5" r="4"/>
+    <circle cx="533.2" cy="268.5" r="4"/>
+    <circle cx="544.5" cy="268.5" r="4"/>
+  </g>
+
+  <!-- L7805 in its TO-220 package, pins 1 2 3 = in, ground, out -->
+  <g fill="none" stroke="#000">
+    <rect x="205" y="247" width="49.5" height="20.5" stroke-width="1"/>
+    <circle cx="229.5" cy="257.5" r="7" stroke-width="1"/>
+    <rect x="211" y="315" width="6" height="31" stroke-width="1"/>
+    <rect x="226.5" y="315" width="6" height="31" stroke-width="1"/>
+    <rect x="243" y="315" width="6" height="31" stroke-width="1"/>
+    <rect x="205" y="268" width="49.5" height="46.5" stroke-width="2.2"/>
+  </g>
+
+  <!-- ===== labels ===== -->
+  <g font-family="DejaVu Sans" font-size="12" fill="#000">
+    <text x="104" y="132">+12V</text>
+    <text x="114" y="225">0V</text>
+    <g text-anchor="middle">
+      <text x="79.5"  y="183">POWER SUPPLY</text>
+      <text x="79.5"  y="197">12...16V / 300mA</text>
+      <text x="225"   y="143">L7805</text>
+      <text x="229.5" y="295">L7805</text>
+      <text x="407"   y="46">TRIONIC 8</text>
+      <text x="407"   y="60">ECU</text>
+    </g>
+    <text x="376" y="327">BDM ADAPTER</text>
+  </g>
+
+  <g font-family="DejaVu Sans" font-size="8.5" fill="#000">
+    <!-- L7805 pins -->
+    <text x="188" y="141">1</text>
+    <text x="262" y="141" text-anchor="end">3</text>
+    <text x="225" y="161" text-anchor="middle">2</text>
+    <!-- ECU pins -->
+    <g text-anchor="end">
+      <text x="363" y="47.5">PIN2</text>
+      <text x="363" y="72.5">PIN3</text>
+      <text x="363" y="98.5">PIN63</text>
+    </g>
+    <!-- BDM header pin numbers -->
+    <g text-anchor="middle">
+      <text x="442.5" y="94">10</text>
+      <text x="453.8" y="94">9</text>
+      <text x="465.2" y="94">8</text>
+      <text x="476.5" y="94">7</text>
+      <text x="487.8" y="94">6</text>
+      <text x="499.2" y="94">5</text>
+      <text x="510.5" y="94">4</text>
+      <text x="521.8" y="94">3</text>
+      <text x="533.2" y="94">2</text>
+      <text x="544.5" y="94">1</text>
+      <!-- TO-220 pins -->
+      <text x="214"   y="357">1</text>
+      <text x="229.5" y="357">2</text>
+      <text x="246"   y="357">3</text>
+    </g>
+  </g>
+
+  <!-- capacitor values -->
+  <g font-family="DejaVu Sans" fill="#000">
+    <text x="158" y="178" font-size="10">+</text>
+    <text x="167" y="182" font-size="9" font-weight="bold">C1</text>
+    <text x="167" y="190" font-size="7.5">1uF</text>
+    <text x="167" y="198" font-size="7.5">25V</text>
+    <text x="302" y="178" font-size="10">+</text>
+    <text x="311" y="182" font-size="9" font-weight="bold">C2</text>
+    <text x="311" y="190" font-size="7.5">1uF</text>
+    <text x="311" y="198" font-size="7.5">25V</text>
+  </g>
+</svg>

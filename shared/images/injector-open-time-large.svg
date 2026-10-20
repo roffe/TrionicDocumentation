@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Same as injector-open-time.svg but for larger injectors: they need longer
+  to open (wider red ramp), closing time (green) stays the same.
+  T5 book, "Tuning the T5", image "Pulse vs. injector open time with larger
+  injectors". Same frame as injector-pulse.svg, shown at 60 % of the text
+  width.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+     width="290" height="140" viewBox="0 28 290 140"
+     font-family="DejaVu Sans" font-stretch="condensed">
+  <!-- time axis -->
+  <line x1="13" y1="145" x2="278" y2="145" stroke="#a0a0a0" stroke-width="1.6"/>
+
+  <!-- opening (red) and closing (green) time -->
+  <g stroke="none">
+    <path d="M 34 145 V 42 H 53 Z  M 159 145 V 42 H 178 Z" fill="#ee0000"/>
+    <path d="M 92 42 V 145 H 97 Z  M 217 42 V 145 H 222 Z" fill="#11cc11"/>
+  </g>
+
+  <!-- pulses -->
+  <path d="M 34 145 V 42 H 92 V 145 M 159 145 V 42 H 217 V 145"
+        fill="none" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/>
+
+  <!-- injector open -->
+  <path d="M 34 145 L 53 42 V 36 H 92 V 42 L 97 145
+           M 159 145 L 178 42 V 36 H 217 V 42 L 222 145"
+        fill="none" stroke="#a3202e" stroke-width="1.1" stroke-linejoin="round"/>
+
+  <text x="272" y="160" text-anchor="end" font-size="10" font-weight="bold">time</text>
+</svg>
