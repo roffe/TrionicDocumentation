@@ -949,7 +949,8 @@ Ok writes the proposal into the binary, Cancel leaves it alone.
 The wizard doesn't take flow rates or fuel pressure, it moves the injector constant by a fixed step for each injector type.
 For a different fuel pressure or other injectors use the formulas above and change Inj_konst! yourself.
 
-<!-- TODO roffe: T5Suite's "Fuel tuning..." calculator (flow rate and fuel pressure in, injector constant out, +1 per 100 cc for latency) is gone in TxSuite. Is "use the formulas above" enough here, or is there a tool to point at? -->
+To compensate for the injector latency increase in larger injectors (more time needed to open) add one (1) to the newly calculated injector constant for every 100 cc / minute increase in injector flow \@ 3 bar.
+This is only guesstimating but there’s nothing better at this time.
 
 Again: when injectors flow changes by more than 25 percent the injector constant and injection map needs verification too.
 
