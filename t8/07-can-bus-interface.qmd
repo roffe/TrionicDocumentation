@@ -73,8 +73,7 @@ Currently, downloading and programming the flash is supported, as well as readin
 
 Downloading the entire flash contents from the ECU results in a 1Mbyte binary file that can be opened in TxSuite.
 In TxSuite that's ECU → Read ECU.
-
-<!-- TODO roffe: Dilemma wrote "takes about 25 minutes" here, that was T8Suite in 2011. How long does ECU → Read ECU take now, with and without the Legion bootloader? -->
+It takes a few minutes.
 
 The protocol complies largely with KWP2000.
 
