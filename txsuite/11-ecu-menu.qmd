@@ -1,7 +1,7 @@
 # ECU menu
 
 The ECU menu reads and flashes the ECU over CAN, the way the Trionic CAN Flasher does.
-Like the Realtime menu it needs a file of the ECU open, and an interface set up in File → Settings → Common.
+Like the Realtime menu it needs a file of the ECU open (Read ECU doesn't, it asks), and an interface set up in File → Settings → Common.
 The progress shows in the status bar, and TxSuite won't close while it runs.
 
 ::: {.content-visible when-profile="t8-manual"}
@@ -11,7 +11,15 @@ With File → Settings → T8 → Use Legion Bootloader on (the default) reading
 ## ECU → Read ECU
 
 Downloads the flash content from the connected ECU.
-It will ask you where to store the binary file.
+It asks which ECU is connected, Trionic 5, 7 or 8 (Enter takes the open file's ECU), then where to store the binary file.
+The ECU on the bench doesn't have to be the open file's.
+
+When it fails TxSuite says why.
+
+::: {.content-visible when-profile="t5-manual"}
+On a Trionic 5 that is what happened on the bus, line by line, as in the log file.
+"No Trionic 5 answered" means nothing on the bus took the first bootloader frame: check that the ECU is a Trionic 5, that it has power, and the CAN H / CAN L wires (ECU pins 62 and 63).
+:::
 
 ## ECU → Flash current file to ECU
 

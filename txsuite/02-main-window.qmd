@@ -24,8 +24,9 @@ An ECU's own items only show while a file of that ECU is open, in the place they
 With no file open only the shared items show.
 
 Items that need an open file are greyed out until you open one.
-The ECU follows the file as well: Connect ECU, Read ECU and the other ECU actions need a file of that ECU open, because the file tells TxSuite which ECU it is talking to.
+The ECU follows the file as well: Connect ECU and the other ECU actions need a file of that ECU open, because the file tells TxSuite which ECU it is talking to.
 Without one TxSuite says "A file must be loaded first: it tells which ECU (Trionic 5, 7 or 8) to connect to."
+ECU → Read ECU is the exception, it asks which ECU is connected.
 
 The menus are described one by one in the chapters after this one.
 
